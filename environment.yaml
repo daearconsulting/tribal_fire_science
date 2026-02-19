@@ -1,0 +1,25 @@
+name: tribal_fire
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - geopandas=0.14
+  - pandas=2.0
+  - numpy=1.26
+  - matplotlib=3.8
+  - seaborn=0.12
+  - networkx=3.1
+  - osmnx=1.2.2
+  - folium=0.18
+  - shapely=2.1
+  - contextily=1.6
+  - fiona=1.9
+  - pyproj=3.6
+  - rtree=1.0
+  - jupyterlab
+  - ipykernel
+  - notebook
+  - pip
+  - pip:
+      - branca
