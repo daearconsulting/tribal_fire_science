@@ -107,7 +107,7 @@ Open data does **not** imply unrestricted use.
 3. Re-run pipeline
 
 ## Workflows
-Workflows for Tribal fire modeling are documented in **[workflows.md](https://github.com/lijo8146/Tribal_fire_science/blob/main/workflows.md)**.  
+Workflows for Tribal fire modeling are documented in **[workflows.md](https://github.com/daearconsulting/Tribal_fire_science/blob/main/workflows.md)**.  
 This includes:
 
 - Historical fire analysis & risk mapping  
