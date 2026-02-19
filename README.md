@@ -1,6 +1,6 @@
 # Tribal Fire Mapping & Modeling: North America Datasets
 
-This repository provides a curated reference of **open datasets, tools, and workflows** that support **Tribal-led fire management, mapping, modeling, and research** across North America. The focus is on **spatial fire science** (fire history, fuels, weather, and modeling inputs) while explicitly respecting **Tribal data sovereignty, governance, and ethical use**.
+This repository provides a curated reference of open datasets, tools, and workflows that support Tribal-led fire management, mapping, modeling, and research** across North America. The focus is on spatial fire science (fire history, fuels, weather, and modeling inputs) while explicitly respecting Tribal data sovereignty, governance, and ethical use.
 
 ## Quick Links
 
