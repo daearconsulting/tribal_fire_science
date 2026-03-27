@@ -70,12 +70,12 @@ The Census TIGER tribal boundaries will download and cache automatically on firs
 
 All cached data is stored in `data/cache/` and `data/raw/`, both are gitignored and never committed to the repo.
 
-### MTBS — Manual Download
+### MTBS Manual Download
 1. Go to [https://www.mtbs.gov/direct-download](https://www.mtbs.gov/direct-download)
 2. Download the national fire perimeters shapefile
 3. Extract and place at: `data/raw/mtbs_perimeters/mtbs_perims_DD.shp`
 
-### WUI — Manual Download
+### WUI Manual Download
 1. Go to [https://www.fs.usda.gov/rds/archive/catalog/RDS-2015-0047-2](https://www.fs.usda.gov/rds/archive/catalog/RDS-2015-0047-2)
 2. Download and extract to: `data/raw/wui/`
 
