@@ -1,25 +1,86 @@
-name: tribal_fire
+name: tribal-fire-science
 channels:
   - conda-forge
   - defaults
+
 dependencies:
-  - python=3.10
-  - geopandas=0.14
-  - pandas=2.0
-  - numpy=1.26
-  - matplotlib=3.8
-  - seaborn=0.12
-  - networkx=3.1
-  - osmnx=1.2.2
-  - folium=0.18
-  - shapely=2.1
-  - contextily=1.6
-  - fiona=1.9
-  - pyproj=3.6
-  - rtree=1.0
-  - jupyterlab
-  - ipykernel
-  - notebook
+  # Python
+  - python=3.11
+
+  # Geospatial core (order matters for GDAL compatibility)
+  - gdal>=3.7
+  - proj>=9.2
+  - geos>=3.12
+  - fiona>=1.9
+  - pyproj>=3.6
+  - shapely>=2.0
+  - geopandas>=0.14
+  - rasterio>=1.3
+  - rasterstats>=0.19
+  - pyogrio>=0.7          # fast vector I/O backend for geopandas
+
+  # Spatial analysis
+  - scipy>=1.11
+  - scikit-learn>=1.3
+  - networkx>=3.2
+  - rtree>=1.1            # spatial indexing
+
+  # Data
+  - pandas>=2.1
+  - numpy>=1.26
+  - pyarrow>=13.0         # parquet support for caching
+  - h5py>=3.10
+
+  # Visualization
+  - matplotlib>=3.8
+  - seaborn>=0.13
+  - folium>=0.15
+  - branca>=0.7           # folium dependency
+  - mapclassify>=2.6      # choropleth classification
+  - contextily>=1.5       # basemap tiles
+
+  # Notebooks
+  - jupyterlab>=4.0
+  - ipykernel>=6.26
+  - ipywidgets>=8.1
+  - notebook>=7.0
+
+  # HTTP / data fetching
+  - requests>=2.31
+  - httpx>=0.25
+  - aiohttp>=3.9          # async fetching for large datasets
+
+  # APIs and file formats
+  - boto3>=1.34            # S3 / cloud data sources
+  - openpyxl>=3.1
+  - xlrd>=2.0
+  - lxml>=4.9
+  - beautifulsoup4>=4.12
+
+  # Utilities
+  - python-dotenv>=1.0
+  - pyyaml>=6.0
+  - tqdm>=4.66
+  - tenacity>=8.2          # retry logic for API calls
+  - platformdirs>=4.0
+
+  # Dev / testing
+  - pytest>=7.4
+  - black>=23.0
+  - flake8>=6.1
+
   - pip
   - pip:
-      - branca
+    - census>=0.8.19         # US Census API wrapper
+    - pyusda                 # USDA data access (PyPI only)
+    - nbformat>=5.9          # MTBS accessed via direct download in src/data/loaders.py
+
+# Post-install kernel registration 
+# Run after `conda env create -f environment.yml`:
+#
+#   conda activate tribal-fire-science
+#   python -m ipykernel install --user --name tribal-fire-science \
+#     --display-name "Python (tribal-fire-science)"
+#
+# Then in VSCode: Ctrl+Shift+P / "Python: Select Interpreter" / tribal-fire-science
+
