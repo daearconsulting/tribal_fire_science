@@ -40,7 +40,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# ── Retry decorator for flaky public APIs ──────────────────────────────────────
+# Retry decorator for flaky public APIs
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -48,9 +48,13 @@ _retry = retry(
 )
 
 
-# ── Internal helpers ───────────────────────────────────────────────────────────
+# Internal helpers 
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
+    try:
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    except FileExistsError:
+        pass
     return CACHE_DIR / f"{name}{suffix}"
 
 
@@ -86,7 +90,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# ── NIFC Fire Perimeters ───────────────────────────────────────────────────────
+# NIFC Fire Perimeters 
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -103,7 +107,7 @@ def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("nifc_perimeters", _fetch, force_refresh)
 
 
-# ── MTBS Burned Area Perimeters ────────────────────────────────────────────────
+# MTBS Burned Area Perimeters
 
 @_retry
 def load_mtbs_perimeters(
@@ -139,7 +143,7 @@ def load_mtbs_perimeters(
     return gdf.reset_index(drop=True)
 
 
-# ── BIA Tribal Boundaries ─────────────────────────────────────────────────────
+# BIA Tribal Boundaries 
 
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -158,8 +162,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# ── Census TIGER — American Indian / Alaska Native Areas ──────────────────────
-
+# Census TIGER — American Indian / Alaska Native Areas 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
@@ -168,22 +171,37 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     Source: https://www2.census.gov/geo/tiger/TIGER2023/AIANNH/
     """
     def _fetch():
-        # Index page lists individual state/national files — use national file
+        # Ensure directories exist before writing (safe on Windows)
+        for _mkdir_path in [RAW_DIR, CACHE_DIR, RAW_DIR / "census_aiannh"]:
+            try:
+                _mkdir_path.mkdir(parents=True, exist_ok=True)
+            except FileExistsError:
+                pass
+        extract_dir = RAW_DIR / "census_aiannh"
+
         national_url = f"{CENSUS_AIAN_URL}tl_2023_us_aiannh.zip"
+        log.info("Downloading Census TIGER AIANNH from %s", national_url)
         r = requests.get(national_url, timeout=120)
         r.raise_for_status()
+
         zip_path = RAW_DIR / "tl_2023_us_aiannh.zip"
         zip_path.write_bytes(r.content)
+
         with zipfile.ZipFile(zip_path) as z:
-            z.extractall(RAW_DIR / "census_aiannh")
-        shp = next((RAW_DIR / "census_aiannh").glob("*.shp"))
-        gdf = gpd.read_file(shp)
+            z.extractall(extract_dir)
+
+        shp_files = list(extract_dir.glob("*.shp"))
+        if not shp_files:
+            raise FileNotFoundError(
+                f"No shapefile found after extracting Census AIANNH zip to {extract_dir}"
+            )
+        gdf = gpd.read_file(shp_files[0])
         return gdf.to_crs(CRS_GEOGRAPHIC)
 
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# ── Native Land Digital — Tribal Territories ──────────────────────────────────
+# Native Land Digital — Tribal Territories
 
 @_retry
 def load_native_land_territories(
@@ -215,7 +233,7 @@ def load_native_land_territories(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# ── FEMA National Risk Index ───────────────────────────────────────────────────
+# FEMA National Risk Index 
 
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -237,7 +255,7 @@ def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFra
     return _load_or_fetch_geodataframe("fema_nri", _fetch, force_refresh)
 
 
-# ── WUI — Wildland-Urban Interface ────────────────────────────────────────────
+# Wildland-Urban Interface (WUI)
 
 @_retry
 def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -262,7 +280,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("wui", _fetch, force_refresh)
 
 
-# ── NOAA Climate Data (via CDO API) ───────────────────────────────────────────
+# NOAA Climate Data (via CDO API) 
 
 def load_noaa_climate_data(
     station_ids: list[str],

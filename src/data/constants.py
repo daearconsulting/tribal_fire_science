@@ -17,9 +17,14 @@ CACHE_DIR   = DATA_DIR / "cache"       # API response cache (gitignored)
 OUTPUTS_DIR = REPO_ROOT / "outputs"
 NOTEBOOKS_DIR = REPO_ROOT / "notebooks"
 
-# Ensure directories exist at import time (safe no-op if already present)
+# Ensure directories exist at import time.
+# Explicit try/except avoids a Windows pathlib edge case where exist_ok=True
+# still raises FileExistsError when a parent directory already exists.
 for _d in [RAW_DIR, INTERIM_DIR, FINAL_DIR, CACHE_DIR, OUTPUTS_DIR]:
-    _d.mkdir(parents=True, exist_ok=True)
+    try:
+        _d.mkdir(parents=True, exist_ok=True)
+    except FileExistsError:
+        pass
 
 
 # ── Coordinate Reference Systems ───────────────────────────────────────────────

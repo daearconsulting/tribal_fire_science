@@ -24,7 +24,7 @@ from typing import Optional
 import warnings
 
 
-# ── Data source registry ───────────────────────────────────────────────────────
+# Data source registry
 
 @dataclass
 class DataSource:
@@ -64,7 +64,7 @@ class DataSource:
         return f"{self.name}. {self.steward}. {self.url}"
 
 
-# ── Canonical dataset registry ────────────────────────────────────────────────
+# Canonical dataset registry 
 # These mirror the sources in data/loaders.py. Update both when adding sources.
 
 SOURCES: dict[str, DataSource] = {
@@ -145,16 +145,16 @@ SOURCES: dict[str, DataSource] = {
 }
 
 
-# ── Sovereignty acknowledgment ─────────────────────────────────────────────────
+# Sovereignty acknowledgment 
 
 def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     """
     Print data sovereignty acknowledgment for a notebook.
-    Call at the top of any notebook that uses tribal data sources.
+    Call at the top of any notebook that uses Tribal data sources.
 
     Parameters
     ----------
-    source_keys : list of keys from SOURCES dict. If None, prints all tribal sources.
+    source_keys : list of keys from SOURCES dict. If None, prints all Tribal sources.
     """
     keys = source_keys or [k for k, v in SOURCES.items() if v.tribal_data]
 
@@ -162,16 +162,16 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     print("DATA SOVEREIGNTY ACKNOWLEDGMENT")
     print("=" * 70)
     print(
-        "This analysis uses data that describes Indigenous and tribal lands, "
+        "This analysis uses data that describes Indigenous and Tribal lands, "
         "communities, and fire histories. We recognize that:\n"
         "\n"
         "• Tribal nations are sovereign governments with the right to control\n"
         "  data about their own communities and territories (OCAP® principles).\n"
         "\n"
-        "• Federal and third-party datasets may not reflect tribal nations'\n"
+        "• Federal and third-party datasets may not reflect Tribal Nations'\n"
         "  own definitions of territory, governance, or cultural practice.\n"
         "\n"
-        "• This work is intended to support — not replace — tribal-led\n"
+        "• This work is intended to support — not replace — Tribal-led\n"
         "  fire science and land management.\n"
     )
     print("Data sources used:")
@@ -199,7 +199,7 @@ def generate_citations(source_keys: list[str]) -> str:
     return "\n".join(lines)
 
 
-# ── Traditional Ecological Knowledge (TEK) disclaimer ─────────────────────────
+# Traditional Ecological Knowledge (TEK) disclaimer
 
 TEK_DISCLAIMER = """
 Traditional Ecological Knowledge (TEK) Notice
@@ -211,7 +211,7 @@ not as data to be extracted, quantified, or used outside the specific
 collaborative agreements under which it was shared.
 
 If you are building on this work, consult directly with the relevant
-tribal nations before incorporating TEK into new analyses or publications.
+Tribal Nations before incorporating TEK into new analyses or publications.
 """
 
 
