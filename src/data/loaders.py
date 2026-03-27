@@ -2,7 +2,6 @@
 loaders.py — Fetch and cache real datasets used across notebooks.
 
 Design principles
------------------
 - Every function fetches from a documented public source (no synthetic data).
 - Results are cached to data/cache/ as Parquet or GeoJSON to avoid redundant
   API calls. Pass force_refresh=True to re-download.
@@ -90,7 +89,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# NIFC Fire Perimeters
+# NIFC Fire Perimeters 
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -148,7 +147,7 @@ def load_mtbs_perimeters(
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
-    BIA land area representations (tribal boundaries).
+    BIA land area representations (Tribal boundaries).
     Source: BIA Geospatial — https://biamaps.doi.gov
     """
     def _fetch():
@@ -202,7 +201,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# Native Land Digital: Tribal Territories 
+# Native Land Digital — Tribal Territories 
 
 @_retry
 def load_native_land_territories(
@@ -325,3 +324,192 @@ def load_noaa_climate_data(
         return pd.DataFrame(r.json().get("results", []))
 
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
+
+
+# gridMET Weather Data 
+
+# gridMET variable names and their units
+GRIDMET_VARIABLES = {
+    "tmmx":   {"desc": "Maximum temperature",        "units_raw": "K",    "units_out": "F"},
+    "rmin":   {"desc": "Minimum relative humidity",  "units_raw": "%",    "units_out": "%"},
+    "vs":     {"desc": "Wind velocity at 10m",       "units_raw": "m/s",  "units_out": "mph"},
+    "bi":     {"desc": "Burning Index",              "units_raw": "index","units_out": "index"},
+    "erc":    {"desc": "Energy Release Component",   "units_raw": "index","units_out": "index"},
+    "fm1000": {"desc": "1000-hr dead fuel moisture", "units_raw": "%",    "units_out": "%"},
+}
+
+# gridMET OPeNDAP base URL spatial subsetting via index slicing avoids
+# downloading full continental US grids (~200–500 MB per variable per year)
+GRIDMET_OPENDAP_BASE = (
+    "http://thredds.northwestknowledge.net:8080/thredds/dodsC/MET/{var}/{var}_{year}.nc"
+)
+
+
+def load_gridmet_weather(
+    tribal_gdf: gpd.GeoDataFrame,
+    start_year: int = 2000,
+    end_year: int = 2024,
+    variables: list[str] | None = None,
+    name_col: str = "NAME",
+    force_refresh: bool = False,
+) -> pd.DataFrame:
+    """
+    Load gridMET daily weather data for Tribal land centroids.
+
+    Uses OPeNDAP spatial subsetting to download only the grid cells
+    covering the study area — no full continental US download required.
+
+    Source: University of Idaho gridMET
+    https://www.climatologylab.org/gridmet.html
+    Spatial resolution: ~4 km. Temporal coverage: 1979–present.
+
+    Variables loaded by default
+    ---------------------------
+    tmmx   : Daily max temperature (K → °F)
+    rmin   : Daily min relative humidity (%)
+    vs     : Daily mean wind speed (m/s → mph)
+    bi     : Burning Index
+    erc    : Energy Release Component
+    fm1000 : 1000-hr dead fuel moisture (%)
+
+    Parameters
+    ----------
+    tribal_gdf   : GeoDataFrame of Tribal land boundaries (EPSG:4326)
+    start_year   : First year to download (inclusive)
+    end_year     : Last year to download (inclusive)
+    variables    : List of gridMET variable names. Defaults to all six above.
+    name_col     : Column in tribal_gdf to use as Tribal land identifier
+    force_refresh: Re-download even if cache exists
+
+    Returns
+    -------
+    DataFrame with columns: tribal_name, date, year, month, day_of_year,
+    temp_max_f, rh_min_pct, wind_mph, burning_index, erc, fm1000
+    """
+    try:
+        import xarray as xr
+        import numpy as np
+    except ImportError:
+        raise ImportError(
+            "xarray and numpy are required for gridMET loading. "
+            "Run: conda install -n tribal-fire-science xarray numpy"
+        )
+
+    from .constants import CRS_GEOGRAPHIC
+
+    vars_to_load = variables or list(GRIDMET_VARIABLES.keys())
+    cache_name = f"gridmet_{start_year}_{end_year}_{'_'.join(sorted(vars_to_load))}"
+    cached = _cache_path(cache_name, ".parquet")
+
+    if cached.exists() and not force_refresh:
+        log.info("Loading gridMET data from cache: %s", cached)
+        return pd.read_parquet(cached)
+
+    # Compute centroids for point extraction
+    tribal = tribal_gdf.to_crs(CRS_GEOGRAPHIC).copy()
+    tribal["centroid_lon"] = tribal.geometry.centroid.x
+    tribal["centroid_lat"] = tribal.geometry.centroid.y
+
+    all_records = []
+
+    for year in range(start_year, end_year + 1):
+        log.info("Loading gridMET year %d ...", year)
+        year_data: dict[str, xr.Dataset] = {}
+
+        for var in vars_to_load:
+            url = GRIDMET_OPENDAP_BASE.format(var=var, year=year)
+            try:
+                ds = xr.open_dataset(url, engine="netcdf4")
+                year_data[var] = ds
+            except Exception as e:
+                log.warning("Could not load gridMET %s %d: %s", var, year, e)
+                year_data[var] = None
+
+        # Extract values for each Tribal land centroid
+        for _, row in tribal.iterrows():
+            tribal_name = row[name_col]
+            lon = row["centroid_lon"]
+            lat = row["centroid_lat"]
+
+            # Build one record per day
+            try:
+                # Use tmmx to get date range for this year
+                ref_var = next(
+                    (v for v in vars_to_load if year_data.get(v) is not None), None
+                )
+                if ref_var is None:
+                    continue
+
+                ref_ds = year_data[ref_var]
+                # gridMET lat runs N→S (descending), lon runs W→E
+                times = ref_ds["day"].values
+
+                def nearest_val(ds, variable, lat, lon):
+                    """Extract nearest grid cell value time series."""
+                    try:
+                        da = ds[variable]
+                        # Select nearest lat/lon
+                        point = da.sel(
+                            lat=lat, lon=lon, method="nearest"
+                        )
+                        return point.values
+                    except Exception:
+                        return np.full(len(times), np.nan)
+
+                tmmx_vals  = nearest_val(year_data.get("tmmx"),   "air_temperature",            lat, lon) if year_data.get("tmmx")   else np.full(len(times), np.nan)
+                rmin_vals  = nearest_val(year_data.get("rmin"),   "relative_humidity",           lat, lon) if year_data.get("rmin")   else np.full(len(times), np.nan)
+                vs_vals    = nearest_val(year_data.get("vs"),     "wind_speed",                  lat, lon) if year_data.get("vs")     else np.full(len(times), np.nan)
+                bi_vals    = nearest_val(year_data.get("bi"),     "burning_index_g",             lat, lon) if year_data.get("bi")     else np.full(len(times), np.nan)
+                erc_vals   = nearest_val(year_data.get("erc"),    "energy_release_component-g",  lat, lon) if year_data.get("erc")    else np.full(len(times), np.nan)
+                fm_vals    = nearest_val(year_data.get("fm1000"), "dead_fuel_moisture_1000hr",   lat, lon) if year_data.get("fm1000") else np.full(len(times), np.nan)
+
+                # Unit conversions
+                # K to F
+                temp_f = (tmmx_vals - 273.15) * 9 / 5 + 32
+                # m/s to mph
+                wind_mph = vs_vals * 2.23694
+
+                dates = pd.to_datetime(times)
+
+                for i, date in enumerate(dates):
+                    all_records.append({
+                        "tribal_name":    tribal_name,
+                        "date":           date,
+                        "year":           date.year,
+                        "month":          date.month,
+                        "day_of_year":    date.day_of_year,
+                        "temp_max_f":     float(temp_f[i])   if not np.isnan(temp_f[i])   else np.nan,
+                        "rh_min_pct":     float(rmin_vals[i])if not np.isnan(rmin_vals[i])else np.nan,
+                        "wind_mph":       float(wind_mph[i]) if not np.isnan(wind_mph[i]) else np.nan,
+                        "burning_index":  float(bi_vals[i])  if not np.isnan(bi_vals[i])  else np.nan,
+                        "erc":            float(erc_vals[i]) if not np.isnan(erc_vals[i]) else np.nan,
+                        "fm1000":         float(fm_vals[i])  if not np.isnan(fm_vals[i])  else np.nan,
+                    })
+
+            except Exception as e:
+                log.warning("Error extracting gridMET for %s %d: %s", tribal_name, year, e)
+
+        # Close datasets to free memory
+        for ds in year_data.values():
+            if ds is not None:
+                ds.close()
+
+    if not all_records:
+        raise ValueError(
+            "No gridMET records were extracted. Check network access to "
+            "thredds.northwestknowledge.net and verify Tribal land coordinates."
+        )
+
+    df = pd.DataFrame(all_records)
+    df["date"] = pd.to_datetime(df["date"])
+    df = df.sort_values(["tribal_name", "date"]).reset_index(drop=True)
+
+    # Cache result
+    try:
+        CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    except FileExistsError:
+        pass
+    df.to_parquet(cached, index=False)
+    log.info("gridMET data cached to %s", cached)
+
+    return df
