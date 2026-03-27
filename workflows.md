@@ -4,7 +4,7 @@ This document outlines workflows for Tribal-led fire research, modeling, and man
 
 ## Tribal Fire Mapping & Modeling Workflows
 
-## 1. Historical Fire Analysis & Risk Mapping
+## Historical Fire Analysis & Risk Mapping
 
 **Goal:** Understand past fire behavior to predict areas at higher risk.
 
@@ -25,7 +25,7 @@ This document outlines workflows for Tribal-led fire research, modeling, and man
 
 **Tools:** QGIS / ArcGIS, R (`raster`, `sf`), Python (`geopandas`, `rasterio`)
 
-## 2. Fire Behavior Simulation
+## Fire Behavior Simulation
 
 **Goal:** Model potential fire spread under specific weather and fuel conditions.
 
@@ -46,7 +46,7 @@ This document outlines workflows for Tribal-led fire research, modeling, and man
 
 **Use Cases:** Prescribed burn planning, emergency response, hazard mitigation
 
-## 3. Fire Impact on Cultural & Ecological Resources
+## Fire Impact on Cultural & Ecological Resources
 
 **Goal:** Protect cultural resources and sensitive ecosystems.
 
@@ -66,7 +66,7 @@ This document outlines workflows for Tribal-led fire research, modeling, and man
 
 **Use Cases:** Preserving sacred plants, wildlife corridors, and heritage sites
 
-## 4. Real-Time Fire Monitoring & Early Warning
+## Real-Time Fire Monitoring & Early Warning
 
 **Goal:** Track active fires and predict risks dynamically.
 
@@ -85,7 +85,7 @@ This document outlines workflows for Tribal-led fire research, modeling, and man
 
 **Tools:** Google Earth Engine, QGIS / ArcGIS, Python automated scripts
 
-## 5. Prescribed Burn Planning & Optimization
+## Prescribed Burn Planning & Optimization
 
 **Goal:** Use controlled fire to restore ecosystem health and reduce wildfire risk.
 
@@ -113,7 +113,7 @@ This document outlines workflows for Tribal-led fire research, modeling, and man
 - Reducing invasive species  
 - Supporting cultural plant growth  
 
-## 6. Climate Change & Fire Regime Projection
+## Climate Change & Fire Regime Projection
 
 **Goal:** Assess how changing climate affects fire frequency and intensity.
 
@@ -131,7 +131,7 @@ This document outlines workflows for Tribal-led fire research, modeling, and man
 3. Map high-risk areas under multiple emission scenarios.  
 4. Support Tribal climate adaptation planning.
 
-## 7. Multi-Scale Decision Support Dashboard
+## Multi-Scale Decision Support Dashboard
 
 **Goal:** Create a centralized tool for Tribal fire management.
 
