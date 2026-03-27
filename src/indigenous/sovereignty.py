@@ -171,7 +171,7 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
         "• Federal and third-party datasets may not reflect Tribal Nations'\n"
         "  own definitions of territory, governance, or cultural practice.\n"
         "\n"
-        "• This work is intended to support — not replace — Tribal-led\n"
+        "• This work is intended to support Tribal-led\n"
         "  fire science and land management.\n"
     )
     print("Data sources used:")
