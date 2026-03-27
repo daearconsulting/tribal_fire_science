@@ -1,4 +1,4 @@
-# `/src` — Shared Module Reference
+# `/src` Shared Module Reference
 
 Utilities shared across all notebooks in the Tribal Fire Science & Indigenous Data Sovereignty series.
 
@@ -39,7 +39,7 @@ from src.indigenous.sovereignty import print_data_acknowledgment
 
 ## Data Sovereignty
 
-All tribal datasets are flagged in `sovereignty.py`. Call `print_data_acknowledgment()` at the top of every notebook that uses tribal data sources. See OCAP® principles: https://fnigc.ca/ocap-training/
+All tribal datasets are flagged in `sovereignty.py`. Call `print_data_acknowledgment()` at the top of every notebook that uses Tribal data sources. See OCAP® principles: https://fnigc.ca/ocap-training/
 
 ## Data Sources
 
