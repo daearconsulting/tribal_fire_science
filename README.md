@@ -87,7 +87,6 @@ NOAA_CDO_TOKEN=your_token_here
 ```
 
 ## Repository Structure
-'''
 tribal_fire_science/
 ├── notebooks/               # One notebook per analysis topic
 ├── src/                     # Shared Python modules
@@ -113,7 +112,6 @@ tribal_fire_science/
 ├── environment.yaml         # Conda environment (Python 3.11)
 ├── workflows.md             # Tribal fire research workflow reference
 └── citation.cff             # Citation metadata
-```
 
 ### Importing `src` in Notebooks
 
