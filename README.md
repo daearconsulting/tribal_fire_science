@@ -61,12 +61,12 @@ The Census TIGER tribal boundaries will download and cache automatically on firs
 |---|---|---|
 | Census TIGER AIANNH | Auto-downloads on first run | `loaders.load_census_aian()` |
 | NIFC Fire Perimeters | Auto-downloads on first run | `loaders.load_nifc_perimeters()` |
-| MTBS Burned Areas | **Manual download required** — see below | `loaders.load_mtbs_perimeters()` |
+| MTBS Burned Areas | **Manual download required** - see below | `loaders.load_mtbs_perimeters()` |
 | BIA Tribal Boundaries | Auto-downloads on first run | `loaders.load_bia_tribal_boundaries()` |
 | Native Land Digital | Auto-downloads on first run (CC BY-NC 4.0) | `loaders.load_native_land_territories()` |
 | FEMA National Risk Index | Auto-downloads on first run | `loaders.load_fema_national_risk_index()` |
-| WUI Dataset | **Manual download required** — see below | `loaders.load_wui()` |
-| NOAA Climate Data | Requires free API token — see below | `loaders.load_noaa_climate_data()` |
+| WUI Dataset | **Manual download required** - see below | `loaders.load_wui()` |
+| NOAA Climate Data | Requires free API token - see below | `loaders.load_noaa_climate_data()` |
 
 All cached data is stored in `data/cache/` and `data/raw/` — both are gitignored and never committed to the repo.
 
