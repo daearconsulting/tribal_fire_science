@@ -68,7 +68,7 @@ The Census TIGER tribal boundaries will download and cache automatically on firs
 | WUI Dataset | **Manual download required** - see below | `loaders.load_wui()` |
 | NOAA Climate Data | Requires free API token - see below | `loaders.load_noaa_climate_data()` |
 
-All cached data is stored in `data/cache/` and `data/raw/` — both are gitignored and never committed to the repo.
+All cached data is stored in `data/cache/` and `data/raw/`, both are gitignored and never committed to the repo.
 
 ### MTBS — Manual Download
 1. Go to [https://www.mtbs.gov/direct-download](https://www.mtbs.gov/direct-download)
