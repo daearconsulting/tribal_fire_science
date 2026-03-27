@@ -1,5 +1,5 @@
 """
-geo/utils.py — CRS management, spatial joins, and geometry helpers.
+geo/utils.py: CRS management, spatial joins, and geometry helpers.
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ from ..data.constants import CRS_GEOGRAPHIC, CRS_PROJECTED
 log = logging.getLogger(__name__)
 
 
-# ── CRS helpers ────────────────────────────────────────────────────────────────
+# CRS helpers 
 
 def to_geographic(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     """Reproject to WGS 84 geographic (EPSG:4326)."""
@@ -39,7 +39,7 @@ def ensure_crs(gdf: gpd.GeoDataFrame, target_crs: str) -> gpd.GeoDataFrame:
     return gdf
 
 
-# ── Area calculation ───────────────────────────────────────────────────────────
+# Area calculation 
 
 def add_area_acres(
     gdf: gpd.GeoDataFrame,
@@ -57,7 +57,7 @@ def add_area_acres(
     return ensure_crs(gdf, str(original_crs))
 
 
-# ── Bounding box ───────────────────────────────────────────────────────────────
+# Bounding box 
 
 def bbox_from_gdf(gdf: gpd.GeoDataFrame, buffer_deg: float = 0.0) -> tuple:
     """
@@ -73,7 +73,7 @@ def bbox_geodataframe(bounds: tuple[float, float, float, float], crs: str = CRS_
     return gpd.GeoDataFrame(geometry=[box(*bounds)], crs=crs)
 
 
-# ── Spatial join helpers ───────────────────────────────────────────────────────
+# Spatial join helpers 
 
 def fires_within_tribal_lands(
     fires_gdf: gpd.GeoDataFrame,
@@ -126,7 +126,7 @@ def overlap_area_fraction(
     return pd.Series(fractions, index=a.index, name="overlap_fraction")
 
 
-# ── Tribal land coverage ───────────────────────────────────────────────────────
+# Tribal land coverage 
 
 def summarize_fire_tribal_overlap(
     fires_gdf: gpd.GeoDataFrame,

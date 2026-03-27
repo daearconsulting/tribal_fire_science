@@ -1,5 +1,5 @@
 """
-charts.py — Reusable chart helpers for tribal fire science notebooks.
+charts.py Reusable chart helpers for Tribal fire science notebooks.
 """
 
 from __future__ import annotations
@@ -30,8 +30,7 @@ def fire_timeline(
     Bar chart of annual fire activity with optional year highlights.
 
     Parameters
-    ----------
-    highlight_years : list of years to color differently (e.g. extreme fire years)
+    highlight_years : list of years to color differently (ex. extreme fire years)
     """
     if ax is None:
         _, ax = plt.subplots(figsize=(12, 5))
@@ -60,7 +59,7 @@ def risk_heatmap(
     cmap: str = "YlOrRd",
 ) -> plt.Axes:
     """
-    Pivot and render a heatmap (e.g., tribe × risk category).
+    Pivot and render a heatmap (Tribe risk category).
     """
     pivot = df.pivot(index=index_col, columns=columns_col, values=values_col)
     _, ax = plt.subplots(figsize=figsize)
@@ -87,7 +86,7 @@ def capacity_bar(
     figsize: tuple = (10, 6),
 ) -> plt.Axes:
     """
-    Horizontal bar chart — good for tribe-by-tribe comparisons.
+    Horizontal bar chart, good for Tribe-by-Tribe comparisons.
     """
     df_sorted = df.sort_values(value_col, ascending=True)
     _, ax = plt.subplots(figsize=figsize)
@@ -147,4 +146,4 @@ def save_figure(fig: plt.Figure, path: str, dpi: int = 150) -> None:
     out = REPO_ROOT / path
     out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, dpi=dpi, bbox_inches="tight")
-    print(f"Figure saved → {out}")
+    print(f"Figure saved {out}")

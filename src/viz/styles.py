@@ -2,15 +2,14 @@
 styles.py — Color palettes and design tokens for Tribal Fire Science notebooks.
 
 Palette philosophy
-------------------
-Earth/fire tones drawn from landscape — not generic "fire red" stock palettes.
+Earth/fire tones drawn from landscape, not generic "fire red" stock palettes.
 High contrast for accessibility. Avoids color combinations that carry
 unintended cultural associations.
 """
 
 from __future__ import annotations
 
-# ── Primary palette ────────────────────────────────────────────────────────────
+# Primary palette 
 FIRE_ORANGE   = "#E8622A"   # active fire / high risk
 EMBER_RED     = "#C0392B"   # burned / severe
 SMOKE_GRAY    = "#7F8C8D"   # smoke / suppressed
@@ -20,7 +19,7 @@ SKY_BLUE      = "#2980B9"   # water / cool
 SAGE_GREEN    = "#7D9B5E"   # unburned vegetation / managed land
 CHARCOAL      = "#2C2C2C"   # text / outlines
 
-# ── Sequential ramp — fire risk (low → high) ──────────────────────────────────
+# Sequential ramp — fire risk (low to high) 
 FIRE_RISK_RAMP = [
     "#FFFFCC",  # very low
     "#FECC5C",  # low
@@ -29,7 +28,7 @@ FIRE_RISK_RAMP = [
     "#BD0026",  # very high / extreme
 ]
 
-# ── Diverging ramp — change over time ─────────────────────────────────────────
+# Diverging ramp: change over time 
 DIVERGING_BLUE_RED = [
     "#2166AC",  # strong decrease
     "#92C5DE",
@@ -38,7 +37,7 @@ DIVERGING_BLUE_RED = [
     "#D6604D",  # strong increase
 ]
 
-# ── Categorical — tribal regions (BIA 13 regions) ────────────────────────────
+# Categorical Tribal regions (BIA 13 regions) 
 # Distinct, accessible colors for up to 13 categories
 TRIBAL_REGION_COLORS = [
     "#E8622A", "#2980B9", "#27AE60", "#8E44AD", "#F39C12",
@@ -46,7 +45,7 @@ TRIBAL_REGION_COLORS = [
     "#1ABC9C", "#884EA0", "#CA6F1E",
 ]
 
-# ── Folium / choropleth settings ──────────────────────────────────────────────
+# Folium / choropleth settings 
 CHOROPLETH_DEFAULTS = {
     "fill_opacity": 0.7,
     "line_opacity": 0.4,
@@ -69,7 +68,7 @@ FIRE_PERIMETER_STYLE = {
     "fillOpacity": 0.45,
 }
 
-# ── Matplotlib rcParams ────────────────────────────────────────────────────────
+# Matplotlib rcParams 
 MPL_STYLE = {
     "figure.facecolor": "white",
     "axes.facecolor": "#F8F8F8",

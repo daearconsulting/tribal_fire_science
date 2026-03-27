@@ -1,7 +1,7 @@
 """
 validators.py — Data integrity checks for all loaded datasets.
 
-Philosophy: If data is missing or malformed, raise — never substitute
+Philosophy: If data is missing or malformed, raise error, never substitute
 synthetic data. Notebooks should be explicit about data provenance.
 """
 
@@ -15,7 +15,7 @@ import pandas as pd
 
 log = logging.getLogger(__name__)
 
-# ── Required column sets by dataset ───────────────────────────────────────────
+# Required column sets by dataset 
 REQUIRED_COLUMNS = {
     "nifc_perimeters": ["geometry", "IncidentName", "GISAcres"],
     "mtbs_perimeters": ["geometry", "Ig_Date", "BurnBndAc", "Incid_Name"],

@@ -40,7 +40,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# Retry decorator for flaky public APIs
+# Retry decorator for public APIs 
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -90,7 +90,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# NIFC Fire Perimeters 
+# NIFC Fire Perimeters
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -107,7 +107,7 @@ def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("nifc_perimeters", _fetch, force_refresh)
 
 
-# MTBS Burned Area Perimeters
+# MTBS Burned Area Perimeters 
 
 @_retry
 def load_mtbs_perimeters(
@@ -162,7 +162,8 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# Census TIGER — American Indian / Alaska Native Areas 
+# Census TIGER American Indian / Alaska Native Areas 
+
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
@@ -201,7 +202,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# Native Land Digital — Tribal Territories
+# Native Land Digital: Tribal Territories 
 
 @_retry
 def load_native_land_territories(
@@ -265,7 +266,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     NOTE: Large file (~1 GB). Consider filtering by state/bbox after loading.
     """
     def _fetch():
-        # Direct ZIP download — URL may require navigating USDA RDS catalog
+        # Direct ZIP download: URL may require navigating USDA RDS catalog
         # Users may need to manually download and place in data/raw/wui/
         wui_dir = RAW_DIR / "wui"
         shp_files = list(wui_dir.glob("*.shp"))

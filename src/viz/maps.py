@@ -1,5 +1,5 @@
 """
-maps.py — Reusable folium map helpers for tribal fire science notebooks.
+maps.py Reusable folium map helpers for tribal fire science notebooks.
 """
 
 from __future__ import annotations
@@ -53,7 +53,7 @@ def add_tribal_boundaries(
     style: Optional[dict] = None,
 ) -> folium.Map:
     """
-    Add tribal boundary polygons as a named layer.
+    Add Tribal boundary polygons as a named layer.
 
     Parameters
     ----------
@@ -87,8 +87,7 @@ def add_fire_perimeters(
     Add fire perimeter polygons as a named, toggleable layer.
 
     Parameters
-    ----------
-    tooltip_fields : columns to include in tooltip (e.g. ["IncidentName", "GISAcres"])
+    tooltip_fields : columns to include in tooltip (ex. ["IncidentName", "GISAcres"])
     """
     layer_style = style or FIRE_PERIMETER_STYLE
     layer = folium.FeatureGroup(name=name, show=True)

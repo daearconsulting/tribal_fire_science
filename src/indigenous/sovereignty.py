@@ -4,27 +4,58 @@ sovereignty.py — Data governance, attribution, and sovereignty helpers.
 This module exists because Indigenous data sovereignty principles should not be
 scattered across notebooks as comments. They belong in shared, versioned code.
 
-OCAP® Principles (First Nations Information Governance Centre):
-  Ownership   — Tribal nations own their collective data and cultural knowledge
+Three complementary frameworks guide data governance in this project:
+
+OCAP® Principles (First Nations Information Governance Centre)
+  Ownership   — Tribal Nations own their collective data and cultural knowledge
   Control     — Nations control how data is used, interpreted, and shared
   Access      — Nations have the right to access data about their communities
   Possession  — Nations should physically hold or steward data about themselves
+  Reference   : https://fnigc.ca/ocap-training/
 
-References
-----------
-- FNIGC OCAP®: https://fnigc.ca/ocap-training/
+CARE Principles for Indigenous Data Governance (Global Indigenous Data Alliance)
+  Collective Benefit  — Data ecosystems should enable Indigenous peoples to
+                        benefit from their data
+  Authority to Control — Indigenous peoples' rights and interests in Indigenous
+                        data must be recognised and their authority to control
+                        such data empowered
+  Responsibility      — Those working with Indigenous data have a responsibility
+                        to share how that data is used
+  Ethics              — Indigenous peoples' rights and wellbeing should be the
+                        primary concern across the data lifecycle
+  Reference           : https://www.gida-global.org/care
+
+FAIR Principles (FORCE11)
+  Findable     — Data and metadata are easy to find for humans and machines
+  Accessible   — Data is retrievable using open, universal protocols
+  Interoperable — Data uses standard formats and vocabularies
+  Reusable     — Data has clear licensing and provenance documentation
+  Reference    : https://www.go-fair.org/fair-principles/
+
+Relationship between frameworks
+--------------------------------
+FAIR establishes the open science baseline. CARE and OCAP® establish that
+Indigenous data requires additional governance that FAIR alone does not address.
+A dataset can be fully FAIR and still violate Indigenous data sovereignty if it
+was collected without consent, strips cultural context, or enables harmful use.
+In this project, FAIR governs technical data standards; CARE and OCAP® govern
+ethical obligations to Tribal Nations and communities.
+
+Additional references
+---------------------
 - UNDRIP Article 31: https://www.un.org/development/desa/indigenouspeoples/
 - US Indigenous Data Sovereignty Network: https://usindigenousdata.org
+- GIDA CARE Principles: https://www.gida-global.org/care
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Optional
 import warnings
 
 
-# Data source registry
+# Data source registry 
 
 @dataclass
 class DataSource:
@@ -33,14 +64,16 @@ class DataSource:
 
     Parameters
     ----------
-    name            : Human-readable name
-    url             : Authoritative source URL
-    steward         : Organization responsible for the data
-    tribal_data     : True if the dataset contains Indigenous/tribal attributes
-    license         : License or terms of use
-    ocap_notes      : How this dataset relates to OCAP® principles
-    attribution     : Required attribution string for publication
-    use_restrictions: Any restrictions on how data may be used
+    name             : Human-readable name
+    url              : Authoritative source URL
+    steward          : Organization responsible for the data
+    tribal_data      : True if the dataset contains Indigenous/Tribal attributes
+    license          : License or terms of use
+    ocap_notes       : How this dataset relates to OCAP® principles
+    care_notes       : How this dataset relates to CARE principles
+    fair_notes       : How this dataset relates to FAIR principles
+    attribution      : Required attribution string for publication
+    use_restrictions : Any restrictions on how data may be used
     """
     name: str
     url: str
@@ -48,6 +81,8 @@ class DataSource:
     tribal_data: bool = False
     license: str = ""
     ocap_notes: str = ""
+    care_notes: str = ""
+    fair_notes: str = ""
     attribution: str = ""
     use_restrictions: str = ""
 
@@ -74,6 +109,7 @@ SOURCES: dict[str, DataSource] = {
         steward="National Interagency Fire Center (NIFC)",
         tribal_data=False,
         license="Public domain (federal government)",
+        fair_notes="Publicly accessible, machine-readable GeoJSON. Updated continuously.",
         attribution="National Interagency Fire Center, opendata.arcgis.com",
     ),
     "mtbs": DataSource(
@@ -82,6 +118,7 @@ SOURCES: dict[str, DataSource] = {
         steward="USGS / USDA Forest Service",
         tribal_data=False,
         license="Public domain (federal government)",
+        fair_notes="Findable and accessible via direct download. Standard shapefile format.",
         attribution="Eidenshink et al. (2007). MTBS. USGS/USFS.",
     ),
     "bia_tribal_boundaries": DataSource(
@@ -91,10 +128,16 @@ SOURCES: dict[str, DataSource] = {
         tribal_data=True,
         license="Public domain (federal government)",
         ocap_notes=(
-            "Tribal boundary data originates from federal records. "
-            "Boundaries may not reflect tribal nations' own definitions of territory. "
-            "Consult with individual tribes for authoritative boundary information."
+            "Tribal boundary data originates from federal records, not Tribal Nations "
+            "themselves. Boundaries may not reflect Tribal Nations' own definitions of "
+            "territory. Consult with individual Tribes for authoritative boundary information."
         ),
+        care_notes=(
+            "Federal boundary data was not produced under Tribal Authority to Control. "
+            "Use for analytical context only, not for legal, jurisdictional, or "
+            "policy claims without Tribal review and consent."
+        ),
+        fair_notes="Accessible via WFS endpoint. Schema is consistent across vintages.",
         attribution="Bureau of Indian Affairs, BIA National LAR dataset.",
     ),
     "census_aiannh": DataSource(
@@ -105,7 +148,17 @@ SOURCES: dict[str, DataSource] = {
         license="Public domain (federal government)",
         ocap_notes=(
             "Census-defined boundaries are for statistical purposes only. "
-            "They do not represent legal jurisdiction or tribal self-definition."
+            "They do not represent legal jurisdiction or Tribal self-definition. "
+            "Tribal Nations were not the primary stewards of this data collection."
+        ),
+        care_notes=(
+            "Census data was collected by the federal government, not under Tribal "
+            "Authority to Control. Collective Benefit to Tribal Nations depends on "
+            "how results are applied and analysis should serve Tribal interests."
+        ),
+        fair_notes=(
+            "Highly FAIR with versioned annual releases, standard shapefile and GeoJSON "
+            "formats, well-documented metadata, open license."
         ),
         attribution="US Census Bureau, TIGER/Line Shapefiles, 2023.",
     ),
@@ -116,9 +169,19 @@ SOURCES: dict[str, DataSource] = {
         tribal_data=True,
         license="CC BY-NC 4.0",
         ocap_notes=(
-            "Native Land Digital collaborates with Indigenous communities, "
-            "but maps are not authoritative legal representations. "
-            "Attribution required. Non-commercial use only."
+            "Native Land Digital collaborates with Indigenous communities and "
+            "incorporates community input, but maps are not authoritative legal "
+            "representations of Tribal territory."
+        ),
+        care_notes=(
+            "Produced with community input, so stronger Collective Benefit and "
+            "Authority to Control than federal sources. Non-commercial license "
+            "reflects Responsibility to communities. Review ethics of use case "
+            "before applying in any policy or legal context."
+        ),
+        fair_notes=(
+            "Accessible via API. CC BY-NC 4.0 license governs reuse. "
+            "Attribution required in all publications."
         ),
         attribution="Native Land Digital. native-land.ca. CC BY-NC 4.0.",
         use_restrictions=(
@@ -132,6 +195,7 @@ SOURCES: dict[str, DataSource] = {
         steward="Federal Emergency Management Agency (FEMA)",
         tribal_data=False,
         license="Public domain (federal government)",
+        fair_notes="County-level composite scores. Versioned annual releases. Open download.",
         attribution="FEMA National Risk Index, 2023.",
     ),
     "wui": DataSource(
@@ -140,6 +204,7 @@ SOURCES: dict[str, DataSource] = {
         steward="USDA Forest Service",
         tribal_data=False,
         license="Public domain (federal government)",
+        fair_notes="Archived with DOI. Manual download required — not available via API.",
         attribution="Radeloff et al. (2018). USDA Forest Service Research Data Archive.",
     ),
 }
@@ -162,16 +227,33 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     print("DATA SOVEREIGNTY ACKNOWLEDGMENT")
     print("=" * 70)
     print(
-        "This analysis uses data that describes Indigenous and Tribal lands, "
-        "communities, and fire histories. We recognize that:\n"
+        "This analysis uses data that describes Indigenous and Tribal lands,\n"
+        "communities, and fire histories. This project is guided by three\n"
+        "complementary data governance frameworks:\n"
         "\n"
-        "• Tribal nations are sovereign governments with the right to control\n"
-        "  data about their own communities and territories (OCAP® principles).\n"
+        "OCAP®: Tribal Nations own, control, access, and possess data about\n"
+        "  their own communities and territories.\n"
+        "  Reference: https://fnigc.ca/ocap-training/\n"
+        "\n"
+        "CARE: Data use must deliver Collective Benefit to Indigenous peoples,\n"
+        "  respect their Authority to Control, uphold Responsibility to communities,\n"
+        "  and center Ethics across the full data lifecycle.\n"
+        "  Reference: https://www.gida-global.org/care\n"
+        "\n"
+        "FAIR: Data is Findable, Accessible, Interoperable, and Reusable.\n"
+        "  FAIR governs technical standards; CARE and OCAP® govern the ethical\n"
+        "  obligations to Tribal Nations that FAIR alone does not address.\n"
+        "  Reference: https://www.go-fair.org/fair-principles/\n"
+        "\n"
+        "We recognize that:\n"
+        "\n"
+        "• Tribal Nations are sovereign governments with the right to control\n"
+        "  data about their own communities and territories.\n"
         "\n"
         "• Federal and third-party datasets may not reflect Tribal Nations'\n"
         "  own definitions of territory, governance, or cultural practice.\n"
         "\n"
-        "• This work is intended to support Tribal-led\n"
+        "• This work is intended to support, not replace, Tribal-led\n"
         "  fire science and land management.\n"
     )
     print("Data sources used:")
@@ -180,7 +262,9 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
         if src:
             print(f"  • {src.name} — {src.steward}")
             if src.ocap_notes:
-                print(f"    Note: {src.ocap_notes}")
+                print(f"    OCAP®: {src.ocap_notes}")
+            if src.care_notes:
+                print(f"    CARE : {src.care_notes}")
             if src.use_restrictions:
                 print(f"    ⚠ Restrictions: {src.use_restrictions}")
             src.warn_if_restricted()
@@ -209,6 +293,10 @@ stewardship practices and Traditional Ecological Knowledge. TEK belongs to
 the communities that hold it. It is shared here only as general context,
 not as data to be extracted, quantified, or used outside the specific
 collaborative agreements under which it was shared.
+
+Under CARE principles, Tribal Nations hold Authority to Control how their
+knowledge is represented and used. Under OCAP®, Traditional Knowledge is
+Owned and Possessed by the Nation or community that holds it.
 
 If you are building on this work, consult directly with the relevant
 Tribal Nations before incorporating TEK into new analyses or publications.
