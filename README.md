@@ -48,7 +48,7 @@ python -m ipykernel install --user --name tribal-fire-science \
 ```
 
 ### 4. Open in VSCode
-- File → Open Folder `tribal_fire_science`
+- File/Open Folder `tribal_fire_science`
 - `Ctrl+Shift+P` **Python: Select Interpreter** → `tribal-fire-science`
 
 ### 5. Run your first notebook
