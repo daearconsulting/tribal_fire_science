@@ -6,6 +6,7 @@
 **Version:** 1.0.0 · Released February 2026  
 **License:** See [LICENSE](LICENSE)  
 **Citation:** See [citation.cff](citation.cff) or the [cite this repo](#citation) section below
+
 [![DOI](https://zenodo.org/badge/1170268849.svg)](https://doi.org/10.5281/zenodo.19265139)
 
 ## Why This Repo Exists
