@@ -1,31 +1,61 @@
 tribal_name,month,total_ff_days,avg_ff_days_per_month
+Cherokee,5,2,0.08
+Cherokee,6,4,0.16
+Cherokee,7,0,0.0
+Cherokee,8,2,0.08
+Cherokee,9,2,0.08
+Cherokee,10,4,0.16
+Chickasaw,5,8,0.32
+Chickasaw,6,14,0.56
+Chickasaw,7,0,0.0
+Chickasaw,8,0,0.0
+Chickasaw,9,4,0.16
+Chickasaw,10,2,0.08
+Choctaw,5,2,0.08
+Choctaw,6,10,0.4
+Choctaw,7,0,0.0
+Choctaw,8,0,0.0
+Choctaw,9,5,0.2
+Choctaw,10,0,0.0
 Colville,5,0,0.0
 Colville,6,0,0.0
 Colville,7,0,0.0
-Colville,8,0,0.0
-Colville,9,0,0.0
+Colville,8,2,0.08
+Colville,9,2,0.08
 Colville,10,0,0.0
-Flathead,5,0,0.0
-Flathead,6,0,0.0
-Flathead,7,0,0.0
-Flathead,8,0,0.0
-Flathead,9,0,0.0
-Flathead,10,0,0.0
-Fort Apache,5,0,0.0
-Fort Apache,6,0,0.0
+Creek,5,4,0.16
+Creek,6,10,0.4
+Creek,7,0,0.0
+Creek,8,0,0.0
+Creek,9,3,0.12
+Creek,10,3,0.12
+Fort Apache,5,11,0.44
+Fort Apache,6,35,1.4
 Fort Apache,7,0,0.0
-Fort Apache,8,0,0.0
-Fort Apache,9,0,0.0
+Fort Apache,8,1,0.04
+Fort Apache,9,4,0.16
 Fort Apache,10,0,0.0
-Navajo Nation,5,0,0.0
-Navajo Nation,6,0,0.0
-Navajo Nation,7,0,0.0
-Navajo Nation,8,0,0.0
-Navajo Nation,9,0,0.0
-Navajo Nation,10,0,0.0
-Warm Springs,5,0,0.0
-Warm Springs,6,0,0.0
-Warm Springs,7,0,0.0
-Warm Springs,8,0,0.0
-Warm Springs,9,0,0.0
+Kiowa-Comanche-Apache-Fort Sill Apache,5,37,1.48
+Kiowa-Comanche-Apache-Fort Sill Apache,6,27,1.08
+Kiowa-Comanche-Apache-Fort Sill Apache,7,4,0.16
+Kiowa-Comanche-Apache-Fort Sill Apache,8,3,0.12
+Kiowa-Comanche-Apache-Fort Sill Apache,9,6,0.24
+Kiowa-Comanche-Apache-Fort Sill Apache,10,5,0.2
+Osage,5,3,0.12
+Osage,6,9,0.36
+Osage,7,0,0.0
+Osage,8,0,0.0
+Osage,9,4,0.16
+Osage,10,4,0.16
+San Carlos,5,2,0.08
+San Carlos,6,0,0.0
+San Carlos,7,0,0.0
+San Carlos,8,0,0.0
+San Carlos,9,1,0.04
+San Carlos,10,0,0.0
+Warm Springs,5,1,0.04
+Warm Springs,6,4,0.16
+Warm Springs,7,25,1.0
+Warm Springs,8,21,0.84
+Warm Springs,9,1,0.04
 Warm Springs,10,0,0.0
