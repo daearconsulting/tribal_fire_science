@@ -31,6 +31,12 @@ dependencies:
   - pyarrow>=13.0         # parquet support for caching
   - h5py>=3.10
 
+  # Climate / gridded data (gridMET via OPeNDAP)
+  - xarray>=2023.6
+  - dask>=2023.6
+  - netcdf4>=1.6          # NetCDF engine for xarray
+  - rioxarray>=0.15       # raster/xarray integration
+
   # Visualization
   - matplotlib>=3.8
   - seaborn>=0.13
@@ -75,7 +81,7 @@ dependencies:
     - pyusda                 # USDA data access (PyPI only)
     - nbformat>=5.9          # MTBS accessed via direct download in src/data/loaders.py
 
-# Post-install kernel registration 
+# Post-install kernel registration
 # Run after `conda env create -f environment.yml`:
 #
 #   conda activate tribal-fire-science
@@ -83,4 +89,3 @@ dependencies:
 #     --display-name "Python (tribal-fire-science)"
 #
 # Then in VSCode: Ctrl+Shift+P / "Python: Select Interpreter" / tribal-fire-science
-
