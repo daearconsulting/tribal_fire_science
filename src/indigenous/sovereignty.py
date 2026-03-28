@@ -33,7 +33,6 @@ FAIR Principles (FORCE11)
   Reference    : https://www.go-fair.org/fair-principles/
 
 Relationship between frameworks
---------------------------------
 FAIR establishes the open science baseline. CARE and OCAP® establish that
 Indigenous data requires additional governance that FAIR alone does not address.
 A dataset can be fully FAIR and still violate Indigenous data sovereignty if it
@@ -42,7 +41,6 @@ In this project, FAIR governs technical data standards; CARE and OCAP® govern
 ethical obligations to Tribal Nations and communities.
 
 Additional references
----------------------
 - UNDRIP Article 31: https://www.un.org/development/desa/indigenouspeoples/
 - US Indigenous Data Sovereignty Network: https://usindigenousdata.org
 - GIDA CARE Principles: https://www.gida-global.org/care
@@ -55,7 +53,7 @@ from typing import Optional
 import warnings
 
 
-# Data source registry 
+# Data source registry
 
 @dataclass
 class DataSource:
@@ -99,7 +97,7 @@ class DataSource:
         return f"{self.name}. {self.steward}. {self.url}"
 
 
-# Canonical dataset registry 
+# Canonical dataset registry
 # These mirror the sources in data/loaders.py. Update both when adding sources.
 
 SOURCES: dict[str, DataSource] = {
@@ -134,7 +132,7 @@ SOURCES: dict[str, DataSource] = {
         ),
         care_notes=(
             "Federal boundary data was not produced under Tribal Authority to Control. "
-            "Use for analytical context only, not for legal, jurisdictional, or "
+            "Use for analytical context only — not for legal, jurisdictional, or "
             "policy claims without Tribal review and consent."
         ),
         fair_notes="Accessible via WFS endpoint. Schema is consistent across vintages.",
@@ -154,10 +152,10 @@ SOURCES: dict[str, DataSource] = {
         care_notes=(
             "Census data was collected by the federal government, not under Tribal "
             "Authority to Control. Collective Benefit to Tribal Nations depends on "
-            "how results are applied and analysis should serve Tribal interests."
+            "how results are applied — analysis should serve Tribal interests."
         ),
         fair_notes=(
-            "Highly FAIR with versioned annual releases, standard shapefile and GeoJSON "
+            "Highly FAIR — versioned annual releases, standard shapefile and GeoJSON "
             "formats, well-documented metadata, open license."
         ),
         attribution="US Census Bureau, TIGER/Line Shapefiles, 2023.",
@@ -174,7 +172,7 @@ SOURCES: dict[str, DataSource] = {
             "representations of Tribal territory."
         ),
         care_notes=(
-            "Produced with community input, so stronger Collective Benefit and "
+            "Produced with community input — stronger Collective Benefit and "
             "Authority to Control than federal sources. Non-commercial license "
             "reflects Responsibility to communities. Review ethics of use case "
             "before applying in any policy or legal context."
@@ -198,6 +196,18 @@ SOURCES: dict[str, DataSource] = {
         fair_notes="County-level composite scores. Versioned annual releases. Open download.",
         attribution="FEMA National Risk Index, 2023.",
     ),
+    "gridmet": DataSource(
+        name="gridMET Daily Surface Meteorological Data",
+        url="https://www.climatologylab.org/gridmet.html",
+        steward="University of Idaho Climatology Lab",
+        tribal_data=False,
+        license="Public domain",
+        fair_notes=(
+            "Highly FAIR — OPeNDAP access, consistent NetCDF format, "
+            "DOI-registered, 1979-present daily 4km CONUS coverage."
+        ),
+        attribution="Abatzoglou, J.T. (2013). gridMET. Int. J. Climatology.",
+    ),
     "wui": DataSource(
         name="USDA WUI Dataset",
         url="https://www.fs.usda.gov/rds/archive/catalog/RDS-2015-0047-2",
@@ -210,7 +220,7 @@ SOURCES: dict[str, DataSource] = {
 }
 
 
-# Sovereignty acknowledgment 
+# Sovereignty acknowledgment
 
 def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     """
@@ -231,16 +241,16 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
         "communities, and fire histories. This project is guided by three\n"
         "complementary data governance frameworks:\n"
         "\n"
-        "OCAP®: Tribal Nations own, control, access, and possess data about\n"
+        "OCAP® — Tribal Nations own, control, access, and possess data about\n"
         "  their own communities and territories.\n"
         "  Reference: https://fnigc.ca/ocap-training/\n"
         "\n"
-        "CARE: Data use must deliver Collective Benefit to Indigenous peoples,\n"
+        "CARE  — Data use must deliver Collective Benefit to Indigenous peoples,\n"
         "  respect their Authority to Control, uphold Responsibility to communities,\n"
         "  and center Ethics across the full data lifecycle.\n"
         "  Reference: https://www.gida-global.org/care\n"
         "\n"
-        "FAIR: Data is Findable, Accessible, Interoperable, and Reusable.\n"
+        "FAIR  — Data is Findable, Accessible, Interoperable, and Reusable.\n"
         "  FAIR governs technical standards; CARE and OCAP® govern the ethical\n"
         "  obligations to Tribal Nations that FAIR alone does not address.\n"
         "  Reference: https://www.go-fair.org/fair-principles/\n"
@@ -287,10 +297,9 @@ def generate_citations(source_keys: list[str]) -> str:
 
 TEK_DISCLAIMER = """
 Traditional Ecological Knowledge (TEK) Notice
-----------------------------------------------
 Some analyses in this project draw on or are informed by Indigenous fire
 stewardship practices and Traditional Ecological Knowledge. TEK belongs to
-the communities that hold it. It is shared here only as general context,
+the communities that hold it. It is shared here only as general context —
 not as data to be extracted, quantified, or used outside the specific
 collaborative agreements under which it was shared.
 
