@@ -2,6 +2,7 @@
 loaders.py — Fetch and cache real datasets used across notebooks.
 
 Design principles
+-----------------
 - Every function fetches from a documented public source (no synthetic data).
 - Results are cached to data/cache/ as Parquet or GeoJSON to avoid redundant
   API calls. Pass force_refresh=True to re-download.
@@ -39,7 +40,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# Retry decorator for public APIs
+# ── Retry decorator for flaky public APIs ──────────────────────────────────────
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -47,7 +48,7 @@ _retry = retry(
 )
 
 
-# Internal helpers 
+# ── Internal helpers ───────────────────────────────────────────────────────────
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
     try:
@@ -89,7 +90,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# NIFC Fire Perimeters 
+# ── NIFC Fire Perimeters ───────────────────────────────────────────────────────
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -106,7 +107,7 @@ def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("nifc_perimeters", _fetch, force_refresh)
 
 
-# MTBS Burned Area Perimeters 
+# ── MTBS Burned Area Perimeters ────────────────────────────────────────────────
 
 @_retry
 def load_mtbs_perimeters(
@@ -142,7 +143,7 @@ def load_mtbs_perimeters(
     return gdf.reset_index(drop=True)
 
 
-# BIA Tribal Boundaries
+# ── BIA Tribal Boundaries ─────────────────────────────────────────────────────
 
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -161,7 +162,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# Census TIGER American Indian / Alaska Native Areas 
+# ── Census TIGER — American Indian / Alaska Native Areas ──────────────────────
 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -201,7 +202,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# Native Land Digital Tribal Territories 
+# ── Native Land Digital — Tribal Territories ──────────────────────────────────
 
 @_retry
 def load_native_land_territories(
@@ -233,7 +234,7 @@ def load_native_land_territories(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# FEMA National Risk Index 
+# ── FEMA National Risk Index ───────────────────────────────────────────────────
 
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -255,7 +256,7 @@ def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFra
     return _load_or_fetch_geodataframe("fema_nri", _fetch, force_refresh)
 
 
-# Wildland-Urban Interface (WUI)
+# ── WUI — Wildland-Urban Interface ────────────────────────────────────────────
 
 @_retry
 def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -280,7 +281,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("wui", _fetch, force_refresh)
 
 
-# NOAA Climate Data (via CDO API) 
+# ── NOAA Climate Data (via CDO API) ───────────────────────────────────────────
 
 def load_noaa_climate_data(
     station_ids: list[str],
@@ -326,7 +327,7 @@ def load_noaa_climate_data(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# gridMET Weather Data
+# ── gridMET Weather Data ───────────────────────────────────────────────────────
 
 # gridMET variable names and their units
 GRIDMET_VARIABLES = {
@@ -553,25 +554,49 @@ def load_hifld_fire_stations(
         except FileExistsError:
             pass
 
-        params = {
-            "where": "1=1",
-            "outFields": "*",
-            "f": "geojson",
-            "resultRecordCount": 5000,
-        }
+        if not state_filter:
+            raise ValueError(
+                "state_filter is required for load_hifld_fire_stations to avoid "
+                "requesting the full national dataset. Pass a list of state "
+                "abbreviations, e.g. state_filter=['AZ', 'NM']."
+            )
 
-        if state_filter:
-            states = "', '".join(state_filter)
-            params["where"] = f"STATE IN ('{states}')"
+        states = "', '".join(state_filter)
+        where_clause = f"STATE IN ('{states}')"
 
-        r = requests.get(HIFLD_FIRE_STATIONS_URL, params=params, timeout=120)
-        r.raise_for_status()
-        gdf = gpd.GeoDataFrame.from_features(
-            r.json()["features"], crs=CRS_GEOGRAPHIC
-        )
-        # Drop rows with null geometry
+        # Paginate — HIFLD service max is 1000 records per request
+        all_features = []
+        offset = 0
+        page_size = 1000
+
+        while True:
+            params = {
+                "where":             where_clause,
+                "outFields":         "*",
+                "f":                 "geojson",
+                "resultRecordCount": page_size,
+                "resultOffset":      offset,
+                "outSR":             "4326",
+            }
+            r = requests.get(HIFLD_FIRE_STATIONS_URL, params=params, timeout=120)
+            r.raise_for_status()
+            data = r.json()
+            features = data.get("features", [])
+            all_features.extend(features)
+            log.info("HIFLD: fetched %d records (offset %d)", len(features), offset)
+            # Stop when fewer records than page_size returned
+            if len(features) < page_size:
+                break
+            offset += page_size
+
+        if not all_features:
+            raise ValueError(
+                f"No HIFLD fire stations returned for states: {state_filter}. "
+                "Check state abbreviations and network access."
+            )
+
+        gdf = gpd.GeoDataFrame.from_features(all_features, crs=CRS_GEOGRAPHIC)
         gdf = gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
         return gdf
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
-
