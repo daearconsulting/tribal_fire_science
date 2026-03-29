@@ -196,6 +196,18 @@ SOURCES: dict[str, DataSource] = {
         fair_notes="County-level composite scores. Versioned annual releases. Open download.",
         attribution="FEMA National Risk Index, 2023.",
     ),
+    "hifld_fire_stations": DataSource(
+        name="HIFLD Fire Stations",
+        url="https://hifld-geoplatform.opendata.arcgis.com/datasets/fire-stations",
+        steward="Homeland Infrastructure Foundation-Level Data (HIFLD) / DHS",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes=(
+            "Accessible via ArcGIS REST API. Updated periodically. "
+            "Includes federal, state, local, and some Tribal fire stations."
+        ),
+        attribution="HIFLD Fire Stations. U.S. Department of Homeland Security.",
+    ),
     "gridmet": DataSource(
         name="gridMET Daily Surface Meteorological Data",
         url="https://www.climatologylab.org/gridmet.html",
@@ -228,7 +240,6 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     Call at the top of any notebook that uses Tribal data sources.
 
     Parameters
-    ----------
     source_keys : list of keys from SOURCES dict. If None, prints all Tribal sources.
     """
     keys = source_keys or [k for k, v in SOURCES.items() if v.tribal_data]
@@ -263,7 +274,7 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
         "• Federal and third-party datasets may not reflect Tribal Nations'\n"
         "  own definitions of territory, governance, or cultural practice.\n"
         "\n"
-        "• This work is intended to support, not replace, Tribal-led\n"
+        "• This work is intended to support — not replace — Tribal-led\n"
         "  fire science and land management.\n"
     )
     print("Data sources used:")

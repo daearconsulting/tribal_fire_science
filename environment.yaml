@@ -24,6 +24,7 @@ dependencies:
   - scikit-learn>=1.3
   - networkx>=3.2
   - rtree>=1.1            # spatial indexing
+  - osmnx>=1.9            # OpenStreetMap road network download and analysis
 
   # Data
   - pandas>=2.1
@@ -88,4 +89,4 @@ dependencies:
 #   python -m ipykernel install --user --name tribal-fire-science \
 #     --display-name "Python (tribal-fire-science)"
 #
-# Then in VSCode: Ctrl+Shift+P / "Python: Select Interpreter" / tribal-fire-science
+# Then in VSCode: Ctrl+Shift+P → "Python: Select Interpreter" → tribal-fire-science

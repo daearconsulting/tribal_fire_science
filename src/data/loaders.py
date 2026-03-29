@@ -47,7 +47,7 @@ _retry = retry(
 )
 
 
-# Internal helpers
+# Internal helpers 
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
     try:
@@ -89,7 +89,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# NIFC Fire Perimeters
+# NIFC Fire Perimeters 
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -106,7 +106,7 @@ def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("nifc_perimeters", _fetch, force_refresh)
 
 
-# MTBS Burned Area Perimeters
+# MTBS Burned Area Perimeters 
 
 @_retry
 def load_mtbs_perimeters(
@@ -161,7 +161,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# Census TIGER American Indian / Alaska Native Areas
+# Census TIGER American Indian / Alaska Native Areas 
 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -201,7 +201,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# Native Land Digital — Tribal Territories
+# Native Land Digital Tribal Territories 
 
 @_retry
 def load_native_land_territories(
@@ -233,7 +233,7 @@ def load_native_land_territories(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# FEMA National Risk Index
+# FEMA National Risk Index 
 
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -468,7 +468,7 @@ def load_gridmet_weather(
                 fm_vals    = nearest_val(year_data.get("fm1000"), "dead_fuel_moisture_1000hr",   lat, lon) if year_data.get("fm1000") else np.full(len(times), np.nan)
 
                 # Unit conversions
-                # K to °F
+                # K to F
                 temp_f = (tmmx_vals - 273.15) * 9 / 5 + 32
                 # m/s to mph
                 wind_mph = vs_vals * 2.23694
@@ -517,3 +517,61 @@ def load_gridmet_weather(
     log.info("gridMET data cached to %s", cached)
 
     return df
+
+
+# HIFLD Fire Stations
+
+HIFLD_FIRE_STATIONS_URL = (
+    "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/"
+    "Fire_Stations/FeatureServer/0/query"
+)
+
+
+@_retry
+def load_hifld_fire_stations(
+    state_filter: list[str] | None = None,
+    force_refresh: bool = False,
+) -> gpd.GeoDataFrame:
+    """
+    HIFLD Fire Stations — federal, state, local, and Tribal fire stations.
+    Source: Homeland Infrastructure Foundation-Level Data (HIFLD)
+    https://hifld-geoplatform.opendata.arcgis.com/datasets/fire-stations
+
+    Parameters
+    ----------
+    state_filter : list of two-letter state abbreviations to filter results
+                   (e.g. ["AZ", "NM", "MT"]). If None, returns all CONUS stations.
+    force_refresh : re-download even if cache exists
+    """
+    cache_name = "hifld_fire_stations"
+    if state_filter:
+        cache_name += "_" + "_".join(sorted(state_filter))
+
+    def _fetch():
+        try:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+
+        params = {
+            "where": "1=1",
+            "outFields": "*",
+            "f": "geojson",
+            "resultRecordCount": 5000,
+        }
+
+        if state_filter:
+            states = "', '".join(state_filter)
+            params["where"] = f"STATE IN ('{states}')"
+
+        r = requests.get(HIFLD_FIRE_STATIONS_URL, params=params, timeout=120)
+        r.raise_for_status()
+        gdf = gpd.GeoDataFrame.from_features(
+            r.json()["features"], crs=CRS_GEOGRAPHIC
+        )
+        # Drop rows with null geometry
+        gdf = gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
+        return gdf
+
+    return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
