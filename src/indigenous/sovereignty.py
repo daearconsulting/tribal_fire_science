@@ -53,7 +53,7 @@ from typing import Optional
 import warnings
 
 
-# Data source registry
+# Data source registry 
 
 @dataclass
 class DataSource:
@@ -61,7 +61,6 @@ class DataSource:
     Metadata for a dataset used in this project.
 
     Parameters
-    ----------
     name             : Human-readable name
     url              : Authoritative source URL
     steward          : Organization responsible for the data
@@ -97,7 +96,7 @@ class DataSource:
         return f"{self.name}. {self.steward}. {self.url}"
 
 
-# Canonical dataset registry
+# Canonical dataset registry 
 # These mirror the sources in data/loaders.py. Update both when adding sources.
 
 SOURCES: dict[str, DataSource] = {
@@ -195,6 +194,24 @@ SOURCES: dict[str, DataSource] = {
         license="Public domain (federal government)",
         fair_notes="County-level composite scores. Versioned annual releases. Open download.",
         attribution="FEMA National Risk Index, 2023.",
+    ),
+    "usgs_wbd": DataSource(
+        name="USGS Watershed Boundary Dataset (WBD) HUC-8",
+        url="https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer",
+        steward="US Geological Survey (USGS)",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes="REST API, versioned, standard GeoJSON output, national coverage.",
+        attribution="USGS National Hydrography Dataset, Watershed Boundary Dataset.",
+    ),
+    "epa_ecoregions_l3": DataSource(
+        name="EPA Level III Ecoregions",
+        url="https://geodata.epa.gov/arcgis/rest/services/ORD/NATL_ECO_L3_SIMP/MapServer",
+        steward="US Environmental Protection Agency (EPA)",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes="REST API, GeoJSON, simplified polygon version for web mapping.",
+        attribution="Omernik, J.M. & Griffith, G.E. (2014). EPA Ecoregions.",
     ),
     "hifld_fire_stations": DataSource(
         name="HIFLD Fire Stations",
@@ -304,7 +321,7 @@ def generate_citations(source_keys: list[str]) -> str:
     return "\n".join(lines)
 
 
-# Traditional Ecological Knowledge (TEK) disclaimer
+# Traditional Ecological Knowledge (TEK) disclaimer 
 
 TEK_DISCLAIMER = """
 Traditional Ecological Knowledge (TEK) Notice

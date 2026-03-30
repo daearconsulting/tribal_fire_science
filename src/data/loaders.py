@@ -40,7 +40,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# ── Retry decorator for flaky public APIs ──────────────────────────────────────
+# Retry decorator for public APIs
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -48,7 +48,7 @@ _retry = retry(
 )
 
 
-# ── Internal helpers ───────────────────────────────────────────────────────────
+# Internal helpers 
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
     try:
@@ -90,7 +90,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# ── NIFC Fire Perimeters ───────────────────────────────────────────────────────
+# NIFC Fire Perimeters 
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -107,7 +107,7 @@ def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("nifc_perimeters", _fetch, force_refresh)
 
 
-# ── MTBS Burned Area Perimeters ────────────────────────────────────────────────
+# MTBS Burned Area Perimeters 
 
 @_retry
 def load_mtbs_perimeters(
@@ -143,7 +143,7 @@ def load_mtbs_perimeters(
     return gdf.reset_index(drop=True)
 
 
-# ── BIA Tribal Boundaries ─────────────────────────────────────────────────────
+# BIA Tribal Boundaries
 
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -162,7 +162,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# ── Census TIGER — American Indian / Alaska Native Areas ──────────────────────
+# Census TIGER American Indian / Alaska Native Areas 
 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -202,7 +202,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# ── Native Land Digital — Tribal Territories ──────────────────────────────────
+# Native Land Digital Tribal Territories
 
 @_retry
 def load_native_land_territories(
@@ -234,7 +234,7 @@ def load_native_land_territories(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# ── FEMA National Risk Index ───────────────────────────────────────────────────
+# FEMA National Risk Index 
 
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -256,7 +256,7 @@ def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFra
     return _load_or_fetch_geodataframe("fema_nri", _fetch, force_refresh)
 
 
-# ── WUI — Wildland-Urban Interface ────────────────────────────────────────────
+# Wildland-Urban Interface (WUI) 
 
 @_retry
 def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -281,7 +281,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("wui", _fetch, force_refresh)
 
 
-# ── NOAA Climate Data (via CDO API) ───────────────────────────────────────────
+# NOAA Climate Data (via CDO API) 
 
 def load_noaa_climate_data(
     station_ids: list[str],
@@ -327,7 +327,7 @@ def load_noaa_climate_data(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# ── gridMET Weather Data ───────────────────────────────────────────────────────
+# gridMET Weather Data 
 
 # gridMET variable names and their units
 GRIDMET_VARIABLES = {
@@ -339,7 +339,7 @@ GRIDMET_VARIABLES = {
     "fm1000": {"desc": "1000-hr dead fuel moisture", "units_raw": "%",    "units_out": "%"},
 }
 
-# gridMET OPeNDAP base URL — spatial subsetting via index slicing avoids
+# gridMET OPeNDAP base URL: spatial subsetting via index slicing avoids
 # downloading full continental US grids (~200–500 MB per variable per year)
 GRIDMET_OPENDAP_BASE = (
     "http://thredds.northwestknowledge.net:8080/thredds/dodsC/MET/{var}/{var}_{year}.nc"
@@ -598,5 +598,153 @@ def load_hifld_fire_stations(
         gdf = gpd.GeoDataFrame.from_features(all_features, crs=CRS_GEOGRAPHIC)
         gdf = gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
         return gdf
+
+    return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
+
+# USGS Watershed Boundary Dataset (WBD) HUC-8
+
+USGS_WBD_URL = (
+    "https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4/query"
+)
+
+
+@_retry
+def load_usgs_wbd_huc8(
+    bbox: tuple[float, float, float, float] | None = None,
+    huc2_codes: list[str] | None = None,
+    force_refresh: bool = False,
+) -> gpd.GeoDataFrame:
+    """
+    USGS Watershed Boundary Dataset — HUC-8 subbasins.
+    Source: https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4
+
+    Parameters
+    ----------
+    bbox       : (min_lon, min_lat, max_lon, max_lat) spatial filter
+    huc2_codes : list of 2-digit HUC region codes (e.g. ["17", "11"])
+                 to limit download. If None, uses bbox only.
+    force_refresh : re-download even if cache exists
+    """
+    cache_name = "usgs_wbd_huc8"
+    if huc2_codes:
+        cache_name += "_" + "_".join(sorted(huc2_codes))
+    if bbox:
+        cache_name += f"_{bbox[0]:.1f}_{bbox[1]:.1f}_{bbox[2]:.1f}_{bbox[3]:.1f}"
+
+    def _fetch():
+        try:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+
+        where = "1=1"
+        if huc2_codes:
+            codes = "', '".join(huc2_codes)
+            where = f"huc2 IN ('{codes}')"
+
+        params = {
+            "where":             where,
+            "outFields":         "huc8,name,areasqkm,states",
+            "f":                 "geojson",
+            "returnGeometry":    "true",
+            "resultRecordCount": 2000,
+            "outSR":             "4326",
+        }
+
+        if bbox:
+            params["geometry"] = f"{bbox[0]},{bbox[1]},{bbox[2]},{bbox[3]}"
+            params["geometryType"] = "esriGeometryEnvelope"
+            params["spatialRel"] = "esriSpatialRelIntersects"
+            params["inSR"] = "4326"
+
+        all_features = []
+        offset = 0
+        while True:
+            params["resultOffset"] = offset
+            r = requests.get(USGS_WBD_URL, params=params, timeout=120)
+            r.raise_for_status()
+            features = r.json().get("features", [])
+            all_features.extend(features)
+            if len(features) < 2000:
+                break
+            offset += 2000
+
+        if not all_features:
+            raise ValueError(
+                "No WBD HUC-8 watersheds returned. "
+                "Check bbox or huc2_codes parameters."
+            )
+
+        gdf = gpd.GeoDataFrame.from_features(all_features, crs=CRS_GEOGRAPHIC)
+        return gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
+
+    return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
+
+# EPA Level III Ecoregions
+
+EPA_ECOREGIONS_L3_URL = (
+    "https://geodata.epa.gov/arcgis/rest/services/ORD/NATL_ECO_L3_SIMP/MapServer/0/query"
+)
+
+
+@_retry
+def load_epa_ecoregions_l3(
+    bbox: tuple[float, float, float, float] | None = None,
+    force_refresh: bool = False,
+) -> gpd.GeoDataFrame:
+    """
+    EPA Level III Ecoregions (simplified).
+    Source: https://geodata.epa.gov/arcgis/rest/services/ORD/NATL_ECO_L3_SIMP/MapServer/0
+
+    Parameters
+    ----------
+    bbox : (min_lon, min_lat, max_lon, max_lat) spatial filter
+    """
+    cache_name = "epa_ecoregions_l3"
+    if bbox:
+        cache_name += f"_{bbox[0]:.1f}_{bbox[1]:.1f}_{bbox[2]:.1f}_{bbox[3]:.1f}"
+
+    def _fetch():
+        try:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+
+        params = {
+            "where":             "1=1",
+            "outFields":         "US_L3CODE,US_L3NAME,NA_L2NAME,NA_L1NAME",
+            "f":                 "geojson",
+            "returnGeometry":    "true",
+            "resultRecordCount": 500,
+            "outSR":             "4326",
+        }
+
+        if bbox:
+            params["geometry"] = f"{bbox[0]},{bbox[1]},{bbox[2]},{bbox[3]}"
+            params["geometryType"] = "esriGeometryEnvelope"
+            params["spatialRel"] = "esriSpatialRelIntersects"
+            params["inSR"] = "4326"
+
+        all_features = []
+        offset = 0
+        while True:
+            params["resultOffset"] = offset
+            r = requests.get(EPA_ECOREGIONS_L3_URL, params=params, timeout=120)
+            r.raise_for_status()
+            features = r.json().get("features", [])
+            all_features.extend(features)
+            if len(features) < 500:
+                break
+            offset += 500
+
+        if not all_features:
+            raise ValueError(
+                "No EPA Level III ecoregions returned. Check bbox parameter."
+            )
+
+        gdf = gpd.GeoDataFrame.from_features(all_features, crs=CRS_GEOGRAPHIC)
+        return gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
