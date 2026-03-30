@@ -40,7 +40,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# Retry decorator for public APIs
+# ── Retry decorator for flaky public APIs ──────────────────────────────────────
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -48,7 +48,7 @@ _retry = retry(
 )
 
 
-# Internal helpers 
+# ── Internal helpers ───────────────────────────────────────────────────────────
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
     try:
@@ -90,7 +90,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# NIFC Fire Perimeters 
+# ── NIFC Fire Perimeters ───────────────────────────────────────────────────────
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -107,7 +107,7 @@ def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("nifc_perimeters", _fetch, force_refresh)
 
 
-# MTBS Burned Area Perimeters 
+# ── MTBS Burned Area Perimeters ────────────────────────────────────────────────
 
 @_retry
 def load_mtbs_perimeters(
@@ -143,7 +143,7 @@ def load_mtbs_perimeters(
     return gdf.reset_index(drop=True)
 
 
-# BIA Tribal Boundaries
+# ── BIA Tribal Boundaries ─────────────────────────────────────────────────────
 
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -162,7 +162,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# Census TIGER American Indian / Alaska Native Areas 
+# ── Census TIGER — American Indian / Alaska Native Areas ──────────────────────
 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -202,7 +202,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# Native Land Digital Tribal Territories
+# ── Native Land Digital — Tribal Territories ──────────────────────────────────
 
 @_retry
 def load_native_land_territories(
@@ -234,7 +234,7 @@ def load_native_land_territories(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# FEMA National Risk Index 
+# ── FEMA National Risk Index ───────────────────────────────────────────────────
 
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -256,7 +256,7 @@ def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFra
     return _load_or_fetch_geodataframe("fema_nri", _fetch, force_refresh)
 
 
-# Wildland-Urban Interface (WUI) 
+# ── WUI — Wildland-Urban Interface ────────────────────────────────────────────
 
 @_retry
 def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -281,7 +281,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("wui", _fetch, force_refresh)
 
 
-# NOAA Climate Data (via CDO API) 
+# ── NOAA Climate Data (via CDO API) ───────────────────────────────────────────
 
 def load_noaa_climate_data(
     station_ids: list[str],
@@ -327,7 +327,7 @@ def load_noaa_climate_data(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# gridMET Weather Data 
+# ── gridMET Weather Data ───────────────────────────────────────────────────────
 
 # gridMET variable names and their units
 GRIDMET_VARIABLES = {
@@ -339,7 +339,7 @@ GRIDMET_VARIABLES = {
     "fm1000": {"desc": "1000-hr dead fuel moisture", "units_raw": "%",    "units_out": "%"},
 }
 
-# gridMET OPeNDAP base URL: spatial subsetting via index slicing avoids
+# gridMET OPeNDAP base URL — spatial subsetting via index slicing avoids
 # downloading full continental US grids (~200–500 MB per variable per year)
 GRIDMET_OPENDAP_BASE = (
     "http://thredds.northwestknowledge.net:8080/thredds/dodsC/MET/{var}/{var}_{year}.nc"
@@ -469,9 +469,9 @@ def load_gridmet_weather(
                 fm_vals    = nearest_val(year_data.get("fm1000"), "dead_fuel_moisture_1000hr",   lat, lon) if year_data.get("fm1000") else np.full(len(times), np.nan)
 
                 # Unit conversions
-                # K to F
+                # K → °F
                 temp_f = (tmmx_vals - 273.15) * 9 / 5 + 32
-                # m/s to mph
+                # m/s → mph
                 wind_mph = vs_vals * 2.23694
 
                 dates = pd.to_datetime(times)
@@ -520,7 +520,7 @@ def load_gridmet_weather(
     return df
 
 
-# HIFLD Fire Stations
+# ── HIFLD Fire Stations ────────────────────────────────────────────────────────
 
 HIFLD_FIRE_STATIONS_URL = (
     "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/"
@@ -602,7 +602,7 @@ def load_hifld_fire_stations(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# USGS Watershed Boundary Dataset (WBD) HUC-8
+# ── USGS Watershed Boundary Dataset (WBD) HUC-8 ───────────────────────────────
 
 USGS_WBD_URL = (
     "https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4/query"
@@ -638,10 +638,14 @@ def load_usgs_wbd_huc8(
         except FileExistsError:
             pass
 
-        where = "1=1"
+        # No huc2 field on this endpoint — filter by first 2 chars of huc8
         if huc2_codes:
-            codes = "', '".join(huc2_codes)
-            where = f"huc2 IN ('{codes}')"
+            conditions = " OR ".join(
+                [f"huc8 LIKE '{code}%'" for code in huc2_codes]
+            )
+            where = f"({conditions})"
+        else:
+            where = "1=1"
 
         params = {
             "where":             where,
@@ -682,7 +686,7 @@ def load_usgs_wbd_huc8(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# EPA Level III Ecoregions
+# ── EPA Level III Ecoregions ───────────────────────────────────────────────────
 
 EPA_ECOREGIONS_L3_URL = (
     "https://geodata.epa.gov/arcgis/rest/services/ORD/NATL_ECO_L3_SIMP/MapServer/0/query"
@@ -748,3 +752,4 @@ def load_epa_ecoregions_l3(
         return gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
