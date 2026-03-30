@@ -1,5 +1,5 @@
 """
-constants.py — Shared configuration for paths, CRS, and tribal identifiers.
+constants.py contains Shared configuration for paths, CRS, and tribal identifiers.
 
 All paths are relative to REPO_ROOT so the project works on any machine
 or GitHub clone without modification.
@@ -27,7 +27,7 @@ for _d in [RAW_DIR, INTERIM_DIR, FINAL_DIR, CACHE_DIR, OUTPUTS_DIR]:
         pass
 
 
-# Coordinate Reference Systems 
+# Coordinate Reference Systems (CRS)
 CRS_GEOGRAPHIC = "EPSG:4326"    # WGS 84 lat/lon for web maps / APIs
 CRS_PROJECTED  = "EPSG:5070"    # Albers Equal Area Conus area calculations
 CRS_WEB_MERCATOR = "EPSG:3857"  # Web Mercator contextily basemaps
@@ -86,19 +86,19 @@ NOAA_RAWS_URL     = "https://raws.nifc.gov/"
 # EPA Air quality (smoke / PM2.5)
 EPA_AQS_URL = "https://aqs.epa.gov/data/api/"
 
-# Native Land Digital — Tribal territory polygons
+# Native Land Digital Tribal territory polygons
 NATIVE_LAND_API = "https://native-land.ca/api/index.php"
 
 
-# Federal Indian Regions
-# BIA Regional Office codes human-readable names
+# Federal Indian Regions 
+# BIA Regional Office codes to human-readable names
 BIA_REGIONS = {
     "AK": "Alaska",
     "EA": "Eastern",
     "ES": "Eastern Oklahoma",
     "GP": "Great Plains",
     "MP": "Midwest",
-    "MT": "Midwest (Minnesota)",  # sometimes split
+    "MT": "Midwest (Minnesota)",  
     "NA": "Navajo",
     "NW": "Northwest",
     "PA": "Pacific",
@@ -115,7 +115,26 @@ FAST_FIRE_ACRES_THRESHOLD = 10_000
 # Red flag wind speed threshold (mph) used in fast_fire_days_analysis
 RED_FLAG_WIND_MPH = 25
 
-# Visualization defaults 
+# Primary study Tribes
+# Based on top 10 Tribal Nations by historical fire frequency (MTBS 1984-2024),
+# derived from historical_fast_fires_tribal.ipynb.
+# All notebooks in this series use this list for consistency. You can edit this
+# list to reflect Tribes of your choice.
+
+PRIMARY_TRIBES = [
+    "Choctaw",
+    "Osage",
+    "Creek",
+    "San Carlos",
+    "Fort Apache",
+    "Cherokee",
+    "Kiowa-Comanche-Apache-Fort Sill Apache",
+    "Chickasaw",
+    "Colville",
+    "Warm Springs",
+]
+
+# Visualization defaults
 DEFAULT_MAP_CENTER  = [39.5, -98.35]   # geographic center of contiguous US
 DEFAULT_MAP_ZOOM    = 4
 TRIBAL_ACCENT_COLOR = "#C8522B"        # terra cotta
