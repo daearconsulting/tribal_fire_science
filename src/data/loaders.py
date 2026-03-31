@@ -619,7 +619,6 @@ def load_usgs_wbd_huc8(
     Source: https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4
 
     Parameters
-    ----------
     bbox       : (min_lon, min_lat, max_lon, max_lat) spatial filter
     huc2_codes : list of 2-digit HUC region codes (e.g. ["17", "11"])
                  to limit download. If None, uses bbox only.
@@ -637,14 +636,10 @@ def load_usgs_wbd_huc8(
         except FileExistsError:
             pass
 
-        # No huc2 field on this endpoint — filter by first 2 chars of huc8
-        if huc2_codes:
-            conditions = " OR ".join(
-                [f"huc8 LIKE '{code}%'" for code in huc2_codes]
-            )
-            where = f"({conditions})"
-        else:
-            where = "1=1"
+        # The USGS WBD endpoint returns 500 when combining WHERE and spatial filter.
+        # Always use bbox-only spatial filtering; huc2_codes filtering is done
+        # in Python after loading via huc8.str[:2].
+        where = "1=1"
 
         params = {
             "where":             where,
@@ -683,7 +678,6 @@ def load_usgs_wbd_huc8(
         return gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
-
 
 # EPA Level III Ecoregions
 
