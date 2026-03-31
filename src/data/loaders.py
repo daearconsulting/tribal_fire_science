@@ -2,7 +2,6 @@
 loaders.py — Fetch and cache real datasets used across notebooks.
 
 Design principles
------------------
 - Every function fetches from a documented public source (no synthetic data).
 - Results are cached to data/cache/ as Parquet or GeoJSON to avoid redundant
   API calls. Pass force_refresh=True to re-download.
@@ -40,7 +39,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# ── Retry decorator for flaky public APIs ──────────────────────────────────────
+# Retry decorator for public APIs
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -48,7 +47,7 @@ _retry = retry(
 )
 
 
-# ── Internal helpers ───────────────────────────────────────────────────────────
+# Internal helpers
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
     try:
@@ -90,7 +89,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# ── NIFC Fire Perimeters ───────────────────────────────────────────────────────
+# NIFC Fire Perimeters
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -107,7 +106,7 @@ def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("nifc_perimeters", _fetch, force_refresh)
 
 
-# ── MTBS Burned Area Perimeters ────────────────────────────────────────────────
+# MTBS Burned Area Perimeters
 
 @_retry
 def load_mtbs_perimeters(
@@ -143,7 +142,7 @@ def load_mtbs_perimeters(
     return gdf.reset_index(drop=True)
 
 
-# ── BIA Tribal Boundaries ─────────────────────────────────────────────────────
+# BIA Tribal Boundaries
 
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -162,7 +161,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# ── Census TIGER — American Indian / Alaska Native Areas ──────────────────────
+# Census TIGER American Indian / Alaska Native Areas
 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -202,7 +201,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# ── Native Land Digital — Tribal Territories ──────────────────────────────────
+# Native Land Digital Tribal Territories
 
 @_retry
 def load_native_land_territories(
@@ -234,7 +233,7 @@ def load_native_land_territories(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# ── FEMA National Risk Index ───────────────────────────────────────────────────
+# FEMA National Risk Index
 
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -256,7 +255,7 @@ def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFra
     return _load_or_fetch_geodataframe("fema_nri", _fetch, force_refresh)
 
 
-# ── WUI — Wildland-Urban Interface ────────────────────────────────────────────
+# Wildland-Urban Interface (WUI)
 
 @_retry
 def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -281,7 +280,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("wui", _fetch, force_refresh)
 
 
-# ── NOAA Climate Data (via CDO API) ───────────────────────────────────────────
+# NOAA Climate Data (via CDO API)
 
 def load_noaa_climate_data(
     station_ids: list[str],
@@ -327,7 +326,7 @@ def load_noaa_climate_data(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# ── gridMET Weather Data ───────────────────────────────────────────────────────
+# gridMET Weather Data
 
 # gridMET variable names and their units
 GRIDMET_VARIABLES = {
@@ -520,7 +519,7 @@ def load_gridmet_weather(
     return df
 
 
-# ── HIFLD Fire Stations ────────────────────────────────────────────────────────
+# HIFLD Fire Stations
 
 HIFLD_FIRE_STATIONS_URL = (
     "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/"
@@ -602,7 +601,7 @@ def load_hifld_fire_stations(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# ── USGS Watershed Boundary Dataset (WBD) HUC-8 ───────────────────────────────
+# USGS Watershed Boundary Dataset (WBD) HUC-8
 
 USGS_WBD_URL = (
     "https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4/query"
@@ -686,7 +685,7 @@ def load_usgs_wbd_huc8(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# ── EPA Level III Ecoregions ───────────────────────────────────────────────────
+# EPA Level III Ecoregions
 
 EPA_ECOREGIONS_L3_URL = (
     "https://geodata.epa.gov/arcgis/rest/services/ORD/NATL_ECO_L3_SIMP/MapServer/0/query"
@@ -752,4 +751,3 @@ def load_epa_ecoregions_l3(
         return gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
-
