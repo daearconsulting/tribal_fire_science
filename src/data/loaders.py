@@ -2,6 +2,7 @@
 loaders.py — Fetch and cache real datasets used across notebooks.
 
 Design principles
+-----------------
 - Every function fetches from a documented public source (no synthetic data).
 - Results are cached to data/cache/ as Parquet or GeoJSON to avoid redundant
   API calls. Pass force_refresh=True to re-download.
@@ -39,7 +40,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# Retry decorator for public APIs
+# ── Retry decorator for flaky public APIs ──────────────────────────────────────
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -47,7 +48,7 @@ _retry = retry(
 )
 
 
-# Internal helpers
+# ── Internal helpers ───────────────────────────────────────────────────────────
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
     try:
@@ -89,7 +90,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# NIFC Fire Perimeters
+# ── NIFC Fire Perimeters ───────────────────────────────────────────────────────
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -106,7 +107,7 @@ def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("nifc_perimeters", _fetch, force_refresh)
 
 
-# MTBS Burned Area Perimeters
+# ── MTBS Burned Area Perimeters ────────────────────────────────────────────────
 
 @_retry
 def load_mtbs_perimeters(
@@ -142,7 +143,7 @@ def load_mtbs_perimeters(
     return gdf.reset_index(drop=True)
 
 
-# BIA Tribal Boundaries
+# ── BIA Tribal Boundaries ─────────────────────────────────────────────────────
 
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -161,7 +162,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# Census TIGER American Indian / Alaska Native Areas
+# ── Census TIGER — American Indian / Alaska Native Areas ──────────────────────
 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -201,7 +202,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# Native Land Digital Tribal Territories
+# ── Native Land Digital — Tribal Territories ──────────────────────────────────
 
 @_retry
 def load_native_land_territories(
@@ -233,7 +234,7 @@ def load_native_land_territories(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# FEMA National Risk Index
+# ── FEMA National Risk Index ───────────────────────────────────────────────────
 
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -255,7 +256,7 @@ def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFra
     return _load_or_fetch_geodataframe("fema_nri", _fetch, force_refresh)
 
 
-# Wildland-Urban Interface (WUI)
+# ── WUI — Wildland-Urban Interface ────────────────────────────────────────────
 
 @_retry
 def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -280,7 +281,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("wui", _fetch, force_refresh)
 
 
-# NOAA Climate Data (via CDO API)
+# ── NOAA Climate Data (via CDO API) ───────────────────────────────────────────
 
 def load_noaa_climate_data(
     station_ids: list[str],
@@ -326,7 +327,7 @@ def load_noaa_climate_data(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# gridMET Weather Data
+# ── gridMET Weather Data ───────────────────────────────────────────────────────
 
 # gridMET variable names and their units
 GRIDMET_VARIABLES = {
@@ -519,7 +520,7 @@ def load_gridmet_weather(
     return df
 
 
-# HIFLD Fire Stations
+# ── HIFLD Fire Stations ────────────────────────────────────────────────────────
 
 HIFLD_FIRE_STATIONS_URL = (
     "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/"
@@ -601,7 +602,7 @@ def load_hifld_fire_stations(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# USGS Watershed Boundary Dataset (WBD) HUC-8
+# ── USGS Watershed Boundary Dataset (WBD) HUC-8 ───────────────────────────────
 
 USGS_WBD_URL = (
     "https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4/query"
@@ -619,6 +620,7 @@ def load_usgs_wbd_huc8(
     Source: https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4
 
     Parameters
+    ----------
     bbox       : (min_lon, min_lat, max_lon, max_lat) spatial filter
     huc2_codes : list of 2-digit HUC region codes (e.g. ["17", "11"])
                  to limit download. If None, uses bbox only.
@@ -679,7 +681,8 @@ def load_usgs_wbd_huc8(
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
-# EPA Level III Ecoregions
+
+# ── EPA Level III Ecoregions ───────────────────────────────────────────────────
 
 EPA_ECOREGIONS_L3_URL = (
     "https://geodata.epa.gov/arcgis/rest/services/ORD/NATL_ECO_L3_SIMP/MapServer/0/query"
@@ -739,6 +742,78 @@ def load_epa_ecoregions_l3(
         if not all_features:
             raise ValueError(
                 "No EPA Level III ecoregions returned. Check bbox parameter."
+            )
+
+        gdf = gpd.GeoDataFrame.from_features(all_features, crs=CRS_GEOGRAPHIC)
+        return gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
+
+    return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
+
+# ── BLM Surface Management Agency (SMA) ───────────────────────────────────────
+
+BLM_SMA_URL = (
+    "https://gis.blm.gov/arcgis/rest/services/lands/BLM_Natl_SMA_LimitedScale/"
+    "MapServer/1/query"
+)
+
+
+@_retry
+def load_blm_sma(
+    bbox: tuple[float, float, float, float],
+    force_refresh: bool = False,
+) -> gpd.GeoDataFrame:
+    """
+    BLM Surface Management Agency (SMA) dataset — federal land ownership.
+    Includes BLM, USFS, NPS, FWS, BIA, DOD, state, and private surface ownership.
+    Source: https://gbp-blm-egis.hub.arcgis.com/
+
+    Parameters
+    ----------
+    bbox : (min_lon, min_lat, max_lon, max_lat) — required, clips to study area
+    """
+    if bbox is None:
+        raise ValueError("bbox is required for load_blm_sma to limit download size.")
+
+    cache_name = f"blm_sma_{bbox[0]:.2f}_{bbox[1]:.2f}_{bbox[2]:.2f}_{bbox[3]:.2f}"
+
+    def _fetch():
+        try:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+
+        all_features = []
+        offset = 0
+        page_size = 1000
+
+        while True:
+            params = {
+                "where":             "1=1",
+                "outFields":         "ADMIN_AGENCY_CODE,ADMIN_UNIT_NAME,BLM_STATE_CODE",
+                "f":                 "geojson",
+                "returnGeometry":    "true",
+                "resultRecordCount": page_size,
+                "resultOffset":      offset,
+                "outSR":             "4326",
+                "geometry":          f"{bbox[0]},{bbox[1]},{bbox[2]},{bbox[3]}",
+                "geometryType":      "esriGeometryEnvelope",
+                "spatialRel":        "esriSpatialRelIntersects",
+                "inSR":              "4326",
+            }
+            r = requests.get(BLM_SMA_URL, params=params, timeout=120)
+            r.raise_for_status()
+            features = r.json().get("features", [])
+            all_features.extend(features)
+            log.info("BLM SMA: fetched %d records (offset %d)", len(features), offset)
+            if len(features) < page_size:
+                break
+            offset += page_size
+
+        if not all_features:
+            raise ValueError(
+                "No BLM SMA features returned for bbox. "
+                "Check bbox coordinates and network access."
             )
 
         gdf = gpd.GeoDataFrame.from_features(all_features, crs=CRS_GEOGRAPHIC)

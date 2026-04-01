@@ -33,6 +33,7 @@ FAIR Principles (FORCE11)
   Reference    : https://www.go-fair.org/fair-principles/
 
 Relationship between frameworks
+--------------------------------
 FAIR establishes the open science baseline. CARE and OCAP® establish that
 Indigenous data requires additional governance that FAIR alone does not address.
 A dataset can be fully FAIR and still violate Indigenous data sovereignty if it
@@ -41,6 +42,7 @@ In this project, FAIR governs technical data standards; CARE and OCAP® govern
 ethical obligations to Tribal Nations and communities.
 
 Additional references
+---------------------
 - UNDRIP Article 31: https://www.un.org/development/desa/indigenouspeoples/
 - US Indigenous Data Sovereignty Network: https://usindigenousdata.org
 - GIDA CARE Principles: https://www.gida-global.org/care
@@ -53,7 +55,7 @@ from typing import Optional
 import warnings
 
 
-# Data source registry 
+# ── Data source registry ───────────────────────────────────────────────────────
 
 @dataclass
 class DataSource:
@@ -61,6 +63,7 @@ class DataSource:
     Metadata for a dataset used in this project.
 
     Parameters
+    ----------
     name             : Human-readable name
     url              : Authoritative source URL
     steward          : Organization responsible for the data
@@ -96,7 +99,7 @@ class DataSource:
         return f"{self.name}. {self.steward}. {self.url}"
 
 
-# Canonical dataset registry 
+# ── Canonical dataset registry ────────────────────────────────────────────────
 # These mirror the sources in data/loaders.py. Update both when adding sources.
 
 SOURCES: dict[str, DataSource] = {
@@ -195,6 +198,18 @@ SOURCES: dict[str, DataSource] = {
         fair_notes="County-level composite scores. Versioned annual releases. Open download.",
         attribution="FEMA National Risk Index, 2023.",
     ),
+    "blm_sma": DataSource(
+        name="BLM Surface Management Agency (SMA) Dataset",
+        url="https://gbp-blm-egis.hub.arcgis.com/",
+        steward="Bureau of Land Management (BLM)",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes=(
+            "ArcGIS REST API, GeoJSON output, national coverage. "
+            "Includes BLM, USFS, NPS, FWS, BIA, DOD, state, and private surface ownership."
+        ),
+        attribution="BLM Surface Management Agency Dataset. U.S. Bureau of Land Management.",
+    ),
     "usgs_wbd": DataSource(
         name="USGS Watershed Boundary Dataset (WBD) HUC-8",
         url="https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer",
@@ -249,7 +264,7 @@ SOURCES: dict[str, DataSource] = {
 }
 
 
-# Sovereignty acknowledgment
+# ── Sovereignty acknowledgment ─────────────────────────────────────────────────
 
 def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     """
@@ -257,6 +272,7 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     Call at the top of any notebook that uses Tribal data sources.
 
     Parameters
+    ----------
     source_keys : list of keys from SOURCES dict. If None, prints all Tribal sources.
     """
     keys = source_keys or [k for k, v in SOURCES.items() if v.tribal_data]
@@ -321,10 +337,11 @@ def generate_citations(source_keys: list[str]) -> str:
     return "\n".join(lines)
 
 
-# Traditional Ecological Knowledge (TEK) disclaimer 
+# ── Traditional Ecological Knowledge (TEK) disclaimer ─────────────────────────
 
 TEK_DISCLAIMER = """
 Traditional Ecological Knowledge (TEK) Notice
+----------------------------------------------
 Some analyses in this project draw on or are informed by Indigenous fire
 stewardship practices and Traditional Ecological Knowledge. TEK belongs to
 the communities that hold it. It is shared here only as general context —
@@ -343,3 +360,4 @@ Tribal Nations before incorporating TEK into new analyses or publications.
 def print_tek_disclaimer() -> None:
     """Print the TEK disclaimer. Use in indigenous_fire_stewardship.ipynb."""
     print(TEK_DISCLAIMER)
+
