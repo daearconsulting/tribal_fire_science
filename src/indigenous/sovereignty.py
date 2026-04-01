@@ -216,6 +216,22 @@ SOURCES: dict[str, DataSource] = {
         fair_notes="REST API, versioned annual releases, requires free API key.",
         attribution="US Census Bureau, American Community Survey.",
     ),
+    "maca_projections": DataSource(
+        name="MACAv2-METDATA Downscaled Climate Projections",
+        url="http://thredds.northwestknowledge.net:8080/thredds/dodsC/",
+        steward="Northwest Knowledge Network, University of Idaho",
+        tribal_data=False,
+        license="Public domain",
+        fair_notes=(
+            "OPeNDAP endpoint, xarray/pydap access, CONUS 4km resolution. "
+            "Scenarios: historical, RCP 4.5, RCP 8.5. Variables: tasmax, tasmin, pr, rhsmin, rhsmax. "
+            "Citation: Abatzoglou & Brown (2012). DOI: 10.1002/joc.2312"
+        ),
+        attribution=(
+            "Abatzoglou, J.T. and Brown, T.J. (2012). A comparison of statistical downscaling "
+            "methods suited for wildfire applications. Int. J. Climatology. doi:10.1002/joc.2312"
+        ),
+    ),
     "nlcd": DataSource(
         name="National Land Cover Database (NLCD) Impervious Surface",
         url="https://www.mrlc.gov/data",
@@ -367,11 +383,10 @@ def generate_citations(source_keys: list[str]) -> str:
     return "\n".join(lines)
 
 
-# ── Traditional Ecological Knowledge (TEK) disclaimer ─────────────────────────
+# Traditional Ecological Knowledge (TEK) disclaimer
 
 TEK_DISCLAIMER = """
 Traditional Ecological Knowledge (TEK) Notice
-----------------------------------------------
 Some analyses in this project draw on or are informed by Indigenous fire
 stewardship practices and Traditional Ecological Knowledge. TEK belongs to
 the communities that hold it. It is shared here only as general context —
@@ -390,5 +405,6 @@ Tribal Nations before incorporating TEK into new analyses or publications.
 def print_tek_disclaimer() -> None:
     """Print the TEK disclaimer. Use in indigenous_fire_stewardship.ipynb."""
     print(TEK_DISCLAIMER)
+
 
 

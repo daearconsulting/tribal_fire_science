@@ -81,6 +81,7 @@ dependencies:
     - census>=0.8.19         # US Census API wrapper
     - pyusda                 # USDA data access (PyPI only)
     - nbformat>=5.9          # MTBS accessed via direct download in src/data/loaders.py
+    - pydap==3.5.9
 
 # Post-install kernel registration
 # Run after `conda env create -f environment.yml`:

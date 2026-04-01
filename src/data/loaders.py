@@ -906,3 +906,114 @@ def load_census_acs_population(
 
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
+
+# ── MACAv2 Climate Projections ─────────────────────────────────────────────────
+# Multivariate Adaptive Constructed Analogs v2 (MACAv2-METDATA)
+# Source: Northwest Knowledge Network THREDDS
+# http://thredds.northwestknowledge.net:8080/thredds/dodsC/
+
+MACA_BASE_URL = (
+    "http://thredds.northwestknowledge.net:8080/thredds/dodsC/"
+    "agg_macav2metdata_{var}_{model}_r1i1p1_{scenario}_CONUS_monthly.nc"
+)
+
+# Supported variables
+MACA_VARIABLES = {
+    "tasmax": "air_temperature",       # Max daily temperature (K)
+    "tasmin": "air_temperature",       # Min daily temperature (K)
+    "pr":     "precipitation",         # Precipitation (mm/day)
+    "rhsmin": "relative_humidity",     # Min relative humidity (%)
+    "rhsmax": "relative_humidity",     # Max relative humidity (%)
+}
+
+# Scenarios and representative GCMs
+MACA_SCENARIOS = ["historical", "rcp45", "rcp85"]
+MACA_MODELS = [
+    "BNU-ESM",
+    "IPSL-CM5A-LR",
+    "NorESM1-M",
+]
+
+# Period date ranges
+MACA_PERIODS = {
+    "historical": ("1950-01-01", "2005-12-31"),
+    "rcp45":      ("2006-01-01", "2099-12-31"),
+    "rcp85":      ("2006-01-01", "2099-12-31"),
+}
+
+
+def load_maca_projections(
+    lon: float,
+    lat: float,
+    variable: str,
+    scenario: str,
+    model: str,
+    start_year: int,
+    end_year: int,
+    force_refresh: bool = False,
+) -> "pd.DataFrame":
+    """
+    Load MACAv2-METDATA monthly climate projections for a single point.
+    Extracts the nearest grid cell to (lon, lat) over OPeNDAP.
+
+    Requires: xarray, pydap (pip install pydap)
+
+    Parameters
+    ----------
+    lon, lat   : Point coordinates (WGS84)
+    variable   : MACAv2 variable code, e.g. 'tasmax', 'pr'
+    scenario   : 'historical', 'rcp45', or 'rcp85'
+    model      : GCM name, e.g. 'BNU-ESM'
+    start_year : First year to retrieve
+    end_year   : Last year to retrieve
+
+    Returns
+    -------
+    DataFrame with columns: time, {variable}, lon, lat
+    """
+    import importlib
+    if importlib.util.find_spec("xarray") is None:
+        raise ImportError("xarray is required: conda install xarray")
+    if importlib.util.find_spec("pydap") is None:
+        raise ImportError("pydap is required: pip install pydap")
+
+    import xarray as xr
+
+    cache_name = (
+        f"maca_{variable}_{model}_{scenario}"
+        f"_{start_year}_{end_year}"
+        f"_{lon:.3f}_{lat:.3f}"
+    )
+
+    def _fetch():
+        try:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+
+        url = MACA_BASE_URL.format(
+            var=variable, model=model, scenario=scenario
+        )
+        log.info("Opening MACAv2 OPeNDAP: %s", url)
+
+        ds = xr.open_dataset(url, engine="pydap")
+
+        # Select nearest grid cell
+        ds_point = ds.sel(lon=lon % 360, lat=lat, method="nearest")
+
+        # Slice time range
+        ds_point = ds_point.sel(
+            time=slice(f"{start_year}-01-01", f"{end_year}-12-31")
+        )
+
+        # Extract variable
+        var_name = [v for v in ds_point.data_vars][0]
+        series   = ds_point[var_name].to_series().reset_index()
+        series   = series.rename(columns={var_name: variable})
+
+        ds.close()
+        return series
+
+    return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
+
+
