@@ -1,0 +1,22 @@
+feature_id,type,privacy_level,population,risk_level,risk_score
+OSM_0000,School,public,0,Low,2.73
+OSM_0001,School,public,0,Low,0.91
+OSM_0002,School,public,0,Low,0.0
+OSM_0003,School,public,0,Low,0.0
+OSM_0004,School,public,0,Low,2.73
+OSM_0005,School,public,0,Low,0.0
+OSM_0006,School,public,0,Low,1.82
+OSM_0007,School,public,0,Low,1.82
+OSM_0008,Fire Station,public,0,Low,2.73
+OSM_0009,Fire Station,public,0,High,6.36
+OSM_0010,Fire Station,public,0,Moderate,5.45
+OSM_0011,Tribal Office,public,0,Low,2.73
+OSM_0012,Community Center,public,0,Moderate,3.64
+OSM_0013,School,public,0,Low,0.0
+OSM_0014,School,public,0,Low,0.0
+OSM_0015,School,public,0,Low,0.0
+OSM_0016,Community Center,public,0,Low,1.82
+OSM_0017,Health Clinic,public,0,Moderate,3.64
+OSM_0018,School,public,0,Low,2.73
+OSM_0019,Fire Station,public,0,Low,2.73
+OSM_0020,School,public,0,Low,0.0

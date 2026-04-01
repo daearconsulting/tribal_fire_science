@@ -71,10 +71,14 @@ dependencies:
   - tenacity>=8.2          # retry logic for API calls
   - platformdirs>=4.0
 
-  # Dev / testing
+  # Dev/testing
   - pytest>=7.4
   - black>=23.0
   - flake8>=6.1
+
+  # EPA Keys
+  - EPA_AQS_EMAIL=your@email.com
+  - EPA_AQS_KEY=your_key
 
   - pip
   - pip:

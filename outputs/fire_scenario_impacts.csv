@@ -1,0 +1,4 @@
+scenario_name,spread_rate_mph,duration_hours,assets_impacted,population_impacted,routes_impacted,cultural_affected
+Moderate (4hr),2,4,0,0,0,False
+Fast (6hr),5,6,12,0,242,False
+Extreme (8hr),8,8,18,0,816,False
