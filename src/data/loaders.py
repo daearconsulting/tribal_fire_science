@@ -48,6 +48,9 @@ _retry = retry(
 )
 
 
+# ── Module-level URL constants ────────────────────────────────────────────────
+CENSUS_TIGER_BASE = "https://www2.census.gov/geo/tiger"
+
 # ── Internal helpers ───────────────────────────────────────────────────────────
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
@@ -1015,5 +1018,193 @@ def load_maca_projections(
         return series
 
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
+
+
+# ── Census TIGER County Boundaries ─────────────────────────────────────────────
+
+CENSUS_COUNTY_URL = f"{CENSUS_TIGER_BASE}/TIGER2023/COUNTY/tl_2023_us_county.zip"
+
+
+@_retry
+def load_census_counties(force_refresh: bool = False) -> gpd.GeoDataFrame:
+    """
+    Census TIGER county boundaries (2023 vintage).
+    Returns GeoDataFrame with STATEFP, COUNTYFP, GEOID, NAME, geometry.
+    Source: https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/
+    """
+    def _fetch():
+        try:
+            RAW_DIR.mkdir(parents=True, exist_ok=True)
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+        log.info("Downloading Census TIGER county boundaries...")
+        r = requests.get(CENSUS_COUNTY_URL, timeout=300)
+        r.raise_for_status()
+        zip_path = RAW_DIR / "tl_2023_us_county.zip"
+        zip_path.write_bytes(r.content)
+        extract_dir = RAW_DIR / "census_counties"
+        extract_dir.mkdir(exist_ok=True)
+        with zipfile.ZipFile(zip_path) as z:
+            z.extractall(extract_dir)
+        shp = next(extract_dir.glob("*.shp"))
+        gdf = gpd.read_file(shp)
+        return gdf.to_crs(CRS_GEOGRAPHIC)
+
+    return _load_or_fetch_geodataframe("census_counties", _fetch, force_refresh)
+
+
+# ── EPA AQS PM2.5 Daily Data ───────────────────────────────────────────────────
+
+EPA_AQS_BASE = "https://aqs.epa.gov/data/api"
+
+# PM2.5 parameter codes
+# 88101 = PM2.5 Local Conditions (FRM/FEM — highest quality)
+# 88502 = Acceptable PM2.5 (includes non-FRM — better rural coverage)
+EPA_AQS_PM25_PARAMS = ["88101", "88502"]
+
+
+def load_epa_aqs_pm25(
+    state_fips: str,
+    county_fips: str,
+    year: int,
+    email: str,
+    api_key: str,
+    force_refresh: bool = False,
+) -> "pd.DataFrame":
+    """
+    EPA AQS daily PM2.5 concentrations for one county and one year.
+    Requires free EPA AQS credentials: https://aqs.epa.gov/data/api/signup
+
+    Parameters
+    ----------
+    state_fips  : 2-digit state FIPS code (e.g. '04' for Arizona)
+    county_fips : 3-digit county FIPS code (e.g. '007' for Gila County AZ)
+    year        : Calendar year (e.g. 2022)
+    email       : Registered EPA AQS email
+    api_key     : EPA AQS API key
+
+    Returns
+    -------
+    DataFrame with columns: date_local, arithmetic_mean, units_of_measure,
+                             site_number, parameter_code, county_code, state_code
+    """
+    cache_name = f"epa_aqs_pm25_{state_fips}_{county_fips}_{year}"
+
+    def _fetch():
+        try:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+
+        all_records = []
+        bdate = f"{year}0101"
+        edate = f"{year}1231"
+
+        for param in EPA_AQS_PM25_PARAMS:
+            url = (
+                f"{EPA_AQS_BASE}/dailyData/byCounty"
+                f"?email={email}&key={api_key}"
+                f"&param={param}"
+                f"&bdate={bdate}&edate={edate}"
+                f"&state={state_fips}&county={county_fips}"
+            )
+            r = requests.get(url, timeout=60)
+            r.raise_for_status()
+            data = r.json()
+            if data.get("Header", [{}])[0].get("status") == "No data matched your selection":
+                continue
+            records = data.get("Data", [])
+            if records:
+                all_records.extend(records)
+                break  # Use highest-quality param that returns data
+
+        if not all_records:
+            return pd.DataFrame(columns=[
+                "date_local", "arithmetic_mean", "units_of_measure",
+                "site_number", "parameter_code", "county_code", "state_code",
+            ])
+
+        df = pd.DataFrame(all_records)
+        df["date_local"] = pd.to_datetime(df["date_local"], errors="coerce")
+        df["arithmetic_mean"] = pd.to_numeric(df["arithmetic_mean"], errors="coerce")
+        # Take daily max across sites within county
+        daily = (
+            df.groupby("date_local")["arithmetic_mean"]
+            .max()
+            .reset_index()
+            .rename(columns={"arithmetic_mean": "pm25_ugm3"})
+        )
+        daily["state_fips"]  = state_fips
+        daily["county_fips"] = county_fips
+        daily["year"]        = year
+        return daily
+
+    return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
+
+
+# ── Census ACS Age Demographics ────────────────────────────────────────────────
+
+def load_census_age_demographics(
+    api_key: str,
+    year: int = 2022,
+    force_refresh: bool = False,
+) -> "pd.DataFrame":
+    """
+    Census ACS 5-year estimates — county-level age demographics.
+    Returns total population, count 65+, count under 18, and percentages.
+    Source: Census ACS Table B01001
+
+    Parameters
+    ----------
+    api_key : Free Census API key (https://api.census.gov/data/key_signup.html)
+    year    : ACS release year (5-year estimates ending in this year)
+    """
+    cache_name = f"census_acs_age_{year}"
+
+    def _fetch():
+        try:
+            from census import Census
+        except ImportError:
+            raise ImportError("census package required: pip install census")
+
+        c = Census(api_key, year=year)
+
+        # B01001: Sex by Age
+        # Total: B01001_001E
+        # Male under 18: B01001_003E to B01001_006E
+        # Female under 18: B01001_027E to B01001_030E
+        # Male 65+: B01001_020E to B01001_025E
+        # Female 65+: B01001_044E to B01001_049E
+
+        vars_needed = (
+            ["B01001_001E"]
+            + [f"B01001_{str(i).zfill(3)}E" for i in range(3, 7)]     # male <18
+            + [f"B01001_{str(i).zfill(3)}E" for i in range(27, 31)]    # female <18
+            + [f"B01001_{str(i).zfill(3)}E" for i in range(20, 26)]    # male 65+
+            + [f"B01001_{str(i).zfill(3)}E" for i in range(44, 50)]    # female 65+
+        )
+
+        raw = c.acs5.get(vars_needed, {"for": "county:*", "in": "state:*"})
+        df  = pd.DataFrame(raw)
+
+        # Convert numeric
+        for col in [c for c in df.columns if c.startswith("B01001")]:
+            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
+        df["total_pop"]    = df["B01001_001E"]
+        df["pop_under18"]  = df[[f"B01001_{str(i).zfill(3)}E" for i in list(range(3, 7)) + list(range(27, 31))]].sum(axis=1)
+        df["pop_65plus"]   = df[[f"B01001_{str(i).zfill(3)}E" for i in list(range(20, 26)) + list(range(44, 50))]].sum(axis=1)
+        df["pct_under18"]  = (df["pop_under18"] / df["total_pop"] * 100).round(1)
+        df["pct_65plus"]   = (df["pop_65plus"]  / df["total_pop"] * 100).round(1)
+        df["vulnerability_pct"] = (df["pct_under18"] + df["pct_65plus"]).round(1)
+        df["geoid"]        = df["state"] + df["county"]
+
+        return df[["geoid", "state", "county", "total_pop",
+                   "pop_under18", "pop_65plus",
+                   "pct_under18", "pct_65plus", "vulnerability_pct"]]
+
+    return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
+
 
 

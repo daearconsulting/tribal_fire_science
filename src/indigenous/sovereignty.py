@@ -216,6 +216,19 @@ SOURCES: dict[str, DataSource] = {
         fair_notes="REST API, versioned annual releases, requires free API key.",
         attribution="US Census Bureau, American Community Survey.",
     ),
+    "epa_aqs": DataSource(
+        name="EPA Air Quality System (AQS) Daily PM2.5",
+        url="https://aqs.epa.gov/data/api/",
+        steward="US Environmental Protection Agency",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes=(
+            "Free REST API, requires registration. Daily PM2.5 concentrations "
+            "by monitoring site and county. Coverage gaps exist in rural and Tribal areas. "
+            "Parameter codes: 88101 (FRM), 88502 (acceptable)."
+        ),
+        attribution="EPA Air Quality System (AQS). US Environmental Protection Agency.",
+    ),
     "maca_projections": DataSource(
         name="MACAv2-METDATA Downscaled Climate Projections",
         url="http://thredds.northwestknowledge.net:8080/thredds/dodsC/",
@@ -383,10 +396,11 @@ def generate_citations(source_keys: list[str]) -> str:
     return "\n".join(lines)
 
 
-# Traditional Ecological Knowledge (TEK) disclaimer
+# ── Traditional Ecological Knowledge (TEK) disclaimer ─────────────────────────
 
 TEK_DISCLAIMER = """
 Traditional Ecological Knowledge (TEK) Notice
+----------------------------------------------
 Some analyses in this project draw on or are informed by Indigenous fire
 stewardship practices and Traditional Ecological Knowledge. TEK belongs to
 the communities that hold it. It is shared here only as general context —
