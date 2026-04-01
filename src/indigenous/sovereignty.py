@@ -198,6 +198,36 @@ SOURCES: dict[str, DataSource] = {
         fair_notes="County-level composite scores. Versioned annual releases. Open download.",
         attribution="FEMA National Risk Index, 2023.",
     ),
+    "census_urban_areas": DataSource(
+        name="Census TIGER Urban Areas (UAC) 2020",
+        url="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html",
+        steward="US Census Bureau",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes="Annual vintage releases, standard shapefile format, open download.",
+        attribution="US Census Bureau, TIGER/Line Urban Areas, 2023.",
+    ),
+    "census_acs": DataSource(
+        name="Census American Community Survey (ACS) 5-Year Estimates",
+        url="https://api.census.gov/data/",
+        steward="US Census Bureau",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes="REST API, versioned annual releases, requires free API key.",
+        attribution="US Census Bureau, American Community Survey.",
+    ),
+    "nlcd": DataSource(
+        name="National Land Cover Database (NLCD) Impervious Surface",
+        url="https://www.mrlc.gov/data",
+        steward="Multi-Resolution Land Characteristics (MRLC) Consortium",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes=(
+            "30m resolution raster. Available for download via MRLC viewer. "
+            "Large file — manual download required; not available via REST API."
+        ),
+        attribution="Dewitz, J. (2023). NLCD. USGS.",
+    ),
     "blm_sma": DataSource(
         name="BLM Surface Management Agency (SMA) Dataset",
         url="https://gbp-blm-egis.hub.arcgis.com/",
@@ -360,4 +390,5 @@ Tribal Nations before incorporating TEK into new analyses or publications.
 def print_tek_disclaimer() -> None:
     """Print the TEK disclaimer. Use in indigenous_fire_stewardship.ipynb."""
     print(TEK_DISCLAIMER)
+
 

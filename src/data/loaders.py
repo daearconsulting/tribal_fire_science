@@ -820,3 +820,89 @@ def load_blm_sma(
         return gdf[gdf.geometry.notnull() & ~gdf.geometry.is_empty].copy()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
+
+# ── Census TIGER Urban Areas ───────────────────────────────────────────────────
+
+CENSUS_UAC_URL = f"{CENSUS_TIGER_BASE}/TIGER2023/UAC/tl_2023_us_uac20.zip"
+
+
+@_retry
+def load_census_urban_areas(force_refresh: bool = False) -> gpd.GeoDataFrame:
+    """
+    Census TIGER Urban Areas (UAC), 2020 delineation, 2023 vintage.
+    Includes Urbanized Areas (>=50,000 pop) and Urban Clusters (2,500–50,000 pop).
+    Source: https://www2.census.gov/geo/tiger/TIGER2023/UAC/
+
+    Returns
+    -------
+    GeoDataFrame with columns: NAME20, UATYPE20 (U=Urbanized, C=Cluster), geometry
+    """
+    def _fetch():
+        try:
+            RAW_DIR.mkdir(parents=True, exist_ok=True)
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+
+        log.info("Downloading Census Urban Areas from %s", CENSUS_UAC_URL)
+        r = requests.get(CENSUS_UAC_URL, timeout=300)
+        r.raise_for_status()
+        zip_path = RAW_DIR / "tl_2023_us_uac20.zip"
+        zip_path.write_bytes(r.content)
+        extract_dir = RAW_DIR / "census_uac"
+        extract_dir.mkdir(exist_ok=True)
+        with zipfile.ZipFile(zip_path) as z:
+            z.extractall(extract_dir)
+        shp = next(extract_dir.glob("*.shp"))
+        gdf = gpd.read_file(shp)
+        return gdf.to_crs(CRS_GEOGRAPHIC)
+
+    return _load_or_fetch_geodataframe("census_urban_areas", _fetch, force_refresh)
+
+
+# ── Census ACS Population ─────────────────────────────────────────────────────
+
+def load_census_acs_population(
+    api_key: str,
+    year: int = 2022,
+    variables: list[str] | None = None,
+    force_refresh: bool = False,
+) -> pd.DataFrame:
+    """
+    Census American Community Survey (ACS) 5-year estimates — county population.
+    Source: https://api.census.gov/data/
+
+    Parameters
+    ----------
+    api_key   : Census API key (free from https://api.census.gov/data/key_signup.html)
+               Store in .env as CENSUS_API_KEY, never commit.
+    year      : ACS release year (e.g. 2022 = 2018-2022 5-year estimates)
+    variables : List of ACS variable codes. Defaults to ['B01003_001E'] (total population).
+
+    Returns
+    -------
+    DataFrame with state, county, and population columns.
+    """
+    vars_to_fetch = variables or ["B01003_001E"]
+    cache_name = f"census_acs_{year}_{'_'.join(sorted(vars_to_fetch))}"
+
+    def _fetch():
+        try:
+            from census import Census
+        except ImportError:
+            raise ImportError(
+                "census package is required. Run: pip install census"
+            )
+
+        c   = Census(api_key, year=year)
+        raw = c.acs5.get(vars_to_fetch, {"for": "county:*", "in": "state:*"})
+        df  = pd.DataFrame(raw)
+        # Rename population column
+        if "B01003_001E" in df.columns:
+            df = df.rename(columns={"B01003_001E": "total_population"})
+            df["total_population"] = pd.to_numeric(df["total_population"], errors="coerce")
+        return df
+
+    return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
+
