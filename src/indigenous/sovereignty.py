@@ -33,7 +33,6 @@ FAIR Principles (FORCE11)
   Reference    : https://www.go-fair.org/fair-principles/
 
 Relationship between frameworks
---------------------------------
 FAIR establishes the open science baseline. CARE and OCAP® establish that
 Indigenous data requires additional governance that FAIR alone does not address.
 A dataset can be fully FAIR and still violate Indigenous data sovereignty if it
@@ -55,7 +54,7 @@ from typing import Optional
 import warnings
 
 
-# ── Data source registry ───────────────────────────────────────────────────────
+# Data source registry 
 
 @dataclass
 class DataSource:
@@ -99,7 +98,7 @@ class DataSource:
         return f"{self.name}. {self.steward}. {self.url}"
 
 
-# ── Canonical dataset registry ────────────────────────────────────────────────
+# Canonical dataset registry
 # These mirror the sources in data/loaders.py. Update both when adding sources.
 
 SOURCES: dict[str, DataSource] = {
@@ -215,6 +214,18 @@ SOURCES: dict[str, DataSource] = {
         license="Public domain (federal government)",
         fair_notes="REST API, versioned annual releases, requires free API key.",
         attribution="US Census Bureau, American Community Survey.",
+    ),
+    "nhd_flowlines": DataSource(
+        name="USGS NHDPlus High Resolution Flowlines",
+        url="https://hydro.nationalmap.gov/arcgis/rest/services/NHDPlus_HR/MapServer",
+        steward="US Geological Survey (USGS)",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes=(
+            "ArcGIS REST API, GeoJSON output. Stream network with Strahler order. "
+            "High resolution (1:24,000 scale). National coverage."
+        ),
+        attribution="USGS National Hydrography Dataset Plus High Resolution (NHDPlus HR).",
     ),
     "raws_stations": DataSource(
         name="RAWS Fire Weather Station Network",
@@ -339,7 +350,7 @@ SOURCES: dict[str, DataSource] = {
 }
 
 
-# ── Sovereignty acknowledgment ─────────────────────────────────────────────────
+# Sovereignty acknowledgment
 
 def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     """
@@ -347,7 +358,6 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     Call at the top of any notebook that uses Tribal data sources.
 
     Parameters
-    ----------
     source_keys : list of keys from SOURCES dict. If None, prints all Tribal sources.
     """
     keys = source_keys or [k for k, v in SOURCES.items() if v.tribal_data]
@@ -412,11 +422,10 @@ def generate_citations(source_keys: list[str]) -> str:
     return "\n".join(lines)
 
 
-# ── Traditional Ecological Knowledge (TEK) disclaimer ─────────────────────────
+# Traditional Ecological Knowledge (TEK) disclaimer
 
 TEK_DISCLAIMER = """
 Traditional Ecological Knowledge (TEK) Notice
-----------------------------------------------
 Some analyses in this project draw on or are informed by Indigenous fire
 stewardship practices and Traditional Ecological Knowledge. TEK belongs to
 the communities that hold it. It is shared here only as general context —
@@ -435,6 +444,7 @@ Tribal Nations before incorporating TEK into new analyses or publications.
 def print_tek_disclaimer() -> None:
     """Print the TEK disclaimer. Use in indigenous_fire_stewardship.ipynb."""
     print(TEK_DISCLAIMER)
+
 
 
 
