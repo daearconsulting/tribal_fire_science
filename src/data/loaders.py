@@ -1207,4 +1207,197 @@ def load_census_age_demographics(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
+# ── Census TIGER Primary and Secondary Roads ─────────────────────────────────
+
+CENSUS_PRISECROADS_URL = (
+    f"{CENSUS_TIGER_BASE}/TIGER2023/PRISECROADS/tl_2023_us_prisecroads.zip"
+)
+
+
+@_retry
+def load_census_primary_roads(force_refresh: bool = False) -> gpd.GeoDataFrame:
+    """
+    Census TIGER Primary and Secondary Roads — national file (2023 vintage).
+    Includes interstate highways, US routes, state routes, and county roads.
+    Suitable for WUI road density calculation as ignition vector proxy.
+    Source: https://www2.census.gov/geo/tiger/TIGER2023/PRISECROADS/
+
+    Returns
+    -------
+    GeoDataFrame with columns: LINEARID, FULLNAME, RTTYP, MTFCC, geometry
+    """
+    def _fetch():
+        try:
+            RAW_DIR.mkdir(parents=True, exist_ok=True)
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+        log.info("Downloading Census TIGER primary/secondary roads (~50MB)...")
+        r = requests.get(CENSUS_PRISECROADS_URL, timeout=600, stream=True)
+        r.raise_for_status()
+        zip_path = RAW_DIR / "tl_2023_us_prisecroads.zip"
+        with open(zip_path, "wb") as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                f.write(chunk)
+        extract_dir = RAW_DIR / "census_prisecroads"
+        extract_dir.mkdir(exist_ok=True)
+        with zipfile.ZipFile(zip_path) as z:
+            z.extractall(extract_dir)
+        shp = next(extract_dir.glob("*.shp"))
+        gdf = gpd.read_file(shp)
+        return gdf.to_crs(CRS_GEOGRAPHIC)
+
+    return _load_or_fetch_geodataframe("census_primary_roads", _fetch, force_refresh)
+
+
+# ── RAWS Fire Weather Station Locations ───────────────────────────────────────
+
+SYNOPTIC_BASE        = "https://api.synopticdata.com/v2"
+NOAA_ISD_HISTORY_URL = "https://www.ncei.noaa.gov/pub/data/noaa/isd-history.csv"
+
+# Keywords used to identify fire weather / RAWS stations in SynopticData responses
+_RAWS_KEYWORDS = frozenset(["RAWS", "BLM", "USFS", "NPS", "BIA", "FIRE"])
+
+
+def load_raws_stations(
+    states: list[str],
+    synoptic_token: str | None = None,
+    force_refresh: bool = False,
+) -> gpd.GeoDataFrame:
+    """
+    Load RAWS fire weather station locations for a list of US states.
+
+    Primary  : SynopticData API — complete RAWS registry, requires free token.
+               Register at: https://synopticdata.com/mesonet-api/
+               Store as SYNOPTIC_TOKEN in .env
+    Fallback : NOAA ISD station history CSV — no key required.
+               Filters for stations with 'RAWS' in name; less complete.
+
+    Parameters
+    ----------
+    states         : List of 2-letter state abbreviations, e.g. ['AZ', 'OK']
+    synoptic_token : SynopticData API token (optional)
+    force_refresh  : Re-download even if cache exists
+    """
+    state_str  = "_".join(sorted(s.upper() for s in states))
+    cache_name = f"raws_stations_{state_str}"
+
+    def _fetch_synoptic():
+        params = {
+            "token":  synoptic_token,
+            "state":  ",".join(states),
+            "status": "ACTIVE",
+            "output": "json",
+        }
+        r = requests.get(
+            f"{SYNOPTIC_BASE}/stations/metadata", params=params, timeout=90
+        )
+        r.raise_for_status()
+        data     = r.json()
+        stations = data.get("STATION", [])
+        if not stations:
+            raise ValueError(
+                f"SynopticData returned no stations for states {states}. "
+                "Check token and state abbreviations."
+            )
+        records = []
+        for st in stations:
+            mnet = (st.get("MNET_SHORTNAME") or "").upper()
+            name = (st.get("NAME") or "").upper()
+            is_raws = any(kw in mnet or kw in name for kw in _RAWS_KEYWORDS)
+            if not is_raws:
+                continue
+            try:
+                elev_ft = float(st.get("ELEVATION") or 0)
+                records.append({
+                    "station_id":   st.get("STID", ""),
+                    "name":         st.get("NAME", ""),
+                    "state":        st.get("STATE", ""),
+                    "network":      st.get("MNET_SHORTNAME", ""),
+                    "elevation_m":  round(elev_ft * 0.3048, 1),
+                    "lat":          float(st["LATITUDE"]),
+                    "lon":          float(st["LONGITUDE"]),
+                    "source":       "SynopticData",
+                })
+            except (KeyError, ValueError, TypeError):
+                continue
+
+        if not records:
+            raise ValueError(
+                "SynopticData returned stations but none matched RAWS keywords. "
+                f"Keywords used: {sorted(_RAWS_KEYWORDS)}"
+            )
+        gdf = gpd.GeoDataFrame(
+            pd.DataFrame(records),
+            geometry=gpd.points_from_xy(
+                [r["lon"] for r in records],
+                [r["lat"] for r in records],
+            ),
+            crs=CRS_GEOGRAPHIC,
+        )
+        log.info("SynopticData: loaded %d RAWS stations", len(gdf))
+        return gdf
+
+    def _fetch_isd():
+        """NOAA ISD fallback — filters US stations with 'RAWS' in name."""
+        from io import StringIO
+        log.info("Downloading NOAA ISD station history (RAWS fallback)...")
+        r = requests.get(NOAA_ISD_HISTORY_URL, timeout=180)
+        r.raise_for_status()
+        df = pd.read_csv(StringIO(r.text), dtype=str, low_memory=False)
+        df.columns = df.columns.str.strip()
+
+        states_upper = [s.upper() for s in states]
+        df = df[
+            (df.get("CTRY", pd.Series()) == "US") &
+            (df.get("ST",   pd.Series()).isin(states_upper)) &
+            (df.get("STATION NAME", pd.Series())
+               .str.upper()
+               .str.contains("RAWS", na=False))
+        ].copy()
+
+        df["LAT"]     = pd.to_numeric(df.get("LAT",     pd.Series()), errors="coerce")
+        df["LON"]     = pd.to_numeric(df.get("LON",     pd.Series()), errors="coerce")
+        df["ELEV(M)"] = pd.to_numeric(df.get("ELEV(M)", pd.Series()), errors="coerce")
+        df = df.dropna(subset=["LAT", "LON"]).reset_index(drop=True)
+        df = df[df["LAT"].between(-90, 90) & df["LON"].between(-180, 180)]
+
+        if df.empty:
+            raise ValueError(
+                f"No RAWS stations found in NOAA ISD for states {states}. "
+                "Consider using SynopticData (SYNOPTIC_TOKEN in .env) for better coverage."
+            )
+
+        gdf = gpd.GeoDataFrame(
+            {
+                "station_id":  df["USAF"].values,
+                "name":        df["STATION NAME"].values,
+                "state":       df["ST"].values,
+                "network":     "RAWS",
+                "elevation_m": df["ELEV(M)"].values,
+                "source":      "NOAA ISD",
+            },
+            geometry=gpd.points_from_xy(df["LON"], df["LAT"]),
+            crs=CRS_GEOGRAPHIC,
+        )
+        log.info("NOAA ISD: loaded %d RAWS stations", len(gdf))
+        return gdf
+
+    @_retry
+    def _fetch():
+        try:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        except FileExistsError:
+            pass
+
+        if synoptic_token:
+            try:
+                return _fetch_synoptic()
+            except Exception as exc:
+                log.warning(
+                    "SynopticData fetch failed (%s) — falling back to NOAA ISD.", exc
+                )
+        return _fetch_isd()
+
+    return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 

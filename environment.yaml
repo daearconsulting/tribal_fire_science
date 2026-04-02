@@ -76,9 +76,10 @@ dependencies:
   - black>=23.0
   - flake8>=6.1
 
-  # EPA Keys
+  # Keys
   - EPA_AQS_EMAIL=your@email.com
   - EPA_AQS_KEY=your_key
+  - SYNOPTIC_TOKEN=your_token
 
   - pip
   - pip:

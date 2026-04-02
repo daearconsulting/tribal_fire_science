@@ -216,6 +216,22 @@ SOURCES: dict[str, DataSource] = {
         fair_notes="REST API, versioned annual releases, requires free API key.",
         attribution="US Census Bureau, American Community Survey.",
     ),
+    "raws_stations": DataSource(
+        name="RAWS Fire Weather Station Network",
+        url="https://raws.dri.edu/",
+        steward="Western Regional Climate Center / USDA Forest Service / BLM / BIA",
+        tribal_data=False,
+        license="Public domain (federal government)",
+        fair_notes=(
+            "Station locations available via SynopticData API (free token) or NOAA ISD CSV. "
+            "Operated by USFS, BLM, BIA, NPS, and some Tribal nations. "
+            "Coverage gaps on Tribal and rural lands are a known limitation."
+        ),
+        attribution=(
+            "Remote Automated Weather Stations (RAWS) network. "
+            "Western Regional Climate Center, Desert Research Institute."
+        ),
+    ),
     "epa_aqs": DataSource(
         name="EPA Air Quality System (AQS) Daily PM2.5",
         url="https://aqs.epa.gov/data/api/",
@@ -419,6 +435,7 @@ Tribal Nations before incorporating TEK into new analyses or publications.
 def print_tek_disclaimer() -> None:
     """Print the TEK disclaimer. Use in indigenous_fire_stewardship.ipynb."""
     print(TEK_DISCLAIMER)
+
 
 
 
