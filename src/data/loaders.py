@@ -688,7 +688,7 @@ def load_usgs_wbd_huc8(
 # ── EPA Level III Ecoregions ───────────────────────────────────────────────────
 
 EPA_ECOREGIONS_L3_URL = (
-    "https://geodata.epa.gov/arcgis/rest/services/ORD/NATL_ECO_L3_SIMP/MapServer/0/query"
+    "https://geodata.epa.gov/arcgis/rest/services/ORD/USEPA_Ecoregions_Level_III_and_IV/MapServer/11/query"
 )
 
 
@@ -1504,6 +1504,8 @@ def load_raws_stations(
         return _fetch_isd()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
+
 
 
 

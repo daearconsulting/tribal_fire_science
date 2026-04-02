@@ -1,0 +1,18 @@
+tribe1,tribe2,weight,shared_count,distance_km
+Cherokee,Choctaw,10,6,188.900395151456
+Cherokee,Creek,18,10,97.51037123273186
+Cherokee,Osage,9,5,117.34850215543779
+Cherokee,Chickasaw,2,2,
+Cherokee,Kiowa-Comanche-Apache-Fort Sill Apache,1,1,
+Chickasaw,Choctaw,17,10,171.1510751278595
+Chickasaw,Creek,6,4,174.0799403537304
+Chickasaw,Kiowa-Comanche-Apache-Fort Sill Apache,9,5,151.5737310703944
+Chickasaw,Osage,2,2,
+Choctaw,Creek,9,5,137.37929485042065
+Choctaw,Kiowa-Comanche-Apache-Fort Sill Apache,1,1,
+Choctaw,Osage,1,1,
+Colville,Warm Springs,1,1,
+Creek,Osage,10,6,114.07952224388754
+Creek,Kiowa-Comanche-Apache-Fort Sill Apache,2,2,
+Fort Apache,San Carlos,7,4,66.62318816105466
+Kiowa-Comanche-Apache-Fort Sill Apache,Osage,2,2,
