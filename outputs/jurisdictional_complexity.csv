@@ -1,0 +1,11 @@
+NAME,fire_count,fire_risk_score,num_agency_types,num_features,shannon_diversity,largest_owner_pct,fragmentation_idx,governance_complexity_score,complexity_category,quadrant
+Cherokee,97,4.71,0,0,0.0,0.0,0.0,0.0,,"Q2: Low Risk, High Complexity (Inefficient)"
+Chickasaw,74,3.59,0,0,0.0,0.0,0.0,0.0,,"Q2: Low Risk, High Complexity (Inefficient)"
+Choctaw,206,10.0,0,0,0.0,0.0,0.0,0.0,,"Q1: High Risk, High Complexity (CRITICAL)"
+Colville,71,3.45,0,0,0.0,0.0,0.0,0.0,,"Q2: Low Risk, High Complexity (Inefficient)"
+Creek,125,6.07,0,0,0.0,0.0,0.0,0.0,,"Q1: High Risk, High Complexity (CRITICAL)"
+Fort Apache,104,5.05,3,5,1.055,40.0,50.4,46.5,Moderate,"Q1: High Risk, High Complexity (CRITICAL)"
+Kiowa-Comanche-Apache-Fort Sill Apache,84,4.08,0,0,0.0,0.0,0.0,0.0,,"Q2: Low Risk, High Complexity (Inefficient)"
+Osage,173,8.4,0,0,0.0,0.0,0.0,0.0,,"Q1: High Risk, High Complexity (CRITICAL)"
+San Carlos,109,5.29,5,8,1.494,37.5,57.1,58.7,Moderate,"Q1: High Risk, High Complexity (CRITICAL)"
+Warm Springs,63,3.06,0,0,0.0,0.0,0.0,0.0,,"Q2: Low Risk, High Complexity (Inefficient)"
