@@ -917,7 +917,7 @@ def load_census_acs_population(
 # http://thredds.northwestknowledge.net:8080/thredds/dodsC/
 
 MACA_BASE_URL = (
-    "http://thredds.northwestknowledge.net:8080/thredds/dodsC/"
+    "https://thredds.northwestknowledge.net/thredds/dodsC/"
     "agg_macav2metdata_{var}_{model}_r1i1p1_{scenario}_CONUS_monthly.nc"
 )
 
@@ -1000,7 +1000,21 @@ def load_maca_projections(
         )
         log.info("Opening MACAv2 OPeNDAP: %s", url)
 
-        ds = xr.open_dataset(url, engine="pydap")
+        # Try netcdf4 engine first (more reliable with THREDDS),
+        # fall back to pydap if not available
+        for engine in ["netcdf4", "pydap"]:
+            try:
+                ds = xr.open_dataset(url, engine=engine)
+                break
+            except Exception as eng_err:
+                log.warning("Engine %s failed: %s", engine, eng_err)
+                continue
+        else:
+            raise RuntimeError(
+                f"Could not open MACAv2 dataset with netcdf4 or pydap engines.\n"
+                f"URL: {url}\n"
+                f"Install netcdf4: conda install netcdf4"
+            )
 
         # Select nearest grid cell
         ds_point = ds.sel(lon=lon % 360, lat=lat, method="nearest")
@@ -1504,6 +1518,8 @@ def load_raws_stations(
         return _fetch_isd()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
+
 
 
 
