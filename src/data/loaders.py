@@ -1,5 +1,5 @@
 """
-loaders.py to fetch and cache real datasets used across notebooks.
+loaders.py — Fetch and cache real datasets used across notebooks.
 
 Design principles
 - Every function fetches from a documented public source (no synthetic data).
@@ -39,7 +39,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# Retry decorator for  public APIs
+# Retry decorator for public APIs 
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -47,10 +47,10 @@ _retry = retry(
 )
 
 
-# Module-level URL constants 
+# Module-level URL constants
 CENSUS_TIGER_BASE = "https://www2.census.gov/geo/tiger"
 
-# Internal helpers
+# Internal helpers 
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
     try:
@@ -92,7 +92,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# NIFC Fire Perimeters
+# NIFC Fire Perimeters 
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -145,13 +145,13 @@ def load_mtbs_perimeters(
     return gdf.reset_index(drop=True)
 
 
-# BIA Tribal Boundaries
+# BIA Tribal Boundaries 
 
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
     BIA land area representations (tribal boundaries).
-    Source: BIA Geospatial — https://biamaps.doi.gov
+    Source: BIA Geospatial: https://biamaps.doi.gov
     """
     def _fetch():
         r = requests.get(BIA_TRIBAL_BOUNDARIES_URL, timeout=60)
@@ -164,7 +164,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# Census TIGER American Indian / Alaska Native Areas
+# Census TIGER American Indian / Alaska Native Areas 
 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -236,7 +236,7 @@ def load_native_land_territories(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# FEMA National Risk Index
+# FEMA National Risk Index 
 
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -299,7 +299,6 @@ def load_noaa_climate_data(
     Requires a free API token from: https://www.ncei.noaa.gov/cdo-web/token
 
     Parameters
-    ----------
     station_ids : list of NOAA station IDs (e.g. ["GHCND:USC00123456"])
     dataset_id  : CDO dataset (e.g. "GHCND", "NORMAL_DLY")
     start_date  : "YYYY-MM-DD"
@@ -341,7 +340,7 @@ GRIDMET_VARIABLES = {
     "fm1000": {"desc": "1000-hr dead fuel moisture", "units_raw": "%",    "units_out": "%"},
 }
 
-# gridMET OPeNDAP base URL — spatial subsetting via index slicing avoids
+# gridMET OPeNDAP base URL with spatial subsetting via index slicing avoids
 # downloading full continental US grids (~200–500 MB per variable per year)
 GRIDMET_OPENDAP_BASE = (
     "http://thredds.northwestknowledge.net:8080/thredds/dodsC/MET/{var}/{var}_{year}.nc"
@@ -445,7 +444,7 @@ def load_gridmet_weather(
                     continue
 
                 ref_ds = year_data[ref_var]
-                # gridMET lat runs N→S (descending), lon runs W→E
+                # gridMET lat runs N-S (descending), lon runs W-E
                 times = ref_ds["day"].values
 
                 def nearest_val(ds, variable, lat, lon):
@@ -468,9 +467,9 @@ def load_gridmet_weather(
                 fm_vals    = nearest_val(year_data.get("fm1000"), "dead_fuel_moisture_1000hr",   lat, lon) if year_data.get("fm1000") else np.full(len(times), np.nan)
 
                 # Unit conversions
-                # K → °F
+                # K to F
                 temp_f = (tmmx_vals - 273.15) * 9 / 5 + 32
-                # m/s → mph
+                # m/s to mph
                 wind_mph = vs_vals * 2.23694
 
                 dates = pd.to_datetime(times)
@@ -538,7 +537,6 @@ def load_hifld_fire_stations(
     https://hifld-geoplatform.opendata.arcgis.com/datasets/fire-stations
 
     Parameters
-    ----------
     state_filter : list of two-letter state abbreviations to filter results
                    (e.g. ["AZ", "NM", "MT"]). If None, returns all CONUS stations.
     force_refresh : re-download even if cache exists
@@ -563,7 +561,7 @@ def load_hifld_fire_stations(
         states = "', '".join(state_filter)
         where_clause = f"STATE IN ('{states}')"
 
-        # Paginate if used: HIFLD service max is 1000 records per request
+        # Paginate: HIFLD service max is 1000 records per request
         all_features = []
         offset = 0
         page_size = 1000
@@ -619,6 +617,7 @@ def load_usgs_wbd_huc8(
     Source: https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4
 
     Parameters
+    ----------
     bbox       : (min_lon, min_lat, max_lon, max_lat) spatial filter
     huc2_codes : list of 2-digit HUC region codes (e.g. ["17", "11"])
                  to limit download. If None, uses bbox only.
@@ -697,7 +696,6 @@ def load_epa_ecoregions_l3(
     Source: https://geodata.epa.gov/arcgis/rest/services/ORD/NATL_ECO_L3_SIMP/MapServer/0
 
     Parameters
-    ----------
     bbox : (min_lon, min_lat, max_lon, max_lat) spatial filter
     """
     cache_name = "epa_ecoregions_l3"
@@ -1048,8 +1046,8 @@ def load_census_counties(force_refresh: bool = False) -> gpd.GeoDataFrame:
 EPA_AQS_BASE = "https://aqs.epa.gov/data/api"
 
 # PM2.5 parameter codes
-# 88101 = PM2.5 Local Conditions (FRM/FEM — highest quality)
-# 88502 = Acceptable PM2.5 (includes non-FRM — better rural coverage)
+# 88101 = PM2.5 Local Conditions (FRM/FEM: highest quality)
+# 88502 = Acceptable PM2.5 (includes non-FRM: better rural coverage)
 EPA_AQS_PM25_PARAMS = ["88101", "88502"]
 
 
@@ -1138,7 +1136,7 @@ def load_census_age_demographics(
     force_refresh: bool = False,
 ) -> "pd.DataFrame":
     """
-    Census ACS 5-year estimates — county-level age demographics.
+    Census ACS 5-year estimates county-level age demographics.
     Returns total population, count 65+, count under 18, and percentages.
     Source: Census ACS Table B01001
 
@@ -1212,7 +1210,6 @@ def load_nhd_flowlines(
     Source: https://hydro.nationalmap.gov/arcgis/rest/services/NHDPlus_HR/MapServer
 
     Parameters
-    ----------
     bbox             : (min_lon, min_lat, max_lon, max_lat)
     min_stream_order : Minimum Strahler stream order to return (default 3 = perennial
                        streams; use 1 for all streams including ephemeral)
@@ -1396,7 +1393,12 @@ def load_raws_stations(
         return gdf
 
     def _fetch_isd():
-        """NOAA ISD fallback: filters US stations with 'RAWS' in name."""
+        """
+        NOAA ISD fallback downloads all US stations for the requested states
+        and filters by common RAWS/fire weather operator keywords.
+        RAWS stations are not consistently named in ISD; broadening the filter
+        captures most fire weather stations even without "RAWS" in the name.
+        """
         from io import StringIO
         log.info("Downloading NOAA ISD station history (RAWS fallback)...")
         r = requests.get(NOAA_ISD_HISTORY_URL, timeout=180)
@@ -1405,12 +1407,11 @@ def load_raws_stations(
         df.columns = df.columns.str.strip()
 
         states_upper = [s.upper() for s in states]
+
+        # Start with all US stations in the requested states
         df = df[
             (df.get("CTRY", pd.Series()) == "US") &
-            (df.get("ST",   pd.Series()).isin(states_upper)) &
-            (df.get("STATION NAME", pd.Series())
-               .str.upper()
-               .str.contains("RAWS", na=False))
+            (df.get("ST",   pd.Series()).isin(states_upper))
         ].copy()
 
         df["LAT"]     = pd.to_numeric(df.get("LAT",     pd.Series()), errors="coerce")
@@ -1419,25 +1420,50 @@ def load_raws_stations(
         df = df.dropna(subset=["LAT", "LON"]).reset_index(drop=True)
         df = df[df["LAT"].between(-90, 90) & df["LON"].between(-180, 180)]
 
-        if df.empty:
+        # Filter by RAWS/fire weather keywords in station name
+        # RAWS are operated by BLM, USFS, NPS, BIA (many don't have "RAWS" in name)
+        RAWS_NAME_KEYWORDS = [
+            "RAWS", "BLM", "USFS", "NPS", "BIA",
+            "FIRE", "RANGER", "DIST",
+        ]
+        name_col = "STATION NAME"
+        if name_col in df.columns:
+            pattern = "|".join(RAWS_NAME_KEYWORDS)
+            df_raws = df[
+                df[name_col].str.upper().str.contains(pattern, na=False)
+            ].copy()
+        else:
+            df_raws = df.copy()
+
+        # If keyword filter is too aggressive, fall back to all stations in states
+        if df_raws.empty:
+            log.warning(
+                "No stations matched RAWS keywords — returning all stations "
+                "in states %s as fallback. Filter manually if needed.", states
+            )
+            df_raws = df.copy()
+
+        if df_raws.empty:
             raise ValueError(
-                f"No RAWS stations found in NOAA ISD for states {states}. "
-                "Consider using SynopticData (SYNOPTIC_TOKEN in .env) for better coverage."
+                f"No stations found in NOAA ISD for states {states}. "
+                "Register for a free SynopticData token at "
+                "https://synopticdata.com/mesonet-api/ and set "
+                "SYNOPTIC_TOKEN in .env for complete RAWS coverage."
             )
 
         gdf = gpd.GeoDataFrame(
             {
-                "station_id":  df["USAF"].values,
-                "name":        df["STATION NAME"].values,
-                "state":       df["ST"].values,
+                "station_id":  df_raws["USAF"].values,
+                "name":        df_raws[name_col].values if name_col in df_raws.columns else [""] * len(df_raws),
+                "state":       df_raws["ST"].values,
                 "network":     "RAWS",
-                "elevation_m": df["ELEV(M)"].values,
+                "elevation_m": df_raws["ELEV(M)"].values,
                 "source":      "NOAA ISD",
             },
-            geometry=gpd.points_from_xy(df["LON"], df["LAT"]),
+            geometry=gpd.points_from_xy(df_raws["LON"], df_raws["LAT"]),
             crs=CRS_GEOGRAPHIC,
         )
-        log.info("NOAA ISD: loaded %d RAWS stations", len(gdf))
+        log.info("NOAA ISD: loaded %d stations", len(gdf))
         return gdf
 
     @_retry
