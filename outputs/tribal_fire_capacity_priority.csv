@@ -1,0 +1,11 @@
+NAME,coverage_pct,gap_pct,has_fire_program,fire_staff_count,priority_score,priority_category
+Choctaw,22.6,77.4,,,60.96000000000001,Medium
+San Carlos,17.9,82.1,True,,47.839999999999996,Medium
+Chickasaw,58.1,41.9,,,46.760000000000005,Medium
+Kiowa-Comanche-Apache-Fort Sill Apache,58.6,41.4,,,46.56,Medium
+Cherokee,63.4,36.6,,,44.64,Medium
+Creek,80.2,19.8,,,37.92,Medium
+Osage,85.3,14.7,,,35.879999999999995,Medium
+Warm Springs,54.6,45.4,True,12.0,30.16,Low
+Fort Apache,75.0,25.0,True,12.0,22.0,Low
+Colville,45.5,54.5,True,20.0,21.8,Low
