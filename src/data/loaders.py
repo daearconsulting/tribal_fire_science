@@ -917,9 +917,16 @@ def load_census_acs_population(
 # http://thredds.northwestknowledge.net:8080/thredds/dodsC/
 
 MACA_BASE_URL = (
-    "https://thredds.northwestknowledge.net/thredds/dodsC/"
-    "agg_macav2metdata_{var}_{model}_r1i1p1_{scenario}_CONUS_monthly.nc"
+    "http://thredds.northwestknowledge.net:8080/thredds/dodsC/"
+    "agg_macav2metdata_{var}_{model}_r1i1p1_{scenario}_{start_year}_{end_year}_CONUS_monthly.nc"
 )
+
+# Year ranges for each scenario
+MACA_YEAR_RANGES = {
+    "historical": ("1950", "2005"),
+    "rcp45":      ("2006", "2099"),
+    "rcp85":      ("2006", "2099"),
+}
 
 # Supported variables
 MACA_VARIABLES = {
@@ -998,6 +1005,8 @@ def load_maca_projections(
         url = MACA_BASE_URL.format(
             var=variable, model=model, scenario=scenario
         )
+        start_year, end_year = MACA_YEAR_RANGES.get(scenario, ("2006", "2099"))
+        url = url.replace("{start_year}", start_year).replace("{end_year}", end_year)
         log.info("Opening MACAv2 OPeNDAP: %s", url)
 
         # Try netcdf4 engine first (more reliable with THREDDS),
@@ -1518,6 +1527,7 @@ def load_raws_stations(
         return _fetch_isd()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
 
 
 
