@@ -1,0 +1,11 @@
+NAME,nearest_km,nearest_station,nearest_network,density_per1000km2,tribal_nearby,coverage_category,stations_25km,stations_50km,stations_100km,gap_score,gap_category
+Cherokee,27.7,CLAREMORE REGIONAL AIRPORT,RAWS,0.637,1,Marginal,0,5,20,16.5,Good
+Chickasaw,21.7,ARDMORE INTERMEDIATE FLD,RAWS,0.668,0,Marginal,1,8,21,13.1,Good
+Choctaw,52.7,MC ALESTER REGIONAL ARPT,RAWS,0.286,0,Poor,0,0,9,41.5,Moderate Gap
+Colville,53.6,OMAK,RAWS,0.127,0,Poor,0,0,4,49.7,Moderate Gap
+Creek,5.9,OKMULGEE RGNL,RAWS,0.7,1,Adequate,2,4,22,6.8,Good
+Fort Apache,37.0,SHOW LOW MUNICIPAL,RAWS,0.191,0,Marginal,0,3,6,41.5,Moderate Gap
+Kiowa-Comanche-Apache-Fort Sill Apache,32.4,ALTUS AFB AIRPORT,RAWS,0.732,0,Marginal,0,14,23,13.1,Good
+Osage,37.1,BARTLESVILLE MUNI,RAWS,0.573,1,Marginal,0,2,18,22.5,Good
+San Carlos,72.1,SAFFORD REGIONAL AIRPORT,RAWS,0.095,0,Poor,0,0,3,56.9,Significant Gap
+Warm Springs,32.0,CITY COUNTY AIRPORT,RAWS,0.382,0,Marginal,0,1,12,30.5,Moderate Gap

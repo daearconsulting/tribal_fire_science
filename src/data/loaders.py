@@ -1475,7 +1475,7 @@ def load_raws_stations(
             {
                 "station_id":  df_raws["USAF"].values,
                 "name":        df_raws[name_col].values if name_col in df_raws.columns else [""] * len(df_raws),
-                "state":       df_raws["ST"].values,
+                "state":       df_raws[state_col].values,
                 "network":     "RAWS",
                 "elevation_m": df_raws["ELEV(M)"].values,
                 "source":      "NOAA ISD",
@@ -1503,4 +1503,5 @@ def load_raws_stations(
         return _fetch_isd()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
 
