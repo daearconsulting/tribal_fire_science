@@ -791,9 +791,10 @@ def load_blm_sma(
         page_size = 1000
 
         while True:
+            # BLM SMA endpoint rejects combined WHERE + spatial filter (returns 400).
+            # Use spatial filter only — no where clause.
             params = {
-                "where":             "1=1",
-                "outFields":         "ADMIN_AGENCY_CODE,ADMIN_UNIT_NAME,BLM_STATE_CODE",
+                "outFields":         "ADMIN_AGENCY_CODE,ADMIN_UNIT_NAME,ADMIN_ST",
                 "f":                 "geojson",
                 "returnGeometry":    "true",
                 "resultRecordCount": page_size,
@@ -1503,5 +1504,6 @@ def load_raws_stations(
         return _fetch_isd()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
 
 
