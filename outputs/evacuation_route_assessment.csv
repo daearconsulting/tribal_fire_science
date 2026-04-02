@@ -265,7 +265,7 @@ RTE_0262,Payson-Show Low Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0263,Payson-Show Low Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0264,Payson-Show Low Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0265,Payson-Show Low Highway,Primary,0.5,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0266,North Clark Road,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0266,Payson-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0267,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0268,South White Mountain Road,Primary,1.11,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0269,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
@@ -444,7 +444,7 @@ RTE_0441,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
 RTE_0442,North Chief Avenue,Secondary,0.84,0.0,0.0,0.0,0.0,0.0,400
 RTE_0443,North Chief Avenue,Secondary,0.09,0.0,0.09,0.0,100.0,100.0,400
 RTE_0444,North Chief Avenue,Secondary,1.28,0.0,1.28,0.0,100.0,100.0,400
-RTE_0445,North Clark Road,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0445,Payson-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0446,North Clark Road,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0447,Carrizo-Whiteriver-Indian Pine Highway,Secondary,2.31,0.0,0.0,0.0,0.0,0.0,400
 RTE_0448,Carrizo-Whiteriver-Indian Pine Highway,Secondary,8.37,0.0,0.0,0.0,0.0,0.0,400
@@ -522,7 +522,7 @@ RTE_0519,Pinedale Road,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
 RTE_0520,Pinedale Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
 RTE_0521,Payson-Show Low Highway,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0522,Payson-Show Low Highway,Primary,0.76,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0523,South White Mountain Road,Primary,0.62,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0523,West White Mountain Boulevard,Primary,0.62,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0524,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0525,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
 RTE_0526,Penrod Road,Secondary,8.42,0.0,0.0,0.0,0.0,0.0,400
@@ -600,7 +600,7 @@ RTE_0597,Globe-Show Low Highway,Primary,3.02,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0598,Globe-Show Low Highway,Primary,7.28,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0599,West White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0600,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0601,Carrizo-Whiteriver-Indian Pine Highway,Secondary,8.37,0.0,0.0,0.0,0.0,0.0,400
+RTE_0601,North Chief Avenue,Secondary,8.37,0.0,0.0,0.0,0.0,0.0,400
 RTE_0602,North Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
 RTE_0603,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0604,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
@@ -704,10 +704,10 @@ RTE_0701,Show Low-Springerville-East Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,12
 RTE_0702,Show Low-Springerville-East Highway,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0703,Show Low-McNary-Eagar Highway,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
 RTE_0704,Show Low-McNary-Eagar Highway,Secondary,4.51,0.0,0.0,0.0,0.0,0.0,400
-RTE_0705,Show Low-McNary-Eagar Highway,Secondary,7.3,0.0,0.0,0.0,0.0,0.0,400
+RTE_0705,Pine Street,Secondary,7.3,0.0,0.0,0.0,0.0,0.0,400
 RTE_0706,Show Low-McNary-Eagar Highway,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
 RTE_0707,Pine Street,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0708,Show Low-McNary-Eagar Highway,Secondary,7.3,0.0,0.0,0.0,0.0,0.0,400
+RTE_0708,Pine Street,Secondary,7.3,0.0,0.0,0.0,0.0,0.0,400
 RTE_0709,RTE_0709,Secondary,4.24,0.0,0.0,0.0,0.0,0.0,400
 RTE_0710,RTE_0710,Secondary,6.4,0.0,0.0,0.0,0.0,0.0,400
 RTE_0711,Show Low-Springerville-East Highway,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
@@ -761,7 +761,7 @@ RTE_0758,County Road 3148,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
 RTE_0759,County Road 3148,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
 RTE_0760,Ortega Lake-St. Johns Highway,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0761,Ortega Lake-St. Johns Highway,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0762,Show Low-McNary-Eagar Highway,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
+RTE_0762,Pine Street,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
 RTE_0763,Pine Street,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
 RTE_0764,RTE_0764,Secondary,1.45,0.0,0.0,0.0,0.0,0.0,400
 RTE_0765,RTE_0765,Secondary,1.68,0.0,0.0,0.0,0.0,0.0,400
@@ -824,7 +824,7 @@ RTE_0821,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0
 RTE_0822,Show Low-McNary-Eagar Highway,Primary,0.41,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0823,Show Low-McNary-Eagar Highway,Secondary,0.97,0.0,0.0,0.0,0.0,0.0,400
 RTE_0824,Show Low-McNary-Eagar Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0825,Show Low-McNary-Eagar Highway,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
+RTE_0825,Pine Street,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
 RTE_0826,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
 RTE_0827,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
 RTE_0828,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
