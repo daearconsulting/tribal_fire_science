@@ -1,0 +1,51 @@
+NAME,period,scenario,fw_months_mean,fw_months_min,fw_months_max,fw_months_historical,delta_from_baseline
+Cherokee,End-Century,rcp45,2.41,0,5,0.47,1.94
+Cherokee,End-Century,rcp85,3.23,0,5,0.47,2.76
+Cherokee,Historical,historical,0.47,0,2,0.47,0.0
+Cherokee,Mid-Century,rcp45,1.99,0,4,0.47,1.52
+Cherokee,Mid-Century,rcp85,2.32,0,4,0.47,1.85
+Chickasaw,End-Century,rcp45,2.73,0,5,0.47,2.26
+Chickasaw,End-Century,rcp85,3.54,1,5,0.47,3.07
+Chickasaw,Historical,historical,0.47,0,2,0.47,0.0
+Chickasaw,Mid-Century,rcp45,2.32,0,5,0.47,1.85
+Chickasaw,Mid-Century,rcp85,2.51,0,5,0.47,2.04
+Choctaw,End-Century,rcp45,2.32,0,5,0.47,1.85
+Choctaw,End-Century,rcp85,3.11,0,5,0.47,2.64
+Choctaw,Historical,historical,0.47,0,2,0.47,0.0
+Choctaw,Mid-Century,rcp45,1.92,0,4,0.47,1.45
+Choctaw,Mid-Century,rcp85,2.19,0,4,0.47,1.72
+Colville,End-Century,rcp45,0.16,0,1,0.47,-0.31
+Colville,End-Century,rcp85,1.23,0,2,0.47,0.76
+Colville,Historical,historical,0.47,0,2,0.47,0.0
+Colville,Mid-Century,rcp45,0.06,0,1,0.47,-0.41
+Colville,Mid-Century,rcp85,0.29,0,2,0.47,-0.18
+Creek,End-Century,rcp45,2.62,0,5,0.47,2.15
+Creek,End-Century,rcp85,3.41,0,5,0.47,2.94
+Creek,Historical,historical,0.47,0,2,0.47,0.0
+Creek,Mid-Century,rcp45,2.21,0,4,0.47,1.74
+Creek,Mid-Century,rcp85,2.38,0,4,0.47,1.91
+Fort Apache,End-Century,rcp45,0.94,0,4,0.47,0.47
+Fort Apache,End-Century,rcp85,2.58,0,5,0.47,2.11
+Fort Apache,Historical,historical,0.47,0,2,0.47,0.0
+Fort Apache,Mid-Century,rcp45,0.76,0,3,0.47,0.29
+Fort Apache,Mid-Century,rcp85,1.27,0,4,0.47,0.8
+Kiowa-Comanche-Apache-Fort Sill Apache,End-Century,rcp45,3.22,1,5,0.47,2.75
+Kiowa-Comanche-Apache-Fort Sill Apache,End-Century,rcp85,3.98,2,6,0.47,3.51
+Kiowa-Comanche-Apache-Fort Sill Apache,Historical,historical,0.47,0,2,0.47,0.0
+Kiowa-Comanche-Apache-Fort Sill Apache,Mid-Century,rcp45,2.87,1,5,0.47,2.4
+Kiowa-Comanche-Apache-Fort Sill Apache,Mid-Century,rcp85,3.16,1,5,0.47,2.69
+Osage,End-Century,rcp45,2.52,0,5,0.47,2.05
+Osage,End-Century,rcp85,3.34,1,5,0.47,2.87
+Osage,Historical,historical,0.47,0,2,0.47,0.0
+Osage,Mid-Century,rcp45,2.1,0,4,0.47,1.63
+Osage,Mid-Century,rcp85,2.44,0,4,0.47,1.97
+San Carlos,End-Century,rcp45,1.97,0,4,0.47,1.5
+San Carlos,End-Century,rcp85,3.41,0,5,0.47,2.94
+San Carlos,Historical,historical,0.47,0,2,0.47,0.0
+San Carlos,Mid-Century,rcp45,1.72,0,4,0.47,1.25
+San Carlos,Mid-Century,rcp85,2.24,0,4,0.47,1.77
+Warm Springs,End-Century,rcp45,0.21,0,2,0.47,-0.26
+Warm Springs,End-Century,rcp85,1.28,0,3,0.47,0.81
+Warm Springs,Historical,historical,0.47,0,2,0.47,0.0
+Warm Springs,Mid-Century,rcp45,0.08,0,1,0.47,-0.39
+Warm Springs,Mid-Century,rcp85,0.34,0,2,0.47,-0.13

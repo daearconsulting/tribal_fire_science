@@ -916,17 +916,19 @@ def load_census_acs_population(
 # Source: Northwest Knowledge Network THREDDS
 # http://thredds.northwestknowledge.net:8080/thredds/dodsC/
 
-MACA_BASE_URL = (
-    "http://thredds.northwestknowledge.net:8080/thredds/dodsC/"
-    "agg_macav2metdata_{var}_{model}_r1i1p1_{scenario}_{start_year}_{end_year}_CONUS_monthly.nc"
-)
+MACA_THREDDS_BASE = "http://thredds.northwestknowledge.net:8080/thredds/dodsC/"
 
-# Year ranges for each scenario
+# Year ranges per scenario — part of filename on NKN THREDDS
 MACA_YEAR_RANGES = {
     "historical": ("1950", "2005"),
     "rcp45":      ("2006", "2099"),
     "rcp85":      ("2006", "2099"),
 }
+
+def _maca_url(var, model, scenario):
+    start, end = MACA_YEAR_RANGES.get(scenario, ("2006", "2099"))
+    fname = f"agg_macav2metdata_{var}_{model}_r1i1p1_{scenario}_{start}_{end}_CONUS_monthly.nc"
+    return MACA_THREDDS_BASE + fname
 
 # Supported variables
 MACA_VARIABLES = {
@@ -1002,11 +1004,7 @@ def load_maca_projections(
         except FileExistsError:
             pass
 
-        url = MACA_BASE_URL.format(
-            var=variable, model=model, scenario=scenario
-        )
-        start_year, end_year = MACA_YEAR_RANGES.get(scenario, ("2006", "2099"))
-        url = url.replace("{start_year}", start_year).replace("{end_year}", end_year)
+        url = _maca_url(variable, model, scenario)
         log.info("Opening MACAv2 OPeNDAP: %s", url)
 
         # Try netcdf4 engine first (more reliable with THREDDS),
@@ -1037,6 +1035,14 @@ def load_maca_projections(
         var_name = [v for v in ds_point.data_vars][0]
         series   = ds_point[var_name].to_series().reset_index()
         series   = series.rename(columns={var_name: variable})
+
+        # MACAv2 uses cftime.DatetimeNoLeap — convert to standard datetime strings
+        # to avoid Arrow serialization errors when caching as parquet/GeoJSON
+        if hasattr(series["time"].iloc[0], "year"):
+            series["time"] = series["time"].apply(
+                lambda t: f"{t.year:04d}-{t.month:02d}-{t.day:02d}"
+            )
+        series["time"] = pd.to_datetime(series["time"])
 
         ds.close()
         return series
@@ -1527,6 +1533,7 @@ def load_raws_stations(
         return _fetch_isd()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
+
 
 
 
