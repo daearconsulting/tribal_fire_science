@@ -1,5 +1,5 @@
 """
-charts.py Reusable chart helpers for Tribal fire science notebooks.
+charts.py: reusable chart helpers for Tribal fire science notebooks.
 """
 
 from __future__ import annotations
@@ -112,9 +112,8 @@ def fast_fire_scatter(
     Scatter plot for fast-fire events.
 
     Parameters
-    ----------
-    size_col  : column to scale marker size (e.g. total acres)
-    color_col : column for marker color intensity (e.g. spread rate)
+    size_col  : column to scale marker size (ex. total acres)
+    color_col : column for marker color intensity (ex. spread rate)
     """
     _, ax = plt.subplots(figsize=figsize)
 

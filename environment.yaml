@@ -32,7 +32,7 @@ dependencies:
   - pyarrow>=13.0         # parquet support for caching
   - h5py>=3.10
 
-  # Climate / gridded data (gridMET via OPeNDAP)
+  # Climate/gridded data (gridMET via OPeNDAP)
   - xarray>=2023.6
   - dask>=2023.6
   - netcdf4>=1.6          # NetCDF engine for xarray
@@ -52,13 +52,13 @@ dependencies:
   - ipywidgets>=8.1
   - notebook>=7.0
 
-  # HTTP / data fetching
+  # HTTP/data fetching
   - requests>=2.31
   - httpx>=0.25
   - aiohttp>=3.9          # async fetching for large datasets
 
   # APIs and file formats
-  - boto3>=1.34            # S3 / cloud data sources
+  - boto3>=1.34            # S3/cloud data sources
   - openpyxl>=3.1
   - xlrd>=2.0
   - lxml>=4.9

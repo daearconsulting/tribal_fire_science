@@ -9,16 +9,12 @@
 
 [![DOI](https://zenodo.org/badge/1170268849.svg)](https://doi.org/10.5281/zenodo.19265139)
 
----
-
 ## Why This Repo Exists
-
 Tribal nations face disproportionate wildfire risk, yet most fire science tools and datasets are built without Tribal input and applied without Tribal oversight. This project exists to change that by providing open, reproducible, and sovereignty-conscious tools for Tribal-led fire research and land management.
 
 All analysis uses real, documented public data sources. No synthetic data. All code is modular and designed to be extended by Tribal colleges, land managers, and researchers working at the intersection of Indigenous data sovereignty and fire science.
 
 ## Notebooks
-
 | Notebook | Description |
 |---|---|
 | `historical_fast_fires_tribal.ipynb` | Historical wildfire analysis (MTBS 1984–present) on and near Tribal lands (frequency, severity, and risk scores) by tribe |
@@ -60,7 +56,6 @@ Open `notebooks/historical_fast_fires_tribal.ipynb` and run all cells.
 The Census TIGER tribal boundaries will download and cache automatically on first run.
 
 ## Data Setup
-
 | Dataset | How to obtain | Loader |
 |---|---|---|
 | Census TIGER AIANNH | Auto-downloads on first run | `loaders.load_census_aian()` |
@@ -99,8 +94,8 @@ tribal_fire_science/
 │   ├── __init__.py          # Exposes REPO_ROOT
 │   ├── data/
 │   │   ├── constants.py     # Paths, CRS, source URLs, thresholds
-│   │   ├── loaders.py       # Fetch + cache functions for every dataset
-│   │   └── validators.py    # Data integrity checks — no synthetic fallbacks
+│   │   ├── loaders.py       # Fetch and cache functions for every dataset
+│   │   └── validators.py    # Data integrity checks: no synthetic fallbacks
 │   ├── viz/
 │   │   ├── styles.py        # Color palettes, design tokens, mpl rcParams
 │   │   ├── maps.py          # Folium base maps, tribal layers, choropleths
@@ -137,22 +132,20 @@ from src.indigenous.sovereignty import print_data_acknowledgment
 ```
 
 ## Workflows
-
 This repo supports the following Tribal fire research and management workflows.
 See [`workflows.md`](workflows.md) for full detail on inputs, steps, and tools for each.
 
 | Workflow | Purpose |
 |---|---|
-| Historical Fire Analysis & Risk Mapping | Understand past fire behavior to predict future risk |
-| Fire Behavior Simulation | Model fire spread using FARSITE / FlamMap under varying conditions |
-| Fire Impact on Cultural & Ecological Resources | Protect sacred sites, heritage areas, and ecocultural plants |
-| Real-Time Fire Monitoring & Early Warning | Track active fires and generate dynamic risk alerts |
-| Prescribed Burn Planning & Optimization | Support controlled burns for ecosystem restoration |
+| Historical Fire Analysis and Risk Mapping | Understand past fire behavior to predict future risk |
+| Fire Behavior Simulation | Model fire spread using FARSITE/FlamMap under varying conditions |
+| Fire Impact on Cultural and Ecological Resources | Protect sacred sites, heritage areas, and ecocultural plants |
+| Real-Time Fire Monitoring and Early Warning | Track active fires and generate dynamic risk alerts |
+| Prescribed Burn Planning and Optimization | Support controlled burns for ecosystem restoration |
 | Climate Change & Fire Regime Projection | Assess how shifting climate affects Tribal fire risk |
 | Multi-Scale Decision Support Dashboard | Centralize fire data for Tribal land management decisions |
 
 ## Data Sovereignty
-
 This project is guided by three complementary data governance frameworks:
 
 **OCAP®** (First Nations Information Governance Centre): Tribal Nations own, control, access, and possess data about their own communities and territories. [https://fnigc.ca/ocap-training/](https://fnigc.ca/ocap-training/)
@@ -162,16 +155,14 @@ This project is guided by three complementary data governance frameworks:
 **FAIR** (FORCE11): Data is Findable, Accessible, Interoperable, and Reusable. FAIR governs technical data standards; CARE and OCAP® govern the ethical obligations to Tribal Nations that FAIR alone does not address. [https://www.go-fair.org/fair-principles/](https://www.go-fair.org/fair-principles/)
 
 We recognize that:
-
 - Tribal Nations are sovereign governments with the right to control data about their own communities and territories
 - Federal and third-party boundaries (Census, BIA) are for analysis only and do not represent Tribal self-definition of territory
 - Traditional Ecological Knowledge belongs to the communities that hold it and is not treated as extractable data
-- This work is intended to support — not replace — Tribal-led fire science
+- This work is intended to support Tribal-led fire science
 
 `src/indigenous/sovereignty.py` contains data attribution metadata, OCAP®/CARE/FAIR governance notes per dataset, and a TEK disclaimer. Call `print_data_acknowledgment()` at the top of every notebook that uses Tribal data sources.
 
 ## Citation
-
 If you use this software, please cite it as:
 
 ```
@@ -183,7 +174,6 @@ https://orcid.org/0009-0003-0022-1452 · https://orcid.org/0000-0002-7127-2084
 Or see [`citation.cff`](citation.cff) for machine-readable citation metadata.
 
 ## Acknowledgments
-
 This work adheres to Tribal data sovereignty principles and Indigenous communities. We gratefully acknowledge the nations whose lands and fire histories are represented in these analyses, and whose knowledge systems inform this work far beyond what any dataset can capture.
 
 Developed by Lilly Jones, PhD ([Daear Consulting, LLC](https://github.com/daearconsulting))

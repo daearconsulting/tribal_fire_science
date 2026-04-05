@@ -28,9 +28,9 @@ for _d in [RAW_DIR, INTERIM_DIR, FINAL_DIR, CACHE_DIR, OUTPUTS_DIR]:
 
 
 # Coordinate Reference Systems (CRS)
-CRS_GEOGRAPHIC = "EPSG:4326"    # WGS 84 lat/lon for web maps / APIs
+CRS_GEOGRAPHIC = "EPSG:4326"    # WGS 84 lat/lon for web maps/APIs
 CRS_PROJECTED  = "EPSG:5070"    # Albers Equal Area Conus area calculations
-CRS_WEB_MERCATOR = "EPSG:3857"  # Web Mercator contextily basemaps
+CRS_WEB_MERCATOR = "EPSG:3857"  # Web Mercator for contextily basemaps
 
 
 # Data source URLs 
@@ -61,11 +61,11 @@ MTBS_PERIMETERS_URL = (
 )
 MTBS_BURNED_AREA_URL = "https://www.mtbs.gov/direct-download"
 
-# US Census TIGER shapefiles
+# US Census TIGER shapefiles American Indian/Alaskan Native areas
 CENSUS_TIGER_BASE = "https://www2.census.gov/geo/tiger"
-CENSUS_AIAN_URL   = f"{CENSUS_TIGER_BASE}/TIGER2023/AIANNH/"  # AI/AN areas
+CENSUS_AIAN_URL   = f"{CENSUS_TIGER_BASE}/TIGER2023/AIANNH/"  
 
-# Red Cross / FEMA Community assets (used in community_assets_at_risk)
+# Red Cross/FEMA Community assets (used in community_assets_at_risk)
 FEMA_NFHL_URL = (
     "https://hazards.fema.gov/gis/nfhl/rest/services/public/NFHL/MapServer"
 )
@@ -79,11 +79,11 @@ WUI_URL = (
     "https://www.fs.usda.gov/rds/archive/catalog/RDS-2015-0047-2"
 )
 
-# NOAA Climate / Red Flag Warning days
+# NOAA Climate/Red Flag Warning days
 NOAA_CLIMATE_URL  = "https://www.ncei.noaa.gov/cdo-web/api/v2/"
 NOAA_RAWS_URL     = "https://raws.nifc.gov/"
 
-# EPA Air quality (smoke / PM2.5)
+# EPA Air quality (smoke/PM2.5)
 EPA_AQS_URL = "https://aqs.epa.gov/data/api/"
 
 # Native Land Digital Tribal territory polygons
@@ -108,7 +108,7 @@ BIA_REGIONS = {
     "WS": "Western",
 }
 
-# Wildfire risk / behavior thresholds 
+# Wildfire risk/behavior thresholds 
 # Fast-fire definition: >10,000 acres in first operational period (source: NIFC)
 FAST_FIRE_ACRES_THRESHOLD = 10_000
 

@@ -39,8 +39,7 @@ def ensure_crs(gdf: gpd.GeoDataFrame, target_crs: str) -> gpd.GeoDataFrame:
     return gdf
 
 
-# Area calculation 
-
+# Area calculation
 def add_area_acres(
     gdf: gpd.GeoDataFrame,
     col_name: str = "calc_acres",
@@ -58,7 +57,6 @@ def add_area_acres(
 
 
 # Bounding box 
-
 def bbox_from_gdf(gdf: gpd.GeoDataFrame, buffer_deg: float = 0.0) -> tuple:
     """
     Return (min_lon, min_lat, max_lon, max_lat) from a GeoDataFrame's total bounds.
@@ -74,7 +72,6 @@ def bbox_geodataframe(bounds: tuple[float, float, float, float], crs: str = CRS_
 
 
 # Spatial join helpers 
-
 def fires_within_tribal_lands(
     fires_gdf: gpd.GeoDataFrame,
     tribal_gdf: gpd.GeoDataFrame,
@@ -86,7 +83,6 @@ def fires_within_tribal_lands(
     Returns fires with tribal attributes attached.
 
     Parameters
-    ----------
     how       : 'inner' (fires that intersect tribal land only) or 'left'
     predicate : 'intersects', 'within', 'contains'
     """
@@ -127,7 +123,6 @@ def overlap_area_fraction(
 
 
 # Tribal land coverage 
-
 def summarize_fire_tribal_overlap(
     fires_gdf: gpd.GeoDataFrame,
     tribal_gdf: gpd.GeoDataFrame,

@@ -1,8 +1,9 @@
 """
-validators.py — Data integrity checks for all loaded datasets.
+validators.py: data integrity checks for all loaded datasets.
 
 Philosophy: If data is missing or malformed, raise error, never substitute
-synthetic data. Notebooks should be explicit about data provenance.
+synthetic data. Notebooks should be explicit about data provenance in compliance with
+IEEE 2890 (Recommended Practice for Provenance of Indigenous Peoples’ Data)
 """
 
 from __future__ import annotations
@@ -34,9 +35,7 @@ def validate_geodataframe(
 ) -> gpd.GeoDataFrame:
     """
     Run standard checks on a GeoDataFrame.
-
     Raises
-    ------
     ValueError  : if shape, columns, or CRS don't meet expectations
     """
     if gdf is None or len(gdf) == 0:

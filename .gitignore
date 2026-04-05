@@ -36,7 +36,7 @@ MANIFEST
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Unit test/coverage reports
 htmlcov/
 .tox/
 .nox/
@@ -55,17 +55,17 @@ cover/
 *.mo
 *.pot
 
-# Django stuff:
+# Django:
 *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
-# Flask stuff:
+# Flask:
 instance/
 .webassets-cache
 
-# Scrapy stuff:
+# Scrapy:
 .scrapy
 
 # Sphinx documentation
@@ -124,7 +124,7 @@ ipython_config.py
 #   in the .venv directory. It is recommended not to include this directory in version control.
 .pixi
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+# PEP 582; used by github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
 
 # Celery stuff
@@ -188,7 +188,7 @@ cython_debug/
 #  you could uncomment the following to ignore the entire vscode folder
 # .vscode/
 
-# Ruff stuff:
+# Ruff:
 .ruff_cache/
 
 # PyPI configuration file
@@ -218,7 +218,7 @@ data/final/
 !data/cache/.gitkeep
 !data/final/.gitkeep
 
-# API keys / secrets (use .env, never commit)
+# API keys/secrets (use .env, never commit)
 .env
 *.env
 secrets.yml
@@ -230,7 +230,7 @@ __pycache__/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Outputs — large figures/exports
+# Outputs: for large figures/exports
 outputs/*.png
 outputs/*.pdf
 outputs/*.html

@@ -1,5 +1,5 @@
 """
-styles.py — Color palettes and design tokens for Tribal Fire Science notebooks.
+styles.py: color palettes and design tokens for Tribal Fire Science notebooks.
 
 Palette philosophy
 Earth/fire tones drawn from landscape, not generic "fire red" stock palettes.
@@ -10,22 +10,22 @@ unintended cultural associations.
 from __future__ import annotations
 
 # Primary palette 
-FIRE_ORANGE   = "#E8622A"   # active fire / high risk
-EMBER_RED     = "#C0392B"   # burned / severe
-SMOKE_GRAY    = "#7F8C8D"   # smoke / suppressed
-ASH_WHITE     = "#ECF0F1"   # ash / low risk background
-EARTH_BROWN   = "#6D4C41"   # land / tribal boundary
-SKY_BLUE      = "#2980B9"   # water / cool
-SAGE_GREEN    = "#7D9B5E"   # unburned vegetation / managed land
-CHARCOAL      = "#2C2C2C"   # text / outlines
+FIRE_ORANGE   = "#E8622A"   # active fire/high risk
+EMBER_RED     = "#C0392B"   # burned/severe
+SMOKE_GRAY    = "#7F8C8D"   # smoke/suppressed
+ASH_WHITE     = "#ECF0F1"   # ash/low risk background
+EARTH_BROWN   = "#6D4C41"   # land/tribal boundary
+SKY_BLUE      = "#2980B9"   # water/cool
+SAGE_GREEN    = "#7D9B5E"   # unburned vegetation/managed land
+CHARCOAL      = "#2C2C2C"   # text/outlines
 
-# Sequential ramp — fire risk (low to high) 
+# Sequential ramp fire risk (low to high) 
 FIRE_RISK_RAMP = [
     "#FFFFCC",  # very low
     "#FECC5C",  # low
     "#FD8D3C",  # moderate
     "#F03B20",  # high
-    "#BD0026",  # very high / extreme
+    "#BD0026",  # very high/extreme
 ]
 
 # Diverging ramp: change over time 
