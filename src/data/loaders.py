@@ -757,12 +757,12 @@ def load_blm_sma(
     force_refresh: bool = False,
 ) -> gpd.GeoDataFrame:
     """
-    BLM Surface Management Agency (SMA) dataset — federal land ownership.
+    BLM Surface Management Agency (SMA) dataset for federal land ownership.
     Includes BLM, USFS, NPS, FWS, BIA, DOD, state, and private surface ownership.
     Source: https://gbp-blm-egis.hub.arcgis.com/
 
     Parameters
-    bbox : (min_lon, min_lat, max_lon, max_lat) — required, clips to study area
+    bbox : (min_lon, min_lat, max_lon, max_lat) required, clips to study area
     """
     if bbox is None:
         raise ValueError("bbox is required for load_blm_sma to limit download size.")
@@ -862,7 +862,7 @@ def load_census_acs_population(
     force_refresh: bool = False,
 ) -> pd.DataFrame:
     """
-    Census American Community Survey (ACS) 5-year estimates — county population.
+    Census American Community Survey (ACS) 5-year estimates of county population.
     Source: https://api.census.gov/data/
 
     Parameters
@@ -904,7 +904,7 @@ def load_census_acs_population(
 
 MACA_THREDDS_BASE = "http://thredds.northwestknowledge.net:8080/thredds/dodsC/"
 
-# Year ranges per scenario — part of filename on NKN THREDDS
+# Year ranges per scenario: part of filename on NKN THREDDS
 MACA_YEAR_RANGES = {
     "historical": ("1950", "2005"),
     "rcp45":      ("2006", "2099"),
