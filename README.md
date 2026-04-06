@@ -24,8 +24,11 @@ All analysis uses real, documented public data sources. No synthetic data. All c
 | `tribal_fire_capacity_analysis.ipynb` | Assesses fire suppression and response capacity across Tribal nations |
 | `jurisdictional_complexity_analysis.ipynb` | Analyzes overlapping federal, state, and Tribal fire jurisdictions and their management implications |
 | `indigenous_fire_stewardship.ipynb` | Documents and contextualizes Indigenous prescribed fire traditions and their relationship to modern fire management |
-| `funding_resource_alignment.ipynb` | Examines alignment between Tribal fire risk profiles and available federal funding and resources |
+| `fire_weather_monitoring_gaps.ipynb` | Quantifies RAWS monitoring coverage relative to Tribal land, identifies monitoring dead zones, and provides a coverage gap score for federal investment in Tribal fire weather infrastructure |
 | `cross_tribal_collaboration.ipynb` | Identifies opportunities for inter-tribal fire management coordination based on shared risk and geography |
+| `climate_projections_tribal_fire_weather.ipynb` | Analyze fire history, capacity gaps, and structural risk based on current and historical conditions |
+| `postfire_watershed_vulnerability.ipynb` | Burned watersheds are highly vulnerable to erosion, debris flows, and drinking water contamination. Tribal Nations in headwater areas face compounding risks when fire burns upstream of water supply infrastructure |
+| `smoke_air_quality_exposure.ipynb` | Wildfire smoke measured as fine particulate matter (PM2.5) is a direct, measurable public health impact that connects fire science to community health outcomes |
 
 ## Getting Started
 
