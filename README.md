@@ -174,9 +174,11 @@ https://orcid.org/0009-0003-0022-1452 · https://orcid.org/0000-0002-7127-2084
 Or see [`citation.cff`](citation.cff) for machine-readable citation metadata.
 
 ## Acknowledgments
-This work adheres to Tribal data sovereignty principles and Indigenous communities. We gratefully acknowledge the nations whose lands and fire histories are represented in these analyses, and whose knowledge systems inform this work far beyond what any dataset can capture.
+This work adheres to Tribal data sovereignty principles. We gratefully acknowledge the nations whose lands and fire histories are represented in these analyses, and whose knowledge systems inform this work far beyond what any dataset can capture. We gratefully acknowledge the Tribal data sovereignty work by Tribal members and thought leaders, including the authors of CARE, FAIR, OCAP®, Local Contexts, and IEEE 2890-2025.  
 
-Developed by Lilly Jones, PhD ([Daear Consulting, LLC](https://github.com/daearconsulting))
+Developed by Lilly Jones, PhD ([Daear Consulting, LLC](https://github.com/daearconsulting)), in consultation with 
+James Sanovia, MS ([Daear Consulting, LLC](https://github.com/daearconsulting)), enrolled member of the Rosebud Sioux Tribe (Sicangu Lakota Oyate). 
+
 
 
 
