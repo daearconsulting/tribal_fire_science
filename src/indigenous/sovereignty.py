@@ -110,7 +110,7 @@ SOURCES: dict[str, DataSource] = {
     "mtbs": DataSource(
         name="Monitoring Trends in Burn Severity (MTBS)",
         url="https://www.mtbs.gov",
-        steward="USGS / USDA Forest Service",
+        steward="USGS/USDA Forest Service",
         tribal_data=False,
         license="Public domain (federal government)",
         fair_notes="Findable and accessible via direct download. Standard shapefile format.",
@@ -129,7 +129,7 @@ SOURCES: dict[str, DataSource] = {
         ),
         care_notes=(
             "Federal boundary data was not produced under Tribal Authority to Control. "
-            "Use for analytical context only — not for legal, jurisdictional, or "
+            "Use for analytical context only: not for legal, jurisdictional, or "
             "policy claims without Tribal review and consent."
         ),
         fair_notes="Accessible via WFS endpoint. Schema is consistent across vintages.",
