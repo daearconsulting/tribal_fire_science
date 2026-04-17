@@ -82,782 +82,784 @@ RTE_0079,Carrizo-Whiteriver-Indian Pine Highway,Secondary,10.72,0.0,0.0,0.0,0.0,
 RTE_0080,Globe-Show Low Highway,Primary,15.84,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0081,Globe-Show Low Highway,Primary,3.02,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0082,Pinedale Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0083,RTE_0083,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
-RTE_0084,RTE_0084,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0085,Old Highway 160,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0086,Old Highway 160,Secondary,1.48,0.0,0.0,0.0,0.0,0.0,400
-RTE_0087,Porter Mountain Road,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
-RTE_0088,Porter Mountain Road,Secondary,0.53,0.0,0.0,0.0,0.0,0.0,400
-RTE_0089,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0090,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0091,South White Mountain Road,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0092,South White Mountain Road,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0093,Show Low-Springerville-East Highway,Primary,3.52,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0094,Show Low-Springerville-East Highway,Primary,2.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0095,North Chief Avenue,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0096,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0097,North Chief Avenue,Secondary,0.93,0.0,0.0,0.0,0.0,0.0,400
-RTE_0098,North Chief Avenue,Secondary,0.81,0.0,0.0,0.0,0.0,0.0,400
-RTE_0099,West Deuce of Clubs,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0100,West Deuce of Clubs,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0101,Show Low-Springerville-East Highway,Primary,0.36,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0102,Show Low-Springerville-East Highway,Primary,7.71,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0103,West Deuce of Clubs,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0104,West Deuce of Clubs,Primary,0.59,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0105,South Clark Road,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0106,East White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0107,East White Mountain Boulevard,Primary,1.08,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0108,Porter Mountain Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0109,Porter Mountain Road,Secondary,0.25,0.0,0.0,0.0,0.0,0.0,400
-RTE_0110,West White Mountain Boulevard,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0111,West White Mountain Boulevard,Primary,0.65,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0112,North Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0113,North Chief Avenue,Secondary,0.93,0.0,0.0,0.0,0.0,0.0,400
-RTE_0114,North Chief Avenue,Secondary,0.37,0.0,0.0,0.0,0.0,0.0,400
-RTE_0115,North Chief Avenue,Secondary,0.41,0.0,0.33,0.0,79.8,79.8,400
-RTE_0116,East Deuce of Clubs,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0117,East Deuce of Clubs,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0118,Payson-Show Low Highway,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0119,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0120,North Chief Avenue,Secondary,0.13,0.0,0.13,0.0,100.0,100.0,400
-RTE_0121,North Chief Avenue,Secondary,1.5,0.0,1.5,0.0,100.0,100.0,400
-RTE_0122,Globe-Show Low Highway,Primary,3.42,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0123,Globe-Show Low Highway,Primary,15.84,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0124,Pinedale Road,Secondary,0.22,0.0,0.0,0.0,0.0,0.0,400
-RTE_0125,Pinedale Road,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0126,RTE_0126,Secondary,0.76,0.0,0.0,0.0,0.0,0.0,400
-RTE_0127,Old Highway 160,Secondary,1.48,0.0,0.0,0.0,0.0,0.0,400
-RTE_0128,RTE_0128,Secondary,0.74,0.0,0.0,0.0,0.0,0.0,400
-RTE_0129,RTE_0129,Secondary,0.76,0.0,0.0,0.0,0.0,0.0,400
-RTE_0130,RTE_0130,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0131,RTE_0131,Secondary,0.74,0.0,0.0,0.0,0.0,0.0,400
-RTE_0132,RTE_0132,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0133,RTE_0133,Secondary,1.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0134,North Chief Avenue,Secondary,0.53,0.0,0.0,0.0,0.0,0.0,400
-RTE_0135,North Chief Avenue,Secondary,0.84,0.0,0.0,0.0,0.0,0.0,400
-RTE_0136,Bourdon Ranch Road,Secondary,3.8,0.0,0.0,0.0,0.0,0.0,400
-RTE_0137,Show Low-Springerville-East Highway,Primary,7.71,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0138,Show Low-Springerville-East Highway,Primary,3.52,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0139,North Chief Avenue,Secondary,1.28,0.0,1.28,0.0,100.0,100.0,400
-RTE_0140,North Chief Avenue,Secondary,0.94,0.0,0.03,0.0,3.3,3.3,400
-RTE_0141,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0142,Penrod Road,Secondary,0.69,0.0,0.0,0.0,0.0,0.0,400
-RTE_0143,Penrod Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0144,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0145,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0146,South White Mountain Road,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0147,North Chief Avenue,Secondary,0.94,0.0,0.03,0.0,3.3,3.3,400
-RTE_0148,North Chief Avenue,Secondary,0.49,0.0,0.0,0.0,0.0,0.0,400
-RTE_0149,Old Highway 160,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0150,RTE_0150,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0151,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0152,West White Mountain Boulevard,Primary,0.84,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0153,East White Mountain Boulevard,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0154,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0155,North Chief Avenue,Secondary,0.24,0.0,0.24,0.0,100.0,100.0,400
-RTE_0156,North Chief Avenue,Secondary,0.88,0.0,0.88,0.0,100.0,100.0,400
-RTE_0157,West White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0158,East White Mountain Boulevard,Primary,0.78,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0159,West White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0160,West White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0161,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0162,West White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0163,West White Mountain Boulevard,Primary,0.84,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0164,West White Mountain Boulevard,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0165,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0166,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0167,West White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0168,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0169,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0170,West White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0171,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0172,West White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0173,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0174,West White Mountain Boulevard,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0175,Porter Mountain Road,Secondary,0.29,0.0,0.0,0.0,0.0,0.0,400
-RTE_0176,West White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0177,West White Mountain Boulevard,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0178,West White Mountain Boulevard,Primary,0.65,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0179,West White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0180,West White Mountain Boulevard,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0181,West White Mountain Boulevard,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0182,West White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0183,West White Mountain Boulevard,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0184,West White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0185,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0186,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0187,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0188,West White Mountain Boulevard,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0189,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0190,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0191,West White Mountain Boulevard,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0192,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0193,West White Mountain Boulevard,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0194,West White Mountain Boulevard,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0195,West White Mountain Boulevard,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0196,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0197,West White Mountain Boulevard,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0198,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0199,West White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0083,Pinedale Road,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
+RTE_0084,RTE_0084,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
+RTE_0085,RTE_0085,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0086,Old Highway 160,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0087,Old Highway 160,Secondary,1.48,0.0,0.0,0.0,0.0,0.0,400
+RTE_0088,Porter Mountain Road,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
+RTE_0089,Porter Mountain Road,Secondary,0.53,0.0,0.0,0.0,0.0,0.0,400
+RTE_0090,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0091,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0092,South White Mountain Road,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0093,South White Mountain Road,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0094,Show Low-Springerville-East Highway,Primary,3.52,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0095,Show Low-Springerville-East Highway,Primary,2.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0096,North Chief Avenue,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0097,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0098,North Chief Avenue,Secondary,0.93,0.0,0.0,0.0,0.0,0.0,400
+RTE_0099,North Chief Avenue,Secondary,0.81,0.0,0.0,0.0,0.0,0.0,400
+RTE_0100,West Deuce of Clubs,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0101,West Deuce of Clubs,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0102,Show Low-Springerville-East Highway,Primary,0.36,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0103,Show Low-Springerville-East Highway,Primary,7.71,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0104,West Deuce of Clubs,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0105,West Deuce of Clubs,Primary,0.59,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0106,South Clark Road,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0107,East White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0108,East White Mountain Boulevard,Primary,1.08,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0109,Porter Mountain Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0110,Porter Mountain Road,Secondary,0.25,0.0,0.0,0.0,0.0,0.0,400
+RTE_0111,West White Mountain Boulevard,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0112,West White Mountain Boulevard,Primary,0.65,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0113,North Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0114,North Chief Avenue,Secondary,0.93,0.0,0.0,0.0,0.0,0.0,400
+RTE_0115,North Chief Avenue,Secondary,0.37,0.0,0.0,0.0,0.0,0.0,400
+RTE_0116,North Chief Avenue,Secondary,0.41,0.0,0.33,0.0,79.8,79.8,400
+RTE_0117,East Deuce of Clubs,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0118,East Deuce of Clubs,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0119,Payson-Show Low Highway,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0120,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0121,North Chief Avenue,Secondary,0.13,0.0,0.13,0.0,100.0,100.0,400
+RTE_0122,North Chief Avenue,Secondary,1.5,0.0,1.5,0.0,100.0,100.0,400
+RTE_0123,Globe-Show Low Highway,Primary,3.42,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0124,Globe-Show Low Highway,Primary,15.84,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0125,Pinedale Road,Secondary,0.22,0.0,0.0,0.0,0.0,0.0,400
+RTE_0126,Pinedale Road,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0127,RTE_0127,Secondary,0.76,0.0,0.0,0.0,0.0,0.0,400
+RTE_0128,Old Highway 160,Secondary,1.48,0.0,0.0,0.0,0.0,0.0,400
+RTE_0129,RTE_0129,Secondary,0.74,0.0,0.0,0.0,0.0,0.0,400
+RTE_0130,RTE_0130,Secondary,0.76,0.0,0.0,0.0,0.0,0.0,400
+RTE_0131,RTE_0131,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0132,RTE_0132,Secondary,0.74,0.0,0.0,0.0,0.0,0.0,400
+RTE_0133,RTE_0133,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0134,RTE_0134,Secondary,1.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0135,North Chief Avenue,Secondary,0.53,0.0,0.0,0.0,0.0,0.0,400
+RTE_0136,North Chief Avenue,Secondary,0.84,0.0,0.0,0.0,0.0,0.0,400
+RTE_0137,Bourdon Ranch Road,Secondary,3.8,0.0,0.0,0.0,0.0,0.0,400
+RTE_0138,Show Low-Springerville-East Highway,Primary,7.71,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0139,Show Low-Springerville-East Highway,Primary,3.52,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0140,North Chief Avenue,Secondary,1.28,0.0,1.28,0.0,100.0,100.0,400
+RTE_0141,North Chief Avenue,Secondary,0.94,0.0,0.03,0.0,3.3,3.3,400
+RTE_0142,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0143,Penrod Road,Secondary,0.69,0.0,0.0,0.0,0.0,0.0,400
+RTE_0144,Penrod Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0145,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0146,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0147,South White Mountain Road,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0148,North Chief Avenue,Secondary,0.94,0.0,0.03,0.0,3.3,3.3,400
+RTE_0149,North Chief Avenue,Secondary,0.49,0.0,0.0,0.0,0.0,0.0,400
+RTE_0150,Old Highway 160,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0151,RTE_0151,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0152,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0153,West White Mountain Boulevard,Primary,0.84,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0154,East White Mountain Boulevard,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0155,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0156,North Chief Avenue,Secondary,0.24,0.0,0.24,0.0,100.0,100.0,400
+RTE_0157,North Chief Avenue,Secondary,0.88,0.0,0.88,0.0,100.0,100.0,400
+RTE_0158,West White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0159,East White Mountain Boulevard,Primary,0.78,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0160,West White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0161,West White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0162,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0163,West White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0164,West White Mountain Boulevard,Primary,0.84,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0165,West White Mountain Boulevard,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0166,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0167,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0168,West White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0169,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0170,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0171,West White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0172,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0173,West White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0174,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0175,West White Mountain Boulevard,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0176,Porter Mountain Road,Secondary,0.29,0.0,0.0,0.0,0.0,0.0,400
+RTE_0177,West White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0178,West White Mountain Boulevard,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0179,West White Mountain Boulevard,Primary,0.65,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0180,West White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0181,West White Mountain Boulevard,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0182,West White Mountain Boulevard,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0183,West White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0184,West White Mountain Boulevard,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0185,West White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0186,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0187,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0188,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0189,West White Mountain Boulevard,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0190,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0191,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0192,West White Mountain Boulevard,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0193,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0194,West White Mountain Boulevard,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0195,West White Mountain Boulevard,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0196,West White Mountain Boulevard,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0197,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0198,West White Mountain Boulevard,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0199,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0200,West White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0201,West White Mountain Boulevard,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0202,West White Mountain Boulevard,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0203,West White Mountain Boulevard,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0204,West White Mountain Boulevard,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0205,West White Mountain Boulevard,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0206,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0207,West White Mountain Boulevard,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0208,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0209,West White Mountain Boulevard,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0210,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0211,West White Mountain Boulevard,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0212,West White Mountain Boulevard,Primary,0.32,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0213,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0214,West White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0215,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0216,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0217,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0218,West White Mountain Boulevard,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0219,West White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0220,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0221,West White Mountain Boulevard,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0222,West White Mountain Boulevard,Primary,0.01,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0223,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0224,West White Mountain Boulevard,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0225,West White Mountain Boulevard,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0226,West White Mountain Boulevard,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0227,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0228,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0229,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0230,Pinedale Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0231,Pinedale Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
-RTE_0232,Pinedale Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0233,Pinedale Road,Secondary,0.22,0.0,0.0,0.0,0.0,0.0,400
-RTE_0234,East Deuce of Clubs,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0235,East Deuce of Clubs,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0236,North White Mountain Road,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0237,North White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0238,Payson-Show Low Highway,Primary,0.2,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0239,Payson-Show Low Highway,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0240,North Penrod Road,Primary,0.64,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0241,North Penrod Road,Primary,4.27,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0242,Payson-Show Low Highway,Primary,0.37,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0243,Payson-Show Low Highway,Primary,1.2,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0244,Payson-Show Low Highway,Primary,0.32,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0245,Payson-Show Low Highway,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0246,Payson-Show Low Highway,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0247,Payson-Show Low Highway,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0248,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0249,Payson-Show Low Highway,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0250,Payson-Show Low Highway,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0251,Payson-Show Low Highway,Primary,0.48,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0252,Payson-Show Low Highway,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0253,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0254,Payson-Show Low Highway,Primary,0.2,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0255,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0256,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0257,Payson-Show Low Highway,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0258,Lone Pine Dam Road,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0259,Payson-Show Low Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0260,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0261,Payson-Show Low Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0262,Payson-Show Low Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0263,Payson-Show Low Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0264,Payson-Show Low Highway,Primary,0.5,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0265,Payson-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0266,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0267,South White Mountain Road,Primary,1.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0268,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0269,Globe-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0270,Globe-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0271,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
-RTE_0272,Old Highway 160,Secondary,0.17,0.0,0.0,0.0,0.0,0.0,400
-RTE_0273,Lone Pine Dam Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0274,Lone Pine Dam Road,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
-RTE_0275,East Deuce of Clubs,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0276,East Deuce of Clubs,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0277,North White Mountain Road,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0278,North White Mountain Road,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0279,North Clark Road,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0280,North Clark Road,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0281,Lone Pine Dam Road,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0282,Lone Pine Dam Road,Secondary,0.19,0.0,0.0,0.0,0.0,0.0,400
-RTE_0283,Lone Pine Dam Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
-RTE_0284,Lone Pine Dam Road,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0285,South White Mountain Road,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0286,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0287,South Clark Road,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0288,South Clark Road,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0289,South White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0290,South White Mountain Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0291,North White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0292,South White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0293,North White Mountain Road,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0294,East Deuce of Clubs,Primary,0.33,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0295,East Deuce of Clubs,Primary,0.34,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0296,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
-RTE_0297,Old Highway 160,Secondary,0.23,0.0,0.0,0.0,0.0,0.0,400
-RTE_0298,East Deuce of Clubs,Primary,2.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0299,East Deuce of Clubs,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0300,North Penrod Road,Primary,4.27,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0301,Globe-Show Low Highway,Primary,10.67,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0302,Globe-Show Low Highway,Primary,3.42,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0303,Globe-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0304,Globe-Show Low Highway,Primary,2.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0305,Globe-Show Low Highway,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0306,Globe-Show Low Highway,Primary,0.59,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0307,East White Mountain Boulevard,Primary,0.46,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0308,East White Mountain Boulevard,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0309,East Deuce of Clubs,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0310,East Deuce of Clubs,Primary,0.34,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0311,Pinedale Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
-RTE_0312,Pinedale Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0313,Pinedale Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
-RTE_0314,Pinedale Road,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0315,Pinedale Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
-RTE_0316,Pinedale Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0317,Pinedale Road,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0318,Pinedale Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0319,Pinedale Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0320,Pinedale Road,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0321,Pinedale Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0322,Pinedale Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0323,Lone Pine Dam Road,Secondary,0.28,0.0,0.0,0.0,0.0,0.0,400
-RTE_0324,Lone Pine Dam Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0325,East White Mountain Boulevard,Primary,0.37,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0326,East White Mountain Boulevard,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0327,East Deuce of Clubs,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0328,East Deuce of Clubs,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0329,Porter Mountain Road,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0330,Porter Mountain Road,Secondary,0.29,0.0,0.0,0.0,0.0,0.0,400
-RTE_0331,Porter Mountain Road,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0332,Porter Mountain Road,Secondary,0.53,0.0,0.0,0.0,0.0,0.0,400
-RTE_0333,Porter Mountain Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0334,Porter Mountain Road,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
-RTE_0335,Porter Mountain Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0336,Porter Mountain Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0337,Porter Mountain Road,Secondary,0.25,0.0,0.0,0.0,0.0,0.0,400
-RTE_0338,Porter Mountain Road,Secondary,0.69,0.0,0.0,0.0,0.0,0.0,400
-RTE_0339,Porter Mountain Road,Secondary,0.31,0.0,0.0,0.0,0.0,0.0,400
-RTE_0340,Porter Mountain Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0341,Penrod Road,Secondary,8.42,0.0,0.0,0.0,0.0,0.0,400
-RTE_0342,Porter Mountain Road,Secondary,0.31,0.0,0.0,0.0,0.0,0.0,400
-RTE_0343,Lone Pine Dam Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0344,Lone Pine Dam Road,Secondary,0.28,0.0,0.0,0.0,0.0,0.0,400
-RTE_0345,East Deuce of Clubs,Primary,0.42,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0346,West Deuce of Clubs,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0347,East Deuce of Clubs,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0348,East Deuce of Clubs,Primary,0.42,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0349,East Deuce of Clubs,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0350,East Deuce of Clubs,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0351,East Deuce of Clubs,Primary,0.09,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0352,East Deuce of Clubs,Primary,0.33,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0353,Penrod Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0354,North Penrod Road,Primary,0.83,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0355,East Deuce of Clubs,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0356,East Deuce of Clubs,Primary,0.54,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0357,East Deuce of Clubs,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0358,East Deuce of Clubs,Primary,0.54,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0359,East Deuce of Clubs,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0360,East Deuce of Clubs,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0361,Old Highway 160,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0362,Lone Pine Dam Road,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0363,Lone Pine Dam Road,Secondary,0.37,0.0,0.0,0.0,0.0,0.0,400
-RTE_0364,Old Highway 160,Secondary,0.23,0.0,0.0,0.0,0.0,0.0,400
-RTE_0365,Old Highway 160,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0366,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
+RTE_0201,West White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0202,West White Mountain Boulevard,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0203,West White Mountain Boulevard,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0204,West White Mountain Boulevard,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0205,West White Mountain Boulevard,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0206,West White Mountain Boulevard,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0207,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0208,West White Mountain Boulevard,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0209,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0210,West White Mountain Boulevard,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0211,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0212,West White Mountain Boulevard,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0213,West White Mountain Boulevard,Primary,0.32,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0214,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0215,West White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0216,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0217,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0218,West White Mountain Boulevard,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0219,West White Mountain Boulevard,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0220,West White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0221,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0222,West White Mountain Boulevard,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0223,West White Mountain Boulevard,Primary,0.01,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0224,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0225,West White Mountain Boulevard,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0226,West White Mountain Boulevard,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0227,West White Mountain Boulevard,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0228,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0229,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0230,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0231,Pinedale Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0232,Pinedale Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
+RTE_0233,Pinedale Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0234,Pinedale Road,Secondary,0.22,0.0,0.0,0.0,0.0,0.0,400
+RTE_0235,East Deuce of Clubs,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0236,East Deuce of Clubs,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0237,North White Mountain Road,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0238,North White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0239,Payson-Show Low Highway,Primary,0.2,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0240,Payson-Show Low Highway,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0241,North Penrod Road,Primary,0.64,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0242,North Penrod Road,Primary,4.27,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0243,Payson-Show Low Highway,Primary,0.37,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0244,Payson-Show Low Highway,Primary,1.2,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0245,Payson-Show Low Highway,Primary,0.32,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0246,Payson-Show Low Highway,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0247,Payson-Show Low Highway,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0248,Payson-Show Low Highway,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0249,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0250,Payson-Show Low Highway,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0251,Payson-Show Low Highway,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0252,Payson-Show Low Highway,Primary,0.48,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0253,Payson-Show Low Highway,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0254,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0255,Payson-Show Low Highway,Primary,0.2,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0256,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0257,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0258,Payson-Show Low Highway,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0259,Lone Pine Dam Road,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0260,Payson-Show Low Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0261,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0262,Payson-Show Low Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0263,Payson-Show Low Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0264,Payson-Show Low Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0265,Payson-Show Low Highway,Primary,0.5,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0266,Payson-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0267,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0268,South White Mountain Road,Primary,1.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0269,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0270,Globe-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0271,Globe-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0272,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
+RTE_0273,Old Highway 160,Secondary,0.17,0.0,0.0,0.0,0.0,0.0,400
+RTE_0274,Lone Pine Dam Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0275,Lone Pine Dam Road,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
+RTE_0276,East Deuce of Clubs,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0277,East Deuce of Clubs,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0278,North White Mountain Road,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0279,North White Mountain Road,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0280,North Clark Road,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0281,North Clark Road,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0282,Lone Pine Dam Road,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0283,Lone Pine Dam Road,Secondary,0.19,0.0,0.0,0.0,0.0,0.0,400
+RTE_0284,Lone Pine Dam Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
+RTE_0285,Lone Pine Dam Road,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0286,South White Mountain Road,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0287,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0288,South Clark Road,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0289,South Clark Road,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0290,South White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0291,South White Mountain Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0292,North White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0293,North White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0294,North White Mountain Road,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0295,East Deuce of Clubs,Primary,0.33,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0296,East Deuce of Clubs,Primary,0.34,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0297,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
+RTE_0298,Old Highway 160,Secondary,0.23,0.0,0.0,0.0,0.0,0.0,400
+RTE_0299,Show Low-Springerville-East Highway,Primary,2.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0300,East Deuce of Clubs,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0301,North Penrod Road,Primary,4.27,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0302,Globe-Show Low Highway,Primary,10.67,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0303,Globe-Show Low Highway,Primary,3.42,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0304,Globe-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0305,Globe-Show Low Highway,Primary,2.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0306,West Deuce of Clubs,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0307,Globe-Show Low Highway,Primary,0.59,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0308,East White Mountain Boulevard,Primary,0.46,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0309,East White Mountain Boulevard,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0310,East Deuce of Clubs,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0311,East Deuce of Clubs,Primary,0.34,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0312,Pinedale Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
+RTE_0313,Pinedale Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0314,Pinedale Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
+RTE_0315,Pinedale Road,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0316,Pinedale Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
+RTE_0317,Pinedale Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0318,Pinedale Road,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0319,Pinedale Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0320,Pinedale Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0321,Pinedale Road,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0322,Pinedale Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0323,Pinedale Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0324,Lone Pine Dam Road,Secondary,0.28,0.0,0.0,0.0,0.0,0.0,400
+RTE_0325,Lone Pine Dam Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0326,East White Mountain Boulevard,Primary,0.37,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0327,East White Mountain Boulevard,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0328,East Deuce of Clubs,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0329,East Deuce of Clubs,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0330,Porter Mountain Road,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0331,Porter Mountain Road,Secondary,0.29,0.0,0.0,0.0,0.0,0.0,400
+RTE_0332,Porter Mountain Road,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0333,Porter Mountain Road,Secondary,0.53,0.0,0.0,0.0,0.0,0.0,400
+RTE_0334,Porter Mountain Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0335,Porter Mountain Road,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
+RTE_0336,Porter Mountain Road,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0337,Porter Mountain Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0338,Porter Mountain Road,Secondary,0.25,0.0,0.0,0.0,0.0,0.0,400
+RTE_0339,Porter Mountain Road,Secondary,0.69,0.0,0.0,0.0,0.0,0.0,400
+RTE_0340,Porter Mountain Road,Secondary,0.31,0.0,0.0,0.0,0.0,0.0,400
+RTE_0341,Porter Mountain Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0342,Penrod Road,Secondary,8.42,0.0,0.0,0.0,0.0,0.0,400
+RTE_0343,Porter Mountain Road,Secondary,0.31,0.0,0.0,0.0,0.0,0.0,400
+RTE_0344,Lone Pine Dam Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0345,Lone Pine Dam Road,Secondary,0.28,0.0,0.0,0.0,0.0,0.0,400
+RTE_0346,East Deuce of Clubs,Primary,0.42,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0347,West Deuce of Clubs,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0348,East Deuce of Clubs,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0349,East Deuce of Clubs,Primary,0.42,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0350,East Deuce of Clubs,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0351,East Deuce of Clubs,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0352,East Deuce of Clubs,Primary,0.09,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0353,East Deuce of Clubs,Primary,0.33,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0354,Penrod Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0355,North Penrod Road,Primary,0.83,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0356,East Deuce of Clubs,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0357,East Deuce of Clubs,Primary,0.54,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0358,East Deuce of Clubs,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0359,East Deuce of Clubs,Primary,0.54,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0360,East Deuce of Clubs,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0361,East Deuce of Clubs,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0362,Old Highway 160,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0363,Lone Pine Dam Road,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0364,Lone Pine Dam Road,Secondary,0.37,0.0,0.0,0.0,0.0,0.0,400
+RTE_0365,Old Highway 160,Secondary,0.23,0.0,0.0,0.0,0.0,0.0,400
+RTE_0366,Old Highway 160,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
 RTE_0367,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
 RTE_0368,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
-RTE_0369,Old Highway 160,Secondary,1.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0370,Old Highway 160,Secondary,0.26,0.0,0.0,0.0,0.0,0.0,400
-RTE_0371,Old Highway 160,Secondary,1.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0372,Old Highway 160,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
-RTE_0373,Old Highway 160,Secondary,1.79,0.0,0.0,0.0,0.0,0.0,400
-RTE_0374,North Clark Road,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0375,Old Highway 160,Secondary,1.79,0.0,0.0,0.0,0.0,0.0,400
-RTE_0376,North Clark Road,Primary,0.6,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0377,South Clark Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0378,South Clark Road,Primary,0.42,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0369,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
+RTE_0370,Old Highway 160,Secondary,1.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0371,Old Highway 160,Secondary,0.26,0.0,0.0,0.0,0.0,0.0,400
+RTE_0372,Old Highway 160,Secondary,1.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0373,Old Highway 160,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
+RTE_0374,Old Highway 160,Secondary,1.79,0.0,0.0,0.0,0.0,0.0,400
+RTE_0375,North Clark Road,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0376,Old Highway 160,Secondary,1.79,0.0,0.0,0.0,0.0,0.0,400
+RTE_0377,North Clark Road,Primary,0.6,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0378,South Clark Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0379,South Clark Road,Primary,0.42,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0380,South Clark Road,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0381,South Clark Road,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0382,South Clark Road,Primary,0.36,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0383,South Clark Road,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0384,North Clark Road,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0385,South White Mountain Road,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0386,South White Mountain Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0387,East White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0388,East White Mountain Boulevard,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0389,North Penrod Road,Primary,0.64,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0390,North Penrod Road,Primary,0.83,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0391,East White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0392,Show Low-McNary-Eagar Highway,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0393,North Chief Avenue,Secondary,0.13,0.0,0.13,0.0,100.0,100.0,400
-RTE_0394,North Chief Avenue,Secondary,0.93,0.0,0.93,0.0,100.0,100.0,400
-RTE_0395,West Deuce of Clubs,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0396,West Deuce of Clubs,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0397,South White Mountain Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0398,South White Mountain Road,Primary,1.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0399,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0380,South Clark Road,Primary,0.42,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0381,South Clark Road,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0382,South Clark Road,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0383,South Clark Road,Primary,0.36,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0384,South Clark Road,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0385,North Clark Road,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0386,South White Mountain Road,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0387,South White Mountain Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0388,East White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0389,East White Mountain Boulevard,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0390,North Penrod Road,Primary,0.64,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0391,North Penrod Road,Primary,0.83,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0392,East White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0393,Show Low-McNary-Eagar Highway,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0394,North Chief Avenue,Secondary,0.13,0.0,0.13,0.0,100.0,100.0,400
+RTE_0395,North Chief Avenue,Secondary,0.93,0.0,0.93,0.0,100.0,100.0,400
+RTE_0396,West Deuce of Clubs,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0397,West Deuce of Clubs,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0398,South White Mountain Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0399,South White Mountain Road,Primary,1.11,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0400,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0401,East White Mountain Boulevard,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0402,East White Mountain Boulevard,Primary,0.37,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0403,East White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0404,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0405,South White Mountain Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0406,South White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0407,Lone Pine Dam Road,Secondary,0.37,0.0,0.0,0.0,0.0,0.0,400
-RTE_0408,Lone Pine Dam Road,Secondary,0.22,0.0,0.0,0.0,0.0,0.0,400
-RTE_0409,North Clark Road,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0410,North Clark Road,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0411,East White Mountain Boulevard,Primary,0.46,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0412,East White Mountain Boulevard,Primary,1.08,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0413,South White Mountain Road,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0414,South White Mountain Road,Primary,0.62,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0415,South White Mountain Road,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0416,South White Mountain Road,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0417,South White Mountain Road,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0418,South White Mountain Road,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0419,South White Mountain Road,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0420,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0421,East White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0422,East White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0423,Lone Pine Dam Road,Secondary,0.44,0.0,0.0,0.0,0.0,0.0,400
-RTE_0424,Lone Pine Dam Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0425,Lone Pine Dam Road,Secondary,0.44,0.0,0.0,0.0,0.0,0.0,400
-RTE_0426,Lone Pine Dam Road,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0427,Lone Pine Dam Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0428,Lone Pine Dam Road,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
-RTE_0429,Lone Pine Dam Road,Secondary,0.19,0.0,0.0,0.0,0.0,0.0,400
-RTE_0430,Lone Pine Dam Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
-RTE_0431,Lone Pine Dam Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0432,Lone Pine Dam Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0433,Lone Pine Dam Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0434,North Clark Road,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0435,North Clark Road,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0436,East White Mountain Boulevard,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0437,East White Mountain Boulevard,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0438,East White Mountain Boulevard,Primary,0.78,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0439,East White Mountain Boulevard,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0440,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0441,North Chief Avenue,Secondary,0.84,0.0,0.0,0.0,0.0,0.0,400
-RTE_0442,North Chief Avenue,Secondary,0.09,0.0,0.09,0.0,100.0,100.0,400
-RTE_0443,North Chief Avenue,Secondary,1.28,0.0,1.28,0.0,100.0,100.0,400
-RTE_0444,Payson-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0445,North Clark Road,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0446,Carrizo-Whiteriver-Indian Pine Highway,Secondary,2.31,0.0,0.0,0.0,0.0,0.0,400
-RTE_0447,North Chief Avenue,Secondary,8.37,0.0,0.0,0.0,0.0,0.0,400
-RTE_0448,East White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0449,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0450,Carrizo-Whiteriver-Indian Pine Highway,Secondary,3.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0451,Carrizo-Whiteriver-Indian Pine Highway,Secondary,2.31,0.0,0.0,0.0,0.0,0.0,400
-RTE_0452,North Chief Avenue,Secondary,0.81,0.0,0.0,0.0,0.0,0.0,400
-RTE_0453,North Chief Avenue,Secondary,0.37,0.0,0.0,0.0,0.0,0.0,400
-RTE_0454,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0455,West Deuce of Clubs,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0456,North Clark Road,Primary,0.71,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0457,North Clark Road,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0458,North Clark Road,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0459,North Clark Road,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0460,North Clark Road,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0461,North Clark Road,Primary,0.6,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0462,Bourdon Ranch Road,Secondary,0.46,0.0,0.0,0.0,0.0,0.0,400
-RTE_0463,Bourdon Ranch Road,Secondary,0.47,0.0,0.0,0.0,0.0,0.0,400
-RTE_0464,Bourdon Ranch Road,Secondary,0.46,0.0,0.0,0.0,0.0,0.0,400
-RTE_0465,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0401,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0402,East White Mountain Boulevard,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0403,East White Mountain Boulevard,Primary,0.37,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0404,East White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0405,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0406,South White Mountain Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0407,South White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0408,Lone Pine Dam Road,Secondary,0.37,0.0,0.0,0.0,0.0,0.0,400
+RTE_0409,Lone Pine Dam Road,Secondary,0.22,0.0,0.0,0.0,0.0,0.0,400
+RTE_0410,North Clark Road,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0411,North Clark Road,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0412,East White Mountain Boulevard,Primary,0.46,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0413,East White Mountain Boulevard,Primary,1.08,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0414,South White Mountain Road,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0415,West White Mountain Boulevard,Primary,0.62,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0416,South White Mountain Road,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0417,South White Mountain Road,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0418,South White Mountain Road,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0419,South White Mountain Road,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0420,South White Mountain Road,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0421,South White Mountain Road,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0422,East White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0423,East White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0424,Lone Pine Dam Road,Secondary,0.44,0.0,0.0,0.0,0.0,0.0,400
+RTE_0425,Lone Pine Dam Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0426,Lone Pine Dam Road,Secondary,0.44,0.0,0.0,0.0,0.0,0.0,400
+RTE_0427,Lone Pine Dam Road,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0428,Lone Pine Dam Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0429,Lone Pine Dam Road,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
+RTE_0430,Lone Pine Dam Road,Secondary,0.19,0.0,0.0,0.0,0.0,0.0,400
+RTE_0431,Lone Pine Dam Road,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
+RTE_0432,Lone Pine Dam Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0433,Lone Pine Dam Road,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0434,Lone Pine Dam Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0435,North Clark Road,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0436,North Clark Road,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0437,East White Mountain Boulevard,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0438,East White Mountain Boulevard,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0439,East White Mountain Boulevard,Primary,0.78,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0440,East White Mountain Boulevard,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0441,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0442,North Chief Avenue,Secondary,0.84,0.0,0.0,0.0,0.0,0.0,400
+RTE_0443,North Chief Avenue,Secondary,0.09,0.0,0.09,0.0,100.0,100.0,400
+RTE_0444,North Chief Avenue,Secondary,1.28,0.0,1.28,0.0,100.0,100.0,400
+RTE_0445,Payson-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0446,North Clark Road,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0447,Carrizo-Whiteriver-Indian Pine Highway,Secondary,2.31,0.0,0.0,0.0,0.0,0.0,400
+RTE_0448,North Chief Avenue,Secondary,8.37,0.0,0.0,0.0,0.0,0.0,400
+RTE_0449,East White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0450,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0451,Carrizo-Whiteriver-Indian Pine Highway,Secondary,3.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0452,Carrizo-Whiteriver-Indian Pine Highway,Secondary,2.31,0.0,0.0,0.0,0.0,0.0,400
+RTE_0453,North Chief Avenue,Secondary,0.81,0.0,0.0,0.0,0.0,0.0,400
+RTE_0454,North Chief Avenue,Secondary,0.37,0.0,0.0,0.0,0.0,0.0,400
+RTE_0455,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0456,West Deuce of Clubs,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0457,North Clark Road,Primary,0.71,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0458,North Clark Road,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0459,North Clark Road,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0460,North Clark Road,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0461,North Clark Road,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0462,North Clark Road,Primary,0.6,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0463,Bourdon Ranch Road,Secondary,0.46,0.0,0.0,0.0,0.0,0.0,400
+RTE_0464,Bourdon Ranch Road,Secondary,0.47,0.0,0.0,0.0,0.0,0.0,400
+RTE_0465,Bourdon Ranch Road,Secondary,0.46,0.0,0.0,0.0,0.0,0.0,400
 RTE_0466,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0467,West Deuce of Clubs,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0468,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0469,East White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0470,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0471,West Deuce of Clubs,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0472,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0473,North Chief Avenue,Secondary,0.93,0.0,0.93,0.0,100.0,100.0,400
-RTE_0474,North Chief Avenue,Secondary,0.27,0.0,0.27,0.0,100.0,100.0,400
-RTE_0475,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0476,East White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0477,East White Mountain Boulevard,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0478,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0479,East White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0480,East White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0481,East White Mountain Boulevard,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0482,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0483,East White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0484,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0485,East White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0486,East White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0487,East White Mountain Boulevard,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0488,East White Mountain Boulevard,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0489,North Chief Avenue,Secondary,0.41,0.0,0.41,0.0,100.0,100.0,400
-RTE_0490,North Chief Avenue,Secondary,0.98,0.0,0.98,0.0,100.0,100.0,400
-RTE_0491,South Clark Road,Primary,0.36,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0492,South Clark Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0493,Globe-Show Low Highway,Primary,0.59,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0494,Globe-Show Low Highway,Primary,2.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0495,North Clark Road,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0496,North Clark Road,Primary,0.71,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0497,Lone Pine Dam Road,Secondary,0.19,0.0,0.0,0.0,0.0,0.0,400
-RTE_0498,Lone Pine Dam Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0499,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0500,Payson-Show Low Highway,Primary,0.71,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0501,Payson-Show Low Highway,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0502,Payson-Show Low Highway,Primary,0.32,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0503,Payson-Show Low Highway,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0504,Payson-Show Low Highway,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0505,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0506,West Deuce of Clubs,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0507,East Deuce of Clubs,Primary,0.09,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0508,East Deuce of Clubs,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0509,Penrod Road,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
-RTE_0510,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0511,West Deuce of Clubs,Primary,0.59,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0512,Globe-Show Low Highway,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0513,South White Mountain Road,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0514,South White Mountain Road,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0515,South White Mountain Road,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0516,South White Mountain Road,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0517,RTE_0517,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
-RTE_0518,Pinedale Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0519,Payson-Show Low Highway,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0520,Payson-Show Low Highway,Primary,0.76,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0521,South White Mountain Road,Primary,0.62,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0522,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0523,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0524,Penrod Road,Secondary,8.42,0.0,0.0,0.0,0.0,0.0,400
-RTE_0525,Penrod Road,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
-RTE_0526,Penrod Road,Secondary,0.69,0.0,0.0,0.0,0.0,0.0,400
-RTE_0527,North Chief Avenue,Secondary,0.88,0.0,0.88,0.0,100.0,100.0,400
-RTE_0528,North Chief Avenue,Secondary,0.41,0.0,0.41,0.0,100.0,100.0,400
-RTE_0529,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
-RTE_0530,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.29,0.0,0.0,0.0,0.0,0.0,400
-RTE_0531,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0532,North Chief Avenue,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0533,West Cedar Spring Road,Secondary,0.03,0.0,0.03,0.0,100.0,100.0,400
-RTE_0534,North Chief Avenue,Secondary,0.9,0.0,0.9,0.0,100.0,100.0,400
-RTE_0535,North Chief Avenue,Secondary,0.24,0.0,0.24,0.0,100.0,100.0,400
-RTE_0536,West Cedar Spring Road,Secondary,0.12,0.0,0.12,0.0,100.0,100.0,400
-RTE_0537,West Cedar Spring Road,Secondary,0.61,0.0,0.61,0.0,100.0,100.0,400
+RTE_0467,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0468,West Deuce of Clubs,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0469,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0470,East White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0471,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0472,West Deuce of Clubs,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0473,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0474,North Chief Avenue,Secondary,0.93,0.0,0.93,0.0,100.0,100.0,400
+RTE_0475,North Chief Avenue,Secondary,0.27,0.0,0.27,0.0,100.0,100.0,400
+RTE_0476,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0477,East White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0478,East White Mountain Boulevard,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0479,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0480,East White Mountain Boulevard,Primary,0.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0481,East White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0482,East White Mountain Boulevard,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0483,East White Mountain Boulevard,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0484,East White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0485,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0486,East White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0487,East White Mountain Boulevard,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0488,East White Mountain Boulevard,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0489,East White Mountain Boulevard,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0490,North Chief Avenue,Secondary,0.41,0.0,0.41,0.0,100.0,100.0,400
+RTE_0491,North Chief Avenue,Secondary,0.98,0.0,0.98,0.0,100.0,100.0,400
+RTE_0492,South Clark Road,Primary,0.36,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0493,South Clark Road,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0494,Globe-Show Low Highway,Primary,0.59,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0495,Globe-Show Low Highway,Primary,2.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0496,North Clark Road,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0497,North Clark Road,Primary,0.71,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0498,Lone Pine Dam Road,Secondary,0.19,0.0,0.0,0.0,0.0,0.0,400
+RTE_0499,Lone Pine Dam Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0500,Payson-Show Low Highway,Primary,0.26,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0501,Payson-Show Low Highway,Primary,0.71,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0502,Payson-Show Low Highway,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0503,Payson-Show Low Highway,Primary,0.32,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0504,Payson-Show Low Highway,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0505,Payson-Show Low Highway,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0506,West Deuce of Clubs,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0507,West Deuce of Clubs,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0508,East Deuce of Clubs,Primary,0.09,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0509,East Deuce of Clubs,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0510,Penrod Road,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
+RTE_0511,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0512,West Deuce of Clubs,Primary,0.59,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0513,Globe-Show Low Highway,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0514,South White Mountain Road,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0515,South White Mountain Road,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0516,South White Mountain Road,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0517,South White Mountain Road,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0518,RTE_0518,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
+RTE_0519,Pinedale Road,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
+RTE_0520,Pinedale Road,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0521,Payson-Show Low Highway,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0522,Payson-Show Low Highway,Primary,0.76,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0523,West White Mountain Boulevard,Primary,0.62,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0524,West White Mountain Boulevard,Primary,0.27,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0525,Penrod Road,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0526,Penrod Road,Secondary,8.42,0.0,0.0,0.0,0.0,0.0,400
+RTE_0527,Penrod Road,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
+RTE_0528,Penrod Road,Secondary,0.69,0.0,0.0,0.0,0.0,0.0,400
+RTE_0529,North Chief Avenue,Secondary,0.88,0.0,0.88,0.0,100.0,100.0,400
+RTE_0530,North Chief Avenue,Secondary,0.41,0.0,0.41,0.0,100.0,100.0,400
+RTE_0531,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
+RTE_0532,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.29,0.0,0.0,0.0,0.0,0.0,400
+RTE_0533,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0534,North Chief Avenue,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0535,West Cedar Spring Road,Secondary,0.03,0.0,0.03,0.0,100.0,100.0,400
+RTE_0536,North Chief Avenue,Secondary,0.9,0.0,0.9,0.0,100.0,100.0,400
+RTE_0537,North Chief Avenue,Secondary,0.24,0.0,0.24,0.0,100.0,100.0,400
 RTE_0538,West Cedar Spring Road,Secondary,0.12,0.0,0.12,0.0,100.0,100.0,400
-RTE_0539,North Chief Avenue,Secondary,0.27,0.0,0.27,0.0,100.0,100.0,400
-RTE_0540,North Chief Avenue,Secondary,0.9,0.0,0.9,0.0,100.0,100.0,400
-RTE_0541,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0542,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0543,Porter Mountain Road,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
-RTE_0544,Porter Mountain Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0545,RTE_0545,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0546,Porter Mountain Road,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0547,Porter Mountain Road,Secondary,0.69,0.0,0.0,0.0,0.0,0.0,400
-RTE_0548,South White Mountain Road,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0549,South White Mountain Road,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0550,West White Mountain Boulevard,Primary,0.01,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0551,West White Mountain Boulevard,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0552,West White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0553,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0554,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0555,West White Mountain Boulevard,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0556,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0557,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0558,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.32,0.0,0.0,0.0,0.0,0.0,400
-RTE_0559,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.66,0.0,0.0,0.0,0.0,0.0,400
-RTE_0560,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0561,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.32,0.0,0.0,0.0,0.0,0.0,400
-RTE_0562,Old Highway 160,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
-RTE_0563,Old Highway 160,Secondary,0.26,0.0,0.0,0.0,0.0,0.0,400
-RTE_0564,Payson-Show Low Highway,Primary,0.71,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0565,Payson-Show Low Highway,Primary,0.5,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0566,Lone Pine Dam Road,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
-RTE_0567,Lone Pine Dam Road,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0568,Lone Pine Dam Road,Secondary,0.22,0.0,0.0,0.0,0.0,0.0,400
-RTE_0569,Lone Pine Dam Road,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
-RTE_0570,Lone Pine Dam Road,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
+RTE_0539,West Cedar Spring Road,Secondary,0.61,0.0,0.61,0.0,100.0,100.0,400
+RTE_0540,West Cedar Spring Road,Secondary,0.12,0.0,0.12,0.0,100.0,100.0,400
+RTE_0541,North Chief Avenue,Secondary,0.27,0.0,0.27,0.0,100.0,100.0,400
+RTE_0542,North Chief Avenue,Secondary,0.9,0.0,0.9,0.0,100.0,100.0,400
+RTE_0543,West White Mountain Boulevard,Primary,0.1,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0544,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0545,Porter Mountain Road,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
+RTE_0546,Porter Mountain Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0547,RTE_0547,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0548,Porter Mountain Road,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0549,Porter Mountain Road,Secondary,0.69,0.0,0.0,0.0,0.0,0.0,400
+RTE_0550,South White Mountain Road,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0551,South White Mountain Road,Primary,0.8,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0552,West White Mountain Boulevard,Primary,0.01,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0553,West White Mountain Boulevard,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0554,West White Mountain Boulevard,Primary,0.02,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0555,West White Mountain Boulevard,Primary,0.14,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0556,West White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0557,West White Mountain Boulevard,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0558,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0559,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0560,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.32,0.0,0.0,0.0,0.0,0.0,400
+RTE_0561,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.66,0.0,0.0,0.0,0.0,0.0,400
+RTE_0562,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0563,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.32,0.0,0.0,0.0,0.0,0.0,400
+RTE_0564,Old Highway 160,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
+RTE_0565,Old Highway 160,Secondary,0.26,0.0,0.0,0.0,0.0,0.0,400
+RTE_0566,Payson-Show Low Highway,Primary,0.71,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0567,Payson-Show Low Highway,Primary,0.5,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0568,Lone Pine Dam Road,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
+RTE_0569,Lone Pine Dam Road,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0570,Lone Pine Dam Road,Secondary,0.22,0.0,0.0,0.0,0.0,0.0,400
 RTE_0571,Lone Pine Dam Road,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
-RTE_0572,Lone Pine Dam Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0573,Lone Pine Dam Road,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0574,Lone Pine Dam Road,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
-RTE_0575,Lone Pine Dam Road,Secondary,0.19,0.0,0.0,0.0,0.0,0.0,400
-RTE_0576,South White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0577,South White Mountain Road,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0578,Payson-Show Low Highway,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0579,Payson-Show Low Highway,Primary,0.37,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0580,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0581,Payson-Show Low Highway,Primary,0.48,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0582,Payson-Show Low Highway,Primary,0.76,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0583,Payson-Show Low Highway,Primary,2.34,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0584,RTE_0584,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0585,Porter Mountain Road,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
-RTE_0586,Porter Mountain Road,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
-RTE_0587,Globe-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0588,Globe-Show Low Highway,Primary,10.67,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0589,South White Mountain Road,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0590,South White Mountain Road,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0591,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
-RTE_0592,Old Highway 160,Secondary,0.17,0.0,0.0,0.0,0.0,0.0,400
-RTE_0593,East Deuce of Clubs,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0594,East Deuce of Clubs,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0595,Globe-Show Low Highway,Primary,3.02,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0596,Globe-Show Low Highway,Primary,7.28,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0597,West White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0598,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0599,North Chief Avenue,Secondary,8.37,0.0,0.0,0.0,0.0,0.0,400
-RTE_0600,North Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0601,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0602,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0603,South Chief Avenue,Secondary,0.25,0.0,0.0,0.0,0.0,0.0,400
-RTE_0604,South Chief Avenue,Secondary,0.42,0.0,0.0,0.0,0.0,0.0,400
-RTE_0605,South Chief Avenue,Secondary,1.77,0.0,0.0,0.0,0.0,0.0,400
-RTE_0606,South Chief Avenue,Secondary,0.25,0.0,0.0,0.0,0.0,0.0,400
-RTE_0607,South Chief Avenue,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0608,South Chief Avenue,Secondary,1.77,0.0,0.0,0.0,0.0,0.0,400
-RTE_0609,South Chief Avenue,Secondary,0.73,0.0,0.0,0.0,0.0,0.0,400
-RTE_0610,South Chief Avenue,Secondary,0.18,0.0,0.0,0.0,0.0,0.0,400
-RTE_0611,South Chief Avenue,Secondary,1.34,0.0,0.0,0.0,0.0,0.0,400
-RTE_0612,South Chief Avenue,Secondary,0.73,0.0,0.0,0.0,0.0,0.0,400
-RTE_0613,South Chief Avenue,Secondary,7.67,0.0,0.0,0.0,0.0,0.0,400
-RTE_0614,South Chief Avenue,Secondary,1.34,0.0,0.0,0.0,0.0,0.0,400
-RTE_0615,RTE_0615,Secondary,1.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0616,South Chief Avenue,Secondary,5.26,0.0,0.0,0.0,0.0,0.0,400
-RTE_0617,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.53,0.0,0.0,0.0,0.0,0.0,400
-RTE_0618,RTE_0618,Secondary,1.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0619,South Chief Avenue,Secondary,3.9,0.0,0.0,0.0,0.0,0.0,400
-RTE_0620,South Chief Avenue,Secondary,7.67,0.0,0.0,0.0,0.0,0.0,400
-RTE_0621,South Chief Avenue,Secondary,5.26,0.0,0.0,0.0,0.0,0.0,400
-RTE_0622,South Chief Avenue,Secondary,3.9,0.0,0.0,0.0,0.0,0.0,400
-RTE_0623,South Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0624,South Chief Avenue,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0625,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0626,North Chief Avenue,Secondary,0.23,0.0,0.0,0.0,0.0,0.0,400
-RTE_0627,North Chief Avenue,Secondary,0.23,0.0,0.0,0.0,0.0,0.0,400
-RTE_0628,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0629,South Chief Avenue,Secondary,1.31,0.0,0.0,0.0,0.0,0.0,400
-RTE_0630,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0631,South Chief Avenue,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0572,Lone Pine Dam Road,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
+RTE_0573,Lone Pine Dam Road,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
+RTE_0574,Lone Pine Dam Road,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0575,Lone Pine Dam Road,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0576,Lone Pine Dam Road,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
+RTE_0577,Lone Pine Dam Road,Secondary,0.19,0.0,0.0,0.0,0.0,0.0,400
+RTE_0578,North White Mountain Road,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0579,South White Mountain Road,Primary,0.18,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0580,Payson-Show Low Highway,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0581,Payson-Show Low Highway,Primary,0.37,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0582,Payson-Show Low Highway,Primary,0.22,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0583,Payson-Show Low Highway,Primary,0.48,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0584,Payson-Show Low Highway,Primary,0.76,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0585,Payson-Show Low Highway,Primary,2.34,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0586,RTE_0586,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0587,Porter Mountain Road,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
+RTE_0588,Porter Mountain Road,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
+RTE_0589,Globe-Show Low Highway,Primary,0.67,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0590,Globe-Show Low Highway,Primary,10.67,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0591,South White Mountain Road,Primary,0.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0592,South White Mountain Road,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0593,Old Highway 160,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
+RTE_0594,Old Highway 160,Secondary,0.17,0.0,0.0,0.0,0.0,0.0,400
+RTE_0595,East Deuce of Clubs,Primary,0.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0596,East Deuce of Clubs,Primary,0.07,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0597,Globe-Show Low Highway,Primary,3.02,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0598,Globe-Show Low Highway,Primary,7.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0599,West White Mountain Boulevard,Primary,0.06,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0600,West White Mountain Boulevard,Primary,0.13,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0601,North Chief Avenue,Secondary,8.37,0.0,0.0,0.0,0.0,0.0,400
+RTE_0602,North Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0603,East White Mountain Boulevard,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0604,East White Mountain Boulevard,Primary,0.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0605,South Chief Avenue,Secondary,0.25,0.0,0.0,0.0,0.0,0.0,400
+RTE_0606,South Chief Avenue,Secondary,0.42,0.0,0.0,0.0,0.0,0.0,400
+RTE_0607,South Chief Avenue,Secondary,1.77,0.0,0.0,0.0,0.0,0.0,400
+RTE_0608,South Chief Avenue,Secondary,0.25,0.0,0.0,0.0,0.0,0.0,400
+RTE_0609,South Chief Avenue,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0610,South Chief Avenue,Secondary,1.77,0.0,0.0,0.0,0.0,0.0,400
+RTE_0611,South Chief Avenue,Secondary,0.73,0.0,0.0,0.0,0.0,0.0,400
+RTE_0612,South Chief Avenue,Secondary,0.18,0.0,0.0,0.0,0.0,0.0,400
+RTE_0613,South Chief Avenue,Secondary,1.34,0.0,0.0,0.0,0.0,0.0,400
+RTE_0614,South Chief Avenue,Secondary,0.73,0.0,0.0,0.0,0.0,0.0,400
+RTE_0615,South Chief Avenue,Secondary,7.67,0.0,0.0,0.0,0.0,0.0,400
+RTE_0616,South Chief Avenue,Secondary,1.34,0.0,0.0,0.0,0.0,0.0,400
+RTE_0617,RTE_0617,Secondary,1.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0618,South Chief Avenue,Secondary,5.26,0.0,0.0,0.0,0.0,0.0,400
+RTE_0619,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.53,0.0,0.0,0.0,0.0,0.0,400
+RTE_0620,RTE_0620,Secondary,1.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0621,South Chief Avenue,Secondary,3.9,0.0,0.0,0.0,0.0,0.0,400
+RTE_0622,South Chief Avenue,Secondary,7.67,0.0,0.0,0.0,0.0,0.0,400
+RTE_0623,South Chief Avenue,Secondary,5.26,0.0,0.0,0.0,0.0,0.0,400
+RTE_0624,South Chief Avenue,Secondary,3.9,0.0,0.0,0.0,0.0,0.0,400
+RTE_0625,South Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0626,South Chief Avenue,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0627,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0628,North Chief Avenue,Secondary,0.23,0.0,0.0,0.0,0.0,0.0,400
+RTE_0629,North Chief Avenue,Secondary,0.23,0.0,0.0,0.0,0.0,0.0,400
+RTE_0630,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0631,South Chief Avenue,Secondary,1.31,0.0,0.0,0.0,0.0,0.0,400
 RTE_0632,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0633,South Chief Avenue,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0634,South Chief Avenue,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0635,North Chief Avenue,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0636,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0637,North Chief Avenue,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0638,North Chief Avenue,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
-RTE_0639,North Chief Avenue,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
-RTE_0640,North Chief Avenue,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0641,South Chief Avenue,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
-RTE_0642,South Chief Avenue,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0643,South Chief Avenue,Secondary,0.45,0.0,0.0,0.0,0.0,0.0,400
-RTE_0644,South Chief Avenue,Secondary,0.7,0.0,0.0,0.0,0.0,0.0,400
-RTE_0645,South Chief Avenue,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0646,South Chief Avenue,Secondary,0.46,0.0,0.0,0.0,0.0,0.0,400
-RTE_0647,South Chief Avenue,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0648,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0649,South Chief Avenue,Secondary,0.45,0.0,0.0,0.0,0.0,0.0,400
-RTE_0650,South Chief Avenue,Secondary,0.18,0.0,0.0,0.0,0.0,0.0,400
-RTE_0651,South Chief Avenue,Secondary,0.41,0.0,0.0,0.0,0.0,0.0,400
-RTE_0652,South Chief Avenue,Secondary,0.7,0.0,0.0,0.0,0.0,0.0,400
-RTE_0653,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0654,North Chief Avenue,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
-RTE_0655,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0656,South Chief Avenue,Secondary,0.42,0.0,0.0,0.0,0.0,0.0,400
-RTE_0657,South Chief Avenue,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0658,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0659,North Chief Avenue,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0660,North Chief Avenue,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
-RTE_0661,South Chief Avenue,Secondary,0.46,0.0,0.0,0.0,0.0,0.0,400
-RTE_0662,South Chief Avenue,Secondary,0.41,0.0,0.0,0.0,0.0,0.0,400
-RTE_0663,North Chief Avenue,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
-RTE_0664,South Chief Avenue,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0665,North Chief Avenue,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0666,North Chief Avenue,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
-RTE_0667,North Chief Avenue,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
-RTE_0668,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0669,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0670,North Chief Avenue,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
+RTE_0633,South Chief Avenue,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0634,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0635,South Chief Avenue,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0636,South Chief Avenue,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0637,North Chief Avenue,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0638,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0639,North Chief Avenue,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0640,North Chief Avenue,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
+RTE_0641,North Chief Avenue,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
+RTE_0642,North Chief Avenue,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0643,South Chief Avenue,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
+RTE_0644,South Chief Avenue,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0645,South Chief Avenue,Secondary,0.45,0.0,0.0,0.0,0.0,0.0,400
+RTE_0646,South Chief Avenue,Secondary,0.7,0.0,0.0,0.0,0.0,0.0,400
+RTE_0647,South Chief Avenue,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0648,South Chief Avenue,Secondary,0.46,0.0,0.0,0.0,0.0,0.0,400
+RTE_0649,South Chief Avenue,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0650,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0651,South Chief Avenue,Secondary,0.45,0.0,0.0,0.0,0.0,0.0,400
+RTE_0652,South Chief Avenue,Secondary,0.18,0.0,0.0,0.0,0.0,0.0,400
+RTE_0653,South Chief Avenue,Secondary,0.41,0.0,0.0,0.0,0.0,0.0,400
+RTE_0654,South Chief Avenue,Secondary,0.7,0.0,0.0,0.0,0.0,0.0,400
+RTE_0655,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0656,North Chief Avenue,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
+RTE_0657,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0658,South Chief Avenue,Secondary,0.42,0.0,0.0,0.0,0.0,0.0,400
+RTE_0659,South Chief Avenue,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0660,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0661,North Chief Avenue,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0662,North Chief Avenue,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
+RTE_0663,South Chief Avenue,Secondary,0.46,0.0,0.0,0.0,0.0,0.0,400
+RTE_0664,South Chief Avenue,Secondary,0.41,0.0,0.0,0.0,0.0,0.0,400
+RTE_0665,North Chief Avenue,Secondary,0.07,0.0,0.0,0.0,0.0,0.0,400
+RTE_0666,South Chief Avenue,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0667,North Chief Avenue,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0668,North Chief Avenue,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
+RTE_0669,North Chief Avenue,Secondary,0.06,0.0,0.0,0.0,0.0,0.0,400
+RTE_0670,North Chief Avenue,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
 RTE_0671,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
 RTE_0672,North Chief Avenue,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
-RTE_0673,South Chief Avenue,Secondary,0.18,0.0,0.0,0.0,0.0,0.0,400
-RTE_0674,South Chief Avenue,Secondary,0.73,0.0,0.0,0.0,0.0,0.0,400
-RTE_0675,South Chief Avenue,Secondary,0.73,0.0,0.0,0.0,0.0,0.0,400
-RTE_0676,South Chief Avenue,Secondary,1.31,0.0,0.0,0.0,0.0,0.0,400
-RTE_0677,South Chief Avenue,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0678,South Chief Avenue,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
-RTE_0679,North Chief Avenue,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
-RTE_0680,North Chief Avenue,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
-RTE_0681,South Chief Avenue,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0682,South Chief Avenue,Secondary,0.18,0.0,0.0,0.0,0.0,0.0,400
-RTE_0683,South Chief Avenue,Secondary,0.01,0.0,0.0,0.0,0.0,0.0,400
-RTE_0684,South Chief Avenue,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0685,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
-RTE_0686,South Chief Avenue,Secondary,0.01,0.0,0.0,0.0,0.0,0.0,400
-RTE_0687,South Chief Avenue,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0688,South Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0689,Ortega Lake-St. Johns Highway,Primary,0.6,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0690,Ortega Lake-St. Johns Highway,Primary,0.35,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0691,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0692,Show Low-Springerville-East Highway,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0693,Show Low-Springerville-East Highway,Primary,0.38,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0694,Show Low-Springerville-East Highway,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0695,Ortega Lake-St. Johns Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0696,Ortega Lake-St. Johns Highway,Primary,0.55,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0697,Show Low-McNary-Eagar Highway,Secondary,4.51,0.0,0.0,0.0,0.0,0.0,400
-RTE_0698,RTE_0698,Secondary,0.5,0.0,0.0,0.0,0.0,0.0,400
-RTE_0699,Show Low-Springerville-East Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0700,Show Low-Springerville-East Highway,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0701,Show Low-McNary-Eagar Highway,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0702,Show Low-McNary-Eagar Highway,Secondary,4.51,0.0,0.0,0.0,0.0,0.0,400
-RTE_0703,Pine Street,Secondary,7.3,0.0,0.0,0.0,0.0,0.0,400
-RTE_0704,Show Low-McNary-Eagar Highway,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0705,Pine Street,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
-RTE_0706,Pine Street,Secondary,7.3,0.0,0.0,0.0,0.0,0.0,400
-RTE_0707,RTE_0707,Secondary,4.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0708,RTE_0708,Secondary,6.4,0.0,0.0,0.0,0.0,0.0,400
-RTE_0709,Show Low-Springerville-East Highway,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0710,Show Low-Springerville-East Highway,Primary,0.89,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0711,Ortega Lake-St. Johns Highway,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0712,Ortega Lake-St. Johns Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0713,Show Low-Springerville-East Highway,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0714,Show Low-Springerville-East Highway,Primary,0.48,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0715,Show Low-Springerville-East Highway,Primary,1.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0716,Show Low-Springerville-East Highway,Primary,0.38,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0717,Show Low-Springerville-East Highway,Primary,2.23,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0718,Show Low-Springerville-East Highway,Primary,1.36,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0719,Pine Street,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0720,Pine Street,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
-RTE_0721,Ortega Lake-St. Johns Highway,Primary,0.23,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0722,Ortega Lake-St. Johns Highway,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0723,Big Lake Highway,Secondary,3.66,0.0,0.0,0.0,0.0,0.0,400
-RTE_0724,Big Lake Highway,Secondary,1.31,0.0,0.0,0.0,0.0,0.0,400
-RTE_0725,RTE_0725,Secondary,6.4,0.0,0.0,0.0,0.0,0.0,400
-RTE_0726,RTE_0726,Secondary,3.52,0.0,0.0,0.0,0.0,0.0,400
-RTE_0727,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0728,Pine Street,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0673,North Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0674,North Chief Avenue,Secondary,0.21,0.0,0.0,0.0,0.0,0.0,400
+RTE_0675,South Chief Avenue,Secondary,0.18,0.0,0.0,0.0,0.0,0.0,400
+RTE_0676,South Chief Avenue,Secondary,0.73,0.0,0.0,0.0,0.0,0.0,400
+RTE_0677,South Chief Avenue,Secondary,0.73,0.0,0.0,0.0,0.0,0.0,400
+RTE_0678,South Chief Avenue,Secondary,1.31,0.0,0.0,0.0,0.0,0.0,400
+RTE_0679,South Chief Avenue,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0680,South Chief Avenue,Secondary,0.13,0.0,0.0,0.0,0.0,0.0,400
+RTE_0681,North Chief Avenue,Secondary,0.02,0.0,0.0,0.0,0.0,0.0,400
+RTE_0682,North Chief Avenue,Secondary,0.15,0.0,0.0,0.0,0.0,0.0,400
+RTE_0683,South Chief Avenue,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0684,South Chief Avenue,Secondary,0.18,0.0,0.0,0.0,0.0,0.0,400
+RTE_0685,South Chief Avenue,Secondary,0.01,0.0,0.0,0.0,0.0,0.0,400
+RTE_0686,South Chief Avenue,Secondary,0.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0687,South Chief Avenue,Secondary,0.2,0.0,0.0,0.0,0.0,0.0,400
+RTE_0688,South Chief Avenue,Secondary,0.01,0.0,0.0,0.0,0.0,0.0,400
+RTE_0689,South Chief Avenue,Secondary,0.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0690,South Chief Avenue,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0691,Ortega Lake-St. Johns Highway,Primary,0.6,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0692,Ortega Lake-St. Johns Highway,Primary,0.35,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0693,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0694,Show Low-Springerville-East Highway,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0695,Show Low-Springerville-East Highway,Primary,0.38,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0696,Show Low-Springerville-East Highway,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0697,Ortega Lake-St. Johns Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0698,Ortega Lake-St. Johns Highway,Primary,0.55,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0699,Show Low-McNary-Eagar Highway,Secondary,4.51,0.0,0.0,0.0,0.0,0.0,400
+RTE_0700,RTE_0700,Secondary,0.5,0.0,0.0,0.0,0.0,0.0,400
+RTE_0701,Show Low-Springerville-East Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0702,Show Low-Springerville-East Highway,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0703,Show Low-McNary-Eagar Highway,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0704,Show Low-McNary-Eagar Highway,Secondary,4.51,0.0,0.0,0.0,0.0,0.0,400
+RTE_0705,Pine Street,Secondary,7.3,0.0,0.0,0.0,0.0,0.0,400
+RTE_0706,Show Low-McNary-Eagar Highway,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0707,Pine Street,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0708,Pine Street,Secondary,7.3,0.0,0.0,0.0,0.0,0.0,400
+RTE_0709,RTE_0709,Secondary,4.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0710,RTE_0710,Secondary,6.4,0.0,0.0,0.0,0.0,0.0,400
+RTE_0711,Show Low-Springerville-East Highway,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0712,Show Low-Springerville-East Highway,Primary,0.89,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0713,Ortega Lake-St. Johns Highway,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0714,Ortega Lake-St. Johns Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0715,Show Low-Springerville-East Highway,Primary,0.85,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0716,Show Low-Springerville-East Highway,Primary,0.48,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0717,Show Low-Springerville-East Highway,Primary,1.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0718,Show Low-Springerville-East Highway,Primary,0.38,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0719,Show Low-Springerville-East Highway,Primary,2.23,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0720,Show Low-Springerville-East Highway,Primary,1.36,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0721,Pine Street,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0722,Pine Street,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
+RTE_0723,Ortega Lake-St. Johns Highway,Primary,0.23,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0724,Ortega Lake-St. Johns Highway,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0725,Big Lake Highway,Secondary,3.66,0.0,0.0,0.0,0.0,0.0,400
+RTE_0726,Big Lake Highway,Secondary,1.31,0.0,0.0,0.0,0.0,0.0,400
+RTE_0727,RTE_0727,Secondary,6.4,0.0,0.0,0.0,0.0,0.0,400
+RTE_0728,RTE_0728,Secondary,3.52,0.0,0.0,0.0,0.0,0.0,400
 RTE_0729,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0730,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0731,Show Low-Springerville-East Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0732,Show Low-Springerville-East Highway,Primary,1.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0733,Show Low-Springerville-East Highway,Primary,0.52,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0734,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0735,Show Low-Springerville-East Highway,Primary,8.78,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0736,Show Low-Springerville-East Highway,Primary,2.23,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0737,Show Low-Springerville-East Highway,Primary,1.36,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0738,Show Low-Springerville-East Highway,Primary,3.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0739,Show Low-Springerville-East Highway,Primary,3.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0740,Show Low-Springerville-East Highway,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0741,Show Low-Springerville-East Highway,Primary,0.52,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0742,Show Low-Springerville-East Highway,Primary,1.78,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0743,Show Low-Springerville-East Highway,Primary,8.78,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0744,Big Lake Highway,Secondary,1.31,0.0,0.0,0.0,0.0,0.0,400
-RTE_0745,Big Lake Highway,Secondary,1.44,0.0,0.0,0.0,0.0,0.0,400
-RTE_0746,Big Lake Highway,Secondary,6.43,0.0,0.0,0.0,0.0,0.0,400
-RTE_0747,Big Lake Highway,Secondary,3.66,0.0,0.0,0.0,0.0,0.0,400
-RTE_0748,Big Lake Highway,Secondary,1.86,0.0,0.0,0.0,0.0,0.0,400
-RTE_0749,Big Lake Highway,Secondary,2.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0750,Big Lake Highway,Secondary,1.44,0.0,0.0,0.0,0.0,0.0,400
-RTE_0751,Big Lake Highway,Secondary,1.86,0.0,0.0,0.0,0.0,0.0,400
-RTE_0752,Show Low-Springerville-East Highway,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0753,Show Low-Springerville-East Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0754,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0755,Show Low-Springerville-East Highway,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0756,County Road 3148,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0757,County Road 3148,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0758,Ortega Lake-St. Johns Highway,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0759,Ortega Lake-St. Johns Highway,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0760,Pine Street,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
-RTE_0761,Pine Street,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0762,RTE_0762,Secondary,1.45,0.0,0.0,0.0,0.0,0.0,400
-RTE_0763,RTE_0763,Secondary,1.68,0.0,0.0,0.0,0.0,0.0,400
-RTE_0764,RTE_0764,Secondary,0.5,0.0,0.0,0.0,0.0,0.0,400
-RTE_0765,RTE_0765,Secondary,4.24,0.0,0.0,0.0,0.0,0.0,400
-RTE_0766,County Road 3148,Secondary,0.41,0.0,0.0,0.0,0.0,0.0,400
-RTE_0767,County Road 3148,Secondary,0.51,0.0,0.0,0.0,0.0,0.0,400
-RTE_0768,County Road 3148,Secondary,0.12,0.0,0.0,0.0,0.0,0.0,400
-RTE_0769,Ortega Lake-St. Johns Highway,Primary,0.74,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0770,Ortega Lake-St. Johns Highway,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0730,Pine Street,Secondary,0.08,0.0,0.0,0.0,0.0,0.0,400
+RTE_0731,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0732,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0733,Show Low-Springerville-East Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0734,Show Low-Springerville-East Highway,Primary,1.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0735,Show Low-Springerville-East Highway,Primary,0.52,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0736,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0737,Show Low-Springerville-East Highway,Primary,8.78,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0738,Show Low-Springerville-East Highway,Primary,2.23,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0739,Show Low-Springerville-East Highway,Primary,1.36,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0740,Show Low-Springerville-East Highway,Primary,3.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0741,Show Low-Springerville-East Highway,Primary,3.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0742,Show Low-Springerville-East Highway,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0743,Show Low-Springerville-East Highway,Primary,0.52,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0744,Show Low-Springerville-East Highway,Primary,1.78,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0745,Show Low-Springerville-East Highway,Primary,8.78,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0746,Big Lake Highway,Secondary,1.31,0.0,0.0,0.0,0.0,0.0,400
+RTE_0747,Big Lake Highway,Secondary,1.44,0.0,0.0,0.0,0.0,0.0,400
+RTE_0748,Big Lake Highway,Secondary,6.43,0.0,0.0,0.0,0.0,0.0,400
+RTE_0749,Big Lake Highway,Secondary,3.66,0.0,0.0,0.0,0.0,0.0,400
+RTE_0750,Big Lake Highway,Secondary,1.86,0.0,0.0,0.0,0.0,0.0,400
+RTE_0751,Big Lake Highway,Secondary,2.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0752,Big Lake Highway,Secondary,1.44,0.0,0.0,0.0,0.0,0.0,400
+RTE_0753,Big Lake Highway,Secondary,1.86,0.0,0.0,0.0,0.0,0.0,400
+RTE_0754,Show Low-Springerville-East Highway,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0755,Show Low-Springerville-East Highway,Primary,0.47,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0756,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0757,Show Low-Springerville-East Highway,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0758,County Road 3148,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0759,County Road 3148,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0760,Ortega Lake-St. Johns Highway,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0761,Ortega Lake-St. Johns Highway,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0762,Pine Street,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
+RTE_0763,Pine Street,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0764,RTE_0764,Secondary,1.45,0.0,0.0,0.0,0.0,0.0,400
+RTE_0765,RTE_0765,Secondary,1.68,0.0,0.0,0.0,0.0,0.0,400
+RTE_0766,RTE_0766,Secondary,0.5,0.0,0.0,0.0,0.0,0.0,400
+RTE_0767,RTE_0767,Secondary,4.24,0.0,0.0,0.0,0.0,0.0,400
+RTE_0768,County Road 3148,Secondary,0.41,0.0,0.0,0.0,0.0,0.0,400
+RTE_0769,County Road 3148,Secondary,0.51,0.0,0.0,0.0,0.0,0.0,400
+RTE_0770,County Road 3148,Secondary,0.12,0.0,0.0,0.0,0.0,0.0,400
 RTE_0771,Ortega Lake-St. Johns Highway,Primary,0.74,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0772,Ortega Lake-St. Johns Highway,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0773,Ortega Lake-St. Johns Highway,Primary,1.23,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0774,Ortega Lake-St. Johns Highway,Primary,0.23,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0772,Ortega Lake-St. Johns Highway,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0773,Ortega Lake-St. Johns Highway,Primary,0.74,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0774,Ortega Lake-St. Johns Highway,Primary,0.17,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0775,Ortega Lake-St. Johns Highway,Primary,1.23,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0776,Show Low-Springerville-East Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0777,Show Low-Springerville-East Highway,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0778,County Road 3148,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0779,Show Low-Springerville-East Highway,Primary,1.12,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0780,Show Low-Springerville-East Highway,Primary,0.89,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0781,County Road 3148,Secondary,0.32,0.0,0.0,0.0,0.0,0.0,400
-RTE_0782,County Road 3148,Secondary,0.28,0.0,0.0,0.0,0.0,0.0,400
-RTE_0783,County Road 3148,Secondary,0.51,0.0,0.0,0.0,0.0,0.0,400
-RTE_0784,County Road 3148,Secondary,0.32,0.0,0.0,0.0,0.0,0.0,400
-RTE_0785,County Road 3148,Secondary,0.12,0.0,0.0,0.0,0.0,0.0,400
-RTE_0786,County Road 3148,Secondary,2.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0787,RTE_0787,Secondary,2.37,0.0,0.0,0.0,0.0,0.0,400
-RTE_0788,RTE_0788,Secondary,1.68,0.0,0.0,0.0,0.0,0.0,400
+RTE_0776,Ortega Lake-St. Johns Highway,Primary,0.23,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0777,Ortega Lake-St. Johns Highway,Primary,1.23,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0778,Show Low-Springerville-East Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0779,Show Low-Springerville-East Highway,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0780,County Road 3148,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0781,Show Low-Springerville-East Highway,Primary,1.12,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0782,Show Low-Springerville-East Highway,Primary,0.89,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0783,County Road 3148,Secondary,0.32,0.0,0.0,0.0,0.0,0.0,400
+RTE_0784,County Road 3148,Secondary,0.28,0.0,0.0,0.0,0.0,0.0,400
+RTE_0785,County Road 3148,Secondary,0.51,0.0,0.0,0.0,0.0,0.0,400
+RTE_0786,County Road 3148,Secondary,0.32,0.0,0.0,0.0,0.0,0.0,400
+RTE_0787,County Road 3148,Secondary,0.12,0.0,0.0,0.0,0.0,0.0,400
+RTE_0788,County Road 3148,Secondary,2.09,0.0,0.0,0.0,0.0,0.0,400
 RTE_0789,RTE_0789,Secondary,2.37,0.0,0.0,0.0,0.0,0.0,400
-RTE_0790,RTE_0790,Secondary,1.44,0.0,0.0,0.0,0.0,0.0,400
-RTE_0791,RTE_0791,Secondary,1.45,0.0,0.0,0.0,0.0,0.0,400
-RTE_0792,RTE_0792,Secondary,3.52,0.0,0.0,0.0,0.0,0.0,400
-RTE_0793,RTE_0793,Secondary,1.44,0.0,0.0,0.0,0.0,0.0,400
-RTE_0794,Big Lake Highway,Secondary,6.43,0.0,0.0,0.0,0.0,0.0,400
-RTE_0795,Show Low-Springerville-East Highway,Primary,0.01,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0796,Show Low-Springerville-East Highway,Primary,3.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0797,Show Low-Springerville-East Highway,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0798,Show Low-Springerville-East Highway,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0799,Show Low-Springerville-East Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0800,Show Low-Springerville-East Highway,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0801,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0802,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0790,RTE_0790,Secondary,1.68,0.0,0.0,0.0,0.0,0.0,400
+RTE_0791,RTE_0791,Secondary,2.37,0.0,0.0,0.0,0.0,0.0,400
+RTE_0792,RTE_0792,Secondary,1.44,0.0,0.0,0.0,0.0,0.0,400
+RTE_0793,RTE_0793,Secondary,1.45,0.0,0.0,0.0,0.0,0.0,400
+RTE_0794,RTE_0794,Secondary,3.52,0.0,0.0,0.0,0.0,0.0,400
+RTE_0795,RTE_0795,Secondary,1.44,0.0,0.0,0.0,0.0,0.0,400
+RTE_0796,Big Lake Highway,Secondary,6.43,0.0,0.0,0.0,0.0,0.0,400
+RTE_0797,Show Low-Springerville-East Highway,Primary,0.01,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0798,Show Low-Springerville-East Highway,Primary,3.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0799,Show Low-Springerville-East Highway,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0800,Show Low-Springerville-East Highway,Primary,0.44,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0801,Show Low-Springerville-East Highway,Primary,0.08,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0802,Show Low-Springerville-East Highway,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0803,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
-RTE_0804,Pine Street,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0805,Show Low-McNary-Eagar Highway,Secondary,0.97,0.0,0.0,0.0,0.0,0.0,400
-RTE_0806,Show Low-McNary-Eagar Highway,Secondary,0.61,0.0,0.0,0.0,0.0,0.0,400
-RTE_0807,Show Low-McNary-Eagar Highway,Secondary,2.49,0.0,0.0,0.0,0.0,0.0,400
-RTE_0808,Show Low-McNary-Eagar Highway,Secondary,0.4,0.0,0.0,0.0,0.0,0.0,400
-RTE_0809,Show Low-McNary-Eagar Highway,Secondary,0.4,0.0,0.0,0.0,0.0,0.0,400
-RTE_0810,Show Low-McNary-Eagar Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0811,Show Low-McNary-Eagar Highway,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0812,Show Low-McNary-Eagar Highway,Primary,1.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0813,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0814,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0815,Show Low-McNary-Eagar Highway,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0816,Show Low-McNary-Eagar Highway,Primary,0.33,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0817,Show Low-McNary-Eagar Highway,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0804,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0805,Pine Street,Secondary,0.11,0.0,0.0,0.0,0.0,0.0,400
+RTE_0806,Pine Street,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0807,Show Low-McNary-Eagar Highway,Secondary,0.97,0.0,0.0,0.0,0.0,0.0,400
+RTE_0808,Show Low-McNary-Eagar Highway,Secondary,0.61,0.0,0.0,0.0,0.0,0.0,400
+RTE_0809,Show Low-McNary-Eagar Highway,Secondary,2.49,0.0,0.0,0.0,0.0,0.0,400
+RTE_0810,Show Low-McNary-Eagar Highway,Secondary,0.4,0.0,0.0,0.0,0.0,0.0,400
+RTE_0811,Show Low-McNary-Eagar Highway,Secondary,0.4,0.0,0.0,0.0,0.0,0.0,400
+RTE_0812,Show Low-McNary-Eagar Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0813,Show Low-McNary-Eagar Highway,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0814,Show Low-McNary-Eagar Highway,Primary,1.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0815,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0816,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0817,Show Low-McNary-Eagar Highway,Primary,0.43,0.0,0.0,0.0,0.0,0.0,1200
 RTE_0818,Show Low-McNary-Eagar Highway,Primary,0.33,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0819,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0820,Show Low-McNary-Eagar Highway,Primary,0.41,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0821,Show Low-McNary-Eagar Highway,Secondary,0.97,0.0,0.0,0.0,0.0,0.0,400
-RTE_0822,Show Low-McNary-Eagar Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0823,Pine Street,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
-RTE_0824,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
-RTE_0825,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
-RTE_0826,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0827,Show Low-Springerville-East Highway,Primary,3.03,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0828,Big Lake Highway,Secondary,2.05,0.0,0.0,0.0,0.0,0.0,400
-RTE_0829,Show Low-Springerville-East Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0830,Ortega Lake-St. Johns Highway,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0831,Show Low-Springerville-East Highway,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0832,Pine Street,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
-RTE_0833,Pine Street,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
-RTE_0834,Show Low-Springerville-East Highway,Primary,0.01,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0835,Show Low-Springerville-East Highway,Primary,1.78,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0836,County Road 3148,Secondary,2.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0837,County Road 3148,Secondary,0.41,0.0,0.0,0.0,0.0,0.0,400
-RTE_0838,Ortega Lake-St. Johns Highway,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0839,Ortega Lake-St. Johns Highway,Primary,0.55,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0840,Ortega Lake-St. Johns Highway,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0841,Ortega Lake-St. Johns Highway,Primary,0.6,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0842,Ortega Lake-St. Johns Highway,Primary,0.35,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0843,Ortega Lake-St. Johns Highway,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0844,Show Low-Springerville-East Highway,Primary,0.82,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0845,Show Low-Springerville-East Highway,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0846,Show Low-Springerville-East Highway,Primary,0.48,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0847,Show Low-Springerville-East Highway,Primary,0.82,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0848,Show Low-Springerville-East Highway,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0849,Show Low-Springerville-East Highway,Primary,1.04,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0850,Show Low-Springerville-East Highway,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0851,Show Low-Springerville-East Highway,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0852,County Road 3148,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
-RTE_0853,County Road 3148,Secondary,0.28,0.0,0.0,0.0,0.0,0.0,400
-RTE_0854,Show Low-McNary-Eagar Highway,Primary,1.16,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0855,Show Low-McNary-Eagar Highway,Primary,0.41,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0856,Show Low-McNary-Eagar Highway,Secondary,0.61,0.0,0.0,0.0,0.0,0.0,400
-RTE_0857,Show Low-McNary-Eagar Highway,Secondary,2.49,0.0,0.0,0.0,0.0,0.0,400
-RTE_0858,Show Low-Springerville-East Highway,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0859,Show Low-Springerville-East Highway,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0860,Show Low-Springerville-East Highway,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
-RTE_0861,Show Low-Springerville-East Highway,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0819,Show Low-McNary-Eagar Highway,Primary,0.19,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0820,Show Low-McNary-Eagar Highway,Primary,0.33,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0821,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0822,Show Low-McNary-Eagar Highway,Primary,0.41,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0823,Show Low-McNary-Eagar Highway,Secondary,0.97,0.0,0.0,0.0,0.0,0.0,400
+RTE_0824,Show Low-McNary-Eagar Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0825,Pine Street,Secondary,0.16,0.0,0.0,0.0,0.0,0.0,400
+RTE_0826,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.04,0.0,0.0,0.0,0.0,0.0,400
+RTE_0827,Carrizo-Whiteriver-Indian Pine Highway,Secondary,0.14,0.0,0.0,0.0,0.0,0.0,400
+RTE_0828,Show Low-Springerville-East Highway,Primary,0.15,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0829,Show Low-Springerville-East Highway,Primary,3.03,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0830,Big Lake Highway,Secondary,2.05,0.0,0.0,0.0,0.0,0.0,400
+RTE_0831,Show Low-Springerville-East Highway,Primary,0.86,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0832,Ortega Lake-St. Johns Highway,Primary,0.11,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0833,Show Low-Springerville-East Highway,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0834,Pine Street,Secondary,0.03,0.0,0.0,0.0,0.0,0.0,400
+RTE_0835,Pine Street,Secondary,0.1,0.0,0.0,0.0,0.0,0.0,400
+RTE_0836,Show Low-Springerville-East Highway,Primary,0.01,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0837,Show Low-Springerville-East Highway,Primary,1.78,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0838,County Road 3148,Secondary,2.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0839,County Road 3148,Secondary,0.41,0.0,0.0,0.0,0.0,0.0,400
+RTE_0840,Ortega Lake-St. Johns Highway,Primary,0.45,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0841,Ortega Lake-St. Johns Highway,Primary,0.55,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0842,Ortega Lake-St. Johns Highway,Primary,0.21,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0843,Ortega Lake-St. Johns Highway,Primary,0.6,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0844,Ortega Lake-St. Johns Highway,Primary,0.35,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0845,Ortega Lake-St. Johns Highway,Primary,0.53,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0846,Show Low-Springerville-East Highway,Primary,0.82,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0847,Show Low-Springerville-East Highway,Primary,0.51,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0848,Show Low-Springerville-East Highway,Primary,0.48,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0849,Show Low-Springerville-East Highway,Primary,0.82,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0850,Show Low-Springerville-East Highway,Primary,0.28,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0851,Show Low-Springerville-East Highway,Primary,1.04,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0852,Show Low-Springerville-East Highway,Primary,0.25,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0853,Show Low-Springerville-East Highway,Primary,0.3,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0854,County Road 3148,Secondary,0.09,0.0,0.0,0.0,0.0,0.0,400
+RTE_0855,County Road 3148,Secondary,0.28,0.0,0.0,0.0,0.0,0.0,400
+RTE_0856,Show Low-McNary-Eagar Highway,Primary,1.16,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0857,Show Low-McNary-Eagar Highway,Primary,0.41,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0858,Show Low-McNary-Eagar Highway,Secondary,0.61,0.0,0.0,0.0,0.0,0.0,400
+RTE_0859,Show Low-McNary-Eagar Highway,Secondary,2.49,0.0,0.0,0.0,0.0,0.0,400
+RTE_0860,Show Low-Springerville-East Highway,Primary,0.39,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0861,Show Low-Springerville-East Highway,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0862,Show Low-Springerville-East Highway,Primary,0.24,0.0,0.0,0.0,0.0,0.0,1200
+RTE_0863,Show Low-Springerville-East Highway,Primary,0.31,0.0,0.0,0.0,0.0,0.0,1200
