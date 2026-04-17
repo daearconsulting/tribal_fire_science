@@ -4,7 +4,7 @@ sovereignty.py: Data governance, attribution, and sovereignty helpers.
 This module exists because Indigenous data sovereignty principles should not be
 scattered across notebooks as comments. They belong in shared, versioned code.
 
-Three complementary frameworks guide data governance in this project:
+Four complementary frameworks guide data governance in this project:
 
 OCAP® Principles (First Nations Information Governance Centre)
   Ownership   — Tribal Nations own their collective data and cultural knowledge
@@ -32,11 +32,11 @@ FAIR Principles (FORCE11)
   Reusable     — Data has clear licensing and provenance documentation
   Reference    : https://www.go-fair.org/fair-principles/
 
-IEEE 2890-2025 — Recommended Practice for Provenance of Indigenous Peoples' Data
+IEEE 2890-2025: Recommended Practice for Provenance of Indigenous Peoples' Data
   The first international standard for Indigenous data provenance. Establishes
   common parameters for describing and recording how data about or related to
   Indigenous Peoples should be disclosed, connected to people and place, and
-  governed across its lifecycle — including AI/ML and biodiversity contexts.
+  governed across its lifecycle, including AI/ML and biodiversity contexts.
   Reference: https://standards.ieee.org/ieee/2890/10318/
 
 Relationship between frameworks
@@ -141,7 +141,7 @@ SOURCES: dict[str, DataSource] = {
             "Use for analytical context only, not for legal, jurisdictional, or "
             "policy claims without Tribal review and consent."
         ),
-        fair_notes="Accessible via WFS endpoint. Schema is consistent across vintages.",
+        fair_notes="Accessible via WFS endpoint. Schema is consistent across years.",
         attribution="Bureau of Indian Affairs, BIA National LAR dataset.",
     ),
     "census_aiannh": DataSource(
@@ -235,7 +235,7 @@ SOURCES: dict[str, DataSource] = {
     "raws_stations": DataSource(
         name="RAWS Fire Weather Station Network",
         url="https://raws.dri.edu/",
-        steward="Western Regional Climate Center / USDA Forest Service / BLM / BIA",
+        steward="Western Regional Climate Center/USDA Forest Service/BLM/BIA",
         tribal_data=False,
         license="Public domain (federal government)",
         fair_notes=(
@@ -367,12 +367,10 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     """
     keys = source_keys or [k for k, v in SOURCES.items() if v.tribal_data]
 
-    print("=" * 70)
     print("DATA SOVEREIGNTY ACKNOWLEDGMENT")
-    print("=" * 70)
     print(
         "This analysis uses data that describes Indigenous and Tribal lands,\n"
-        "communities, and fire histories. This project is guided by three\n"
+        "communities, and fire histories. This project is guided by four\n"
         "complementary data governance frameworks:\n"
         "\n"
         "OCAP® : Tribal Nations own, control, access, and possess data about\n"
@@ -389,6 +387,13 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
         "  obligations to Tribal Nations that FAIR alone does not address.\n"
         "  Reference: https://www.go-fair.org/fair-principles/\n"
         "\n"
+        "IEEE 2890-2025: Recommended Practice for Provenance of Indigenous Peoples' Data\n"
+        " The first international standard for Indigenous data provenance. Establishes\n"
+        " common parameters for describing and recording how data about or related to\n"
+        " Indigenous Peoples should be disclosed, connected to people and place, and\n"
+        " governed across its lifecycle, including AI/ML and biodiversity contexts.\n"
+        " Reference: https://standards.ieee.org/ieee/2890/10318/\n"
+        "\n"
         "We recognize that:\n"
         "\n"
         "• Tribal Nations are sovereign governments with the right to control\n"
@@ -404,7 +409,7 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     for key in keys:
         src = SOURCES.get(key)
         if src:
-            print(f"  • {src.name} — {src.steward}")
+            print(f"  • {src.name} - {src.steward}")
             if src.ocap_notes:
                 print(f"    OCAP®: {src.ocap_notes}")
             if src.care_notes:
@@ -417,7 +422,7 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
 
 def generate_citations(source_keys: list[str]) -> str:
     """Return a formatted citation block for use in notebooks or reports."""
-    lines = ["References/Data Sources", "-" * 40]
+    lines = ["References/Data Sources"]
     for key in source_keys:
         src = SOURCES.get(key)
         if src:
