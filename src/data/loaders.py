@@ -1,8 +1,8 @@
 """
-loaders.py: fetch and cache datasets used across notebooks.
+loaders.py to fetch and cache real datasets used across notebooks.
 
 Design principles
-- Every function fetches from a documented public source.
+- Every function fetches from a documented public source (no synthetic data).
 - Results are cached to data/cache/ as Parquet or GeoJSON to avoid redundant
   API calls. Pass force_refresh=True to re-download.
 - All returned GeoDataFrames use CRS_GEOGRAPHIC (EPSG:4326) by default.
@@ -39,7 +39,7 @@ from .constants import (
 
 log = logging.getLogger(__name__)
 
-# Retry decorator for public APIs 
+# Retry decorator for public APIs
 _retry = retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
@@ -47,10 +47,10 @@ _retry = retry(
 )
 
 
-# Module-level URL constants 
+# Module-level URL constants
 CENSUS_TIGER_BASE = "https://www2.census.gov/geo/tiger"
 
-# Internal helpers 
+# Internal helpers
 
 def _cache_path(name: str, suffix: str = ".parquet") -> Path:
     try:
@@ -92,7 +92,7 @@ def _load_or_fetch_dataframe(
     return df
 
 
-# NIFC Fire Perimeters 
+# NIFC Fire Perimeters
 
 @_retry
 def load_nifc_perimeters(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -145,7 +145,7 @@ def load_mtbs_perimeters(
     return gdf.reset_index(drop=True)
 
 
-# BIA Tribal Boundaries 
+# BIA Tribal Boundaries
 
 @_retry
 def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -164,7 +164,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("bia_tribal_boundaries", _fetch, force_refresh)
 
 
-# Census TIGER American Indian/Alaska Native Areas 
+# Census TIGER American Indian/Alaska Native Areas
 
 @_retry
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -204,7 +204,7 @@ def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_aiannh", _fetch, force_refresh)
 
 
-# Native Land Digital Tribal Territories 
+# Native Land Digital Tribal Territories
 
 @_retry
 def load_native_land_territories(
@@ -212,7 +212,7 @@ def load_native_land_territories(
     force_refresh: bool = False,
 ) -> gpd.GeoDataFrame:
     """
-    Native Land Digital — Indigenous territory polygons.
+    Native Land Digital Indigenous territory polygons.
     Source: https://native-land.ca  (CC BY-NC 4.0)
     bbox: (min_lon, min_lat, max_lon, max_lat) to spatially filter results.
 
@@ -258,7 +258,7 @@ def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFra
     return _load_or_fetch_geodataframe("fema_nri", _fetch, force_refresh)
 
 
-# Wildland-Urban Interface (WUI) 
+# Wildland-Urban Interface (WUI)
 
 @_retry
 def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
@@ -268,7 +268,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     NOTE: Large file (~1 GB). Consider filtering by state/bbox after loading.
     """
     def _fetch():
-        # Direct ZIP download — URL may require navigating USDA RDS catalog
+        # Direct ZIP download: URL may require navigating USDA RDS catalog
         # Users may need to manually download and place in data/raw/wui/
         wui_dir = RAW_DIR / "wui"
         shp_files = list(wui_dir.glob("*.shp"))
@@ -283,7 +283,7 @@ def load_wui(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("wui", _fetch, force_refresh)
 
 
-# NOAA Climate Data (via CDO API)
+# NOAA Climate Data (via CDO API) 
 
 def load_noaa_climate_data(
     station_ids: list[str],
@@ -299,8 +299,8 @@ def load_noaa_climate_data(
     Requires a free API token from: https://www.ncei.noaa.gov/cdo-web/token
 
     Parameters
-    station_ids : list of NOAA station IDs (ex. ["GHCND:USC00123456"])
-    dataset_id  : CDO dataset (ex. "GHCND", "NORMAL_DLY")
+    station_ids : list of NOAA station IDs (e.g. ["GHCND:USC00123456"])
+    dataset_id  : CDO dataset (e.g. "GHCND", "NORMAL_DLY")
     start_date  : "YYYY-MM-DD"
     end_date    : "YYYY-MM-DD"
     api_token   : CDO API token (store in .env, never commit)
@@ -328,7 +328,7 @@ def load_noaa_climate_data(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# gridMET Weather Data 
+# gridMET Weather Data
 
 # gridMET variable names and their units
 GRIDMET_VARIABLES = {
@@ -340,7 +340,7 @@ GRIDMET_VARIABLES = {
     "fm1000": {"desc": "1000-hr dead fuel moisture", "units_raw": "%",    "units_out": "%"},
 }
 
-# gridMET OPeNDAP base URL spatial subsetting via index slicing avoids
+# gridMET OPeNDAP base URL: spatial subsetting via index slicing avoids
 # downloading full continental US grids (~200–500 MB per variable per year)
 GRIDMET_OPENDAP_BASE = (
     "http://thredds.northwestknowledge.net:8080/thredds/dodsC/MET/{var}/{var}_{year}.nc"
@@ -357,16 +357,18 @@ def load_gridmet_weather(
 ) -> pd.DataFrame:
     """
     Load gridMET daily weather data for Tribal land centroids.
+
     Uses OPeNDAP spatial subsetting to download only the grid cells
     covering the study area, no full continental US download required.
+
     Source: University of Idaho gridMET
     https://www.climatologylab.org/gridmet.html
     Spatial resolution: ~4 km. Temporal coverage: 1979–present.
 
     Variables loaded by default
-    tmmx   : Daily max temperature (K to F)
+    tmmx   : Daily max temperature (K → °F)
     rmin   : Daily min relative humidity (%)
-    vs     : Daily mean wind speed (m/s to mph)
+    vs     : Daily mean wind speed (m/s → mph)
     bi     : Burning Index
     erc    : Energy Release Component
     fm1000 : 1000-hr dead fuel moisture (%)
@@ -465,7 +467,7 @@ def load_gridmet_weather(
                 fm_vals    = nearest_val(year_data.get("fm1000"), "dead_fuel_moisture_1000hr",   lat, lon) if year_data.get("fm1000") else np.full(len(times), np.nan)
 
                 # Unit conversions
-                # K to F
+                # K to °F
                 temp_f = (tmmx_vals - 273.15) * 9 / 5 + 32
                 # m/s to mph
                 wind_mph = vs_vals * 2.23694
@@ -517,7 +519,6 @@ def load_gridmet_weather(
 
 
 # HIFLD Fire Stations
-
 HIFLD_FIRE_STATIONS_URL = (
     "https://services1.arcgis.com/Hp6G80Pky0om7QvQ/arcgis/rest/services/"
     "Fire_Stations/FeatureServer/0/query"
@@ -530,13 +531,13 @@ def load_hifld_fire_stations(
     force_refresh: bool = False,
 ) -> gpd.GeoDataFrame:
     """
-    HIFLD Fire Stations — federal, state, local, and Tribal fire stations.
+    HIFLD Fire Stations (federal, state, local, and Tribal fire stations).
     Source: Homeland Infrastructure Foundation-Level Data (HIFLD)
     https://hifld-geoplatform.opendata.arcgis.com/datasets/fire-stations
 
     Parameters
     state_filter : list of two-letter state abbreviations to filter results
-                   (ex. ["AZ", "NM", "MT"]). If None, returns all CONUS stations.
+                   (e.g. ["AZ", "NM", "MT"]). If None, returns all CONUS stations.
     force_refresh : re-download even if cache exists
     """
     cache_name = "hifld_fire_stations"
@@ -553,13 +554,13 @@ def load_hifld_fire_stations(
             raise ValueError(
                 "state_filter is required for load_hifld_fire_stations to avoid "
                 "requesting the full national dataset. Pass a list of state "
-                "abbreviations: state_filter=['AZ', 'NM']."
+                "abbreviations, ex. state_filter=['AZ', 'NM']."
             )
 
         states = "', '".join(state_filter)
         where_clause = f"STATE IN ('{states}')"
 
-        # Paginate: HIFLD service max is 1000 records per request
+        # Paginate (HIFLD service max is 1000 records per request)
         all_features = []
         offset = 0
         page_size = 1000
@@ -611,12 +612,12 @@ def load_usgs_wbd_huc8(
     force_refresh: bool = False,
 ) -> gpd.GeoDataFrame:
     """
-    USGS Watershed Boundary Dataset — HUC-8 subbasins.
+    USGS Watershed Boundary Dataset HUC-8 subbasins.
     Source: https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer/4
 
     Parameters
     bbox       : (min_lon, min_lat, max_lon, max_lat) spatial filter
-    huc2_codes : list of 2-digit HUC region codes (ex. ["17", "11"])
+    huc2_codes : list of 2-digit HUC region codes (e.g. ["17", "11"])
                  to limit download. If None, uses bbox only.
     force_refresh : re-download even if cache exists
     """
@@ -757,12 +758,12 @@ def load_blm_sma(
     force_refresh: bool = False,
 ) -> gpd.GeoDataFrame:
     """
-    BLM Surface Management Agency (SMA) dataset for federal land ownership.
+    BLM Surface Management Agency (SMA) dataset with federal land ownership.
     Includes BLM, USFS, NPS, FWS, BIA, DOD, state, and private surface ownership.
     Source: https://gbp-blm-egis.hub.arcgis.com/
 
     Parameters
-    bbox : (min_lon, min_lat, max_lon, max_lat) required, clips to study area
+    bbox : (min_lon, min_lat, max_lon, max_lat) — required, clips to study area
     """
     if bbox is None:
         raise ValueError("bbox is required for load_blm_sma to limit download size.")
@@ -781,7 +782,7 @@ def load_blm_sma(
 
         while True:
             # BLM SMA endpoint rejects combined WHERE + spatial filter (returns 400).
-            # Use spatial filter only.
+            # Use spatial filter only, no where clause.
             params = {
                 "outFields":         "ADMIN_AGENCY_CODE,ADMIN_UNIT_NAME,ADMIN_ST",
                 "f":                 "geojson",
@@ -853,7 +854,7 @@ def load_census_urban_areas(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_urban_areas", _fetch, force_refresh)
 
 
-# Census ACS Population 
+# Census ACS Population
 
 def load_census_acs_population(
     api_key: str,
@@ -862,13 +863,13 @@ def load_census_acs_population(
     force_refresh: bool = False,
 ) -> pd.DataFrame:
     """
-    Census American Community Survey (ACS) 5-year estimates of county population.
+    Census American Community Survey (ACS) 5-year estimates for county population.
     Source: https://api.census.gov/data/
 
     Parameters
     api_key   : Census API key (free from https://api.census.gov/data/key_signup.html)
                Store in .env as CENSUS_API_KEY, never commit.
-    year      : ACS release year (ex. 2022 = 2018-2022 5-year estimates)
+    year      : ACS release year (e.g. 2022 = 2018-2022 5-year estimates)
     variables : List of ACS variable codes. Defaults to ['B01003_001E'] (total population).
 
     Returns
@@ -897,14 +898,14 @@ def load_census_acs_population(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# MACAv2 Climate Projections 
+# MACAv2 Climate Projections
 # Multivariate Adaptive Constructed Analogs v2 (MACAv2-METDATA)
 # Source: Northwest Knowledge Network THREDDS
 # http://thredds.northwestknowledge.net:8080/thredds/dodsC/
 
 MACA_THREDDS_BASE = "http://thredds.northwestknowledge.net:8080/thredds/dodsC/"
 
-# Year ranges per scenario: part of filename on NKN THREDDS
+# Year ranges per scenario (part of filename on NKN THREDDS)
 MACA_YEAR_RANGES = {
     "historical": ("1950", "2005"),
     "rcp45":      ("2006", "2099"),
@@ -959,7 +960,7 @@ def load_maca_projections(
 
     Parameters
     lon, lat   : Point coordinates (WGS84)
-    variable   : MACAv2 variable code, ex. 'tasmax', 'pr'
+    variable   : MACAv2 variable code, e.g. 'tasmax', 'pr'
     scenario   : 'historical', 'rcp45', or 'rcp85'
     model      : GCM name, ex. 'BNU-ESM'
     start_year : First year to retrieve
@@ -1020,7 +1021,7 @@ def load_maca_projections(
         series   = ds_point[var_name].to_series().reset_index()
         series   = series.rename(columns={var_name: variable})
 
-        # MACAv2 uses cftime.DatetimeNoLeap so convert to standard datetime strings
+        # MACAv2 uses cftime.DatetimeNoLeap to convert to standard datetime strings
         # to avoid Arrow serialization errors when caching as parquet/GeoJSON
         if hasattr(series["time"].iloc[0], "year"):
             series["time"] = series["time"].apply(
@@ -1068,13 +1069,13 @@ def load_census_counties(force_refresh: bool = False) -> gpd.GeoDataFrame:
     return _load_or_fetch_geodataframe("census_counties", _fetch, force_refresh)
 
 
-# EPA AQS PM2.5 Daily Data 
+# EPA AQS PM2.5 Daily Data
 
 EPA_AQS_BASE = "https://aqs.epa.gov/data/api"
 
 # PM2.5 parameter codes
-# 88101 = PM2.5 Local Conditions (FRM/FEM highest quality)
-# 88502 = Acceptable PM2.5 (includes non-FRM better rural coverage)
+# 88101 = PM2.5 Local Conditions (FRM/FEM = highest quality)
+# 88502 = Acceptable PM2.5 (includes non-FRM = better rural coverage)
 EPA_AQS_PM25_PARAMS = ["88101", "88502"]
 
 
@@ -1155,7 +1156,7 @@ def load_epa_aqs_pm25(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# Census ACS Age Demographics 
+# Census ACS Age Demographics
 
 def load_census_age_demographics(
     api_key: str,
@@ -1163,7 +1164,7 @@ def load_census_age_demographics(
     force_refresh: bool = False,
 ) -> "pd.DataFrame":
     """
-    Census ACS 5-year estimates county-level age demographics.
+    Census ACS 5-year estimates for county-level age demographics.
     Returns total population, count 65+, count under 18, and percentages.
     Source: Census ACS Table B01001
 
@@ -1218,10 +1219,10 @@ def load_census_age_demographics(
     return _load_or_fetch_dataframe(cache_name, _fetch, force_refresh)
 
 
-# USGS NHDPlus HR Flowlines (Stream Network) 
+# USGS NHDPlus HR Flowlines (Stream Network)
 
 NHD_FLOWLINE_URL = (
-    "https://hydro.nationalmap.gov/arcgis/rest/services/NHDPlus_HR/MapServer/2/query"
+    "https://hydro.nationalmap.gov/arcgis/rest/services/NHDPlus_HR/MapServer/3/query"
 )
 
 
@@ -1252,10 +1253,10 @@ def load_nhd_flowlines(
         except FileExistsError:
             pass
 
-        where = f"StreamOrde >= {min_stream_order}" if min_stream_order > 0 else "1=1"
+        where = f"streamorde >= {min_stream_order}" if min_stream_order > 0 else "1=1"
         params = {
             "where":          where,
-            "outFields":      "ReachCode,GNIS_Name,StreamOrde,LengthKM",
+            "outFields":      "reachcode,gnis_name,streamorde,lengthkm",
             "f":              "geojson",
             "returnGeometry": "true",
             "outSR":          "4326",
@@ -1290,7 +1291,7 @@ def load_nhd_flowlines(
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
 
-# Census TIGER Primary and Secondary Roads 
+# Census TIGER Primary and Secondary Roads
 
 CENSUS_PRISECROADS_URL = (
     f"{CENSUS_TIGER_BASE}/TIGER2023/PRISECROADS/tl_2023_us_prisecroads.zip"
@@ -1349,14 +1350,14 @@ def load_raws_stations(
     """
     Load RAWS fire weather station locations for a list of US states.
 
-    Primary  : SynopticData API has a complete RAWS registry, requires free token.
+    Primary  : SynopticData API has complete RAWS registry, requires free token.
                Register at: https://synopticdata.com/mesonet-api/
                Store as SYNOPTIC_TOKEN in .env
-    Fallback : NOAA ISD station history CSV: no key required.
+    Fallback : NOAA ISD station history CSV (no key required).
                Filters for stations with 'RAWS' in name; less complete.
 
     Parameters
-    states         : List of 2-letter state abbreviations, ex. ['AZ', 'OK']
+    states         : List of 2-letter state abbreviations, e.g. ['AZ', 'OK']
     synoptic_token : SynopticData API token (optional)
     force_refresh  : Re-download even if cache exists
     """
@@ -1421,7 +1422,7 @@ def load_raws_stations(
 
     def _fetch_isd():
         """
-        NOAA ISD fallback: downloads all US stations for the requested states
+        NOAA ISD fallback downloads all US stations for the requested states
         and filters by common RAWS/fire weather operator keywords.
         RAWS stations are not consistently named in ISD; broadening the filter
         captures most fire weather stations even without "RAWS" in the name.
@@ -1449,7 +1450,7 @@ def load_raws_stations(
         df = df[df["LAT"].between(-90, 90) & df["LON"].between(-180, 180)]
 
         # Filter by RAWS/fire weather keywords in station name
-        # RAWS are operated by BLM, USFS, NPS, BIA so many don't have "RAWS" in name
+        # RAWS are operated by BLM, USFS, NPS, BIA: many don't have "RAWS" in name
         RAWS_NAME_KEYWORDS = [
             "RAWS", "BLM", "USFS", "NPS", "BIA",
             "FIRE", "RANGER", "DIST",
@@ -1466,7 +1467,7 @@ def load_raws_stations(
         # If keyword filter is too aggressive, fall back to all stations in states
         if df_raws.empty:
             log.warning(
-                "No stations matched RAWS keywords — returning all stations "
+                "No stations matched RAWS keywords: returning all stations "
                 "in states %s as fallback. Filter manually if needed.", states
             )
             df_raws = df.copy()
@@ -1506,17 +1507,10 @@ def load_raws_stations(
                 return _fetch_synoptic()
             except Exception as exc:
                 log.warning(
-                    "SynopticData fetch failed (%s) — falling back to NOAA ISD.", exc
+                    "SynopticData fetch failed (%s): falling back to NOAA ISD.", exc
                 )
         return _fetch_isd()
 
     return _load_or_fetch_geodataframe(cache_name, _fetch, force_refresh)
 
-
-
-
-
-
-
-
-
+   
