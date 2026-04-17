@@ -7,30 +7,37 @@ scattered across notebooks as comments. They belong in shared, versioned code.
 Three complementary frameworks guide data governance in this project:
 
 OCAP® Principles (First Nations Information Governance Centre)
-  Ownership   : Tribal Nations own their collective data and cultural knowledge
-  Control     : Nations control how data is used, interpreted, and shared
-  Access      : Nations have the right to access data about their communities
-  Possession  : Nations should physically hold or steward data about themselves
+  Ownership   — Tribal Nations own their collective data and cultural knowledge
+  Control     — Nations control how data is used, interpreted, and shared
+  Access      — Nations have the right to access data about their communities
+  Possession  — Nations should physically hold or steward data about themselves
   Reference   : https://fnigc.ca/ocap-training/
 
 CARE Principles for Indigenous Data Governance (Global Indigenous Data Alliance)
-  Collective Benefit   : Data ecosystems should enable Indigenous peoples to
+  Collective Benefit  — Data ecosystems should enable Indigenous peoples to
                         benefit from their data
-  Authority to Control : Indigenous peoples' rights and interests in Indigenous
+  Authority to Control — Indigenous peoples' rights and interests in Indigenous
                         data must be recognised and their authority to control
                         such data empowered
-  Responsibility       : Those working with Indigenous data have a responsibility
+  Responsibility      — Those working with Indigenous data have a responsibility
                         to share how that data is used
-  Ethics               : Indigenous peoples' rights and wellbeing should be the
+  Ethics              — Indigenous peoples' rights and wellbeing should be the
                         primary concern across the data lifecycle
-  Reference            : https://www.gida-global.org/care
+  Reference           : https://www.gida-global.org/care
 
 FAIR Principles (FORCE11)
-  Findable      : Data and metadata are easy to find for humans and machines
-  Accessible    : Data is retrievable using open, universal protocols
-  Interoperable : Data uses standard formats and vocabularies
-  Reusable      : Data has clear licensing and provenance documentation
-  Reference     : https://www.go-fair.org/fair-principles/
+  Findable     — Data and metadata are easy to find for humans and machines
+  Accessible   — Data is retrievable using open, universal protocols
+  Interoperable — Data uses standard formats and vocabularies
+  Reusable     — Data has clear licensing and provenance documentation
+  Reference    : https://www.go-fair.org/fair-principles/
+
+IEEE 2890-2025 — Recommended Practice for Provenance of Indigenous Peoples' Data
+  The first international standard for Indigenous data provenance. Establishes
+  common parameters for describing and recording how data about or related to
+  Indigenous Peoples should be disclosed, connected to people and place, and
+  governed across its lifecycle — including AI/ML and biodiversity contexts.
+  Reference: https://standards.ieee.org/ieee/2890/10318/
 
 Relationship between frameworks
 FAIR establishes the open science baseline. CARE and OCAP® establish that
@@ -52,12 +59,14 @@ from dataclasses import dataclass
 from typing import Optional
 import warnings
 
-# Data source registry 
+
+# Data source registry
 
 @dataclass
 class DataSource:
     """
     Metadata for a dataset used in this project.
+
     Parameters
     name             : Human-readable name
     url              : Authoritative source URL
@@ -94,7 +103,7 @@ class DataSource:
         return f"{self.name}. {self.steward}. {self.url}"
 
 
-# Dataset registry
+# Canonical dataset registry
 # These mirror the sources in data/loaders.py. Update both when adding sources.
 
 SOURCES: dict[str, DataSource] = {
@@ -110,7 +119,7 @@ SOURCES: dict[str, DataSource] = {
     "mtbs": DataSource(
         name="Monitoring Trends in Burn Severity (MTBS)",
         url="https://www.mtbs.gov",
-        steward="USGS/USDA Forest Service",
+        steward="USGS / USDA Forest Service",
         tribal_data=False,
         license="Public domain (federal government)",
         fair_notes="Findable and accessible via direct download. Standard shapefile format.",
@@ -129,7 +138,7 @@ SOURCES: dict[str, DataSource] = {
         ),
         care_notes=(
             "Federal boundary data was not produced under Tribal Authority to Control. "
-            "Use for analytical context only: not for legal, jurisdictional, or "
+            "Use for analytical context only, not for legal, jurisdictional, or "
             "policy claims without Tribal review and consent."
         ),
         fair_notes="Accessible via WFS endpoint. Schema is consistent across vintages.",
@@ -149,7 +158,7 @@ SOURCES: dict[str, DataSource] = {
         care_notes=(
             "Census data was collected by the federal government, not under Tribal "
             "Authority to Control. Collective Benefit to Tribal Nations depends on "
-            "how results are applied, analysis should serve Tribal interests."
+            "how results are applied: analysis should serve Tribal interests."
         ),
         fair_notes=(
             "Highly FAIR: versioned annual releases, standard shapefile and GeoJSON "
@@ -226,7 +235,7 @@ SOURCES: dict[str, DataSource] = {
     "raws_stations": DataSource(
         name="RAWS Fire Weather Station Network",
         url="https://raws.dri.edu/",
-        steward="Western Regional Climate Center/USDA Forest Service/BLM/BIA",
+        steward="Western Regional Climate Center / USDA Forest Service / BLM / BIA",
         tribal_data=False,
         license="Public domain (federal government)",
         fair_notes=(
@@ -340,12 +349,14 @@ SOURCES: dict[str, DataSource] = {
         steward="USDA Forest Service",
         tribal_data=False,
         license="Public domain (federal government)",
-        fair_notes="Archived with DOI. Manual download required — not available via API.",
+        fair_notes="Archived with DOI. Manual download required: not available via API.",
         attribution="Radeloff et al. (2018). USDA Forest Service Research Data Archive.",
     ),
 }
 
-# Sovereignty acknowledgment
+
+# Sovereignty acknowledgment 
+
 def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     """
     Print data sovereignty acknowledgment for a notebook.
@@ -356,29 +367,38 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     """
     keys = source_keys or [k for k, v in SOURCES.items() if v.tribal_data]
 
+    print("=" * 70)
     print("DATA SOVEREIGNTY ACKNOWLEDGMENT")
+    print("=" * 70)
     print(
         "This analysis uses data that describes Indigenous and Tribal lands,\n"
         "communities, and fire histories. This project is guided by three\n"
         "complementary data governance frameworks:\n"
         "\n"
-        "OCAP®: Tribal Nations own, control, access, and possess data about\n"
+        "OCAP® : Tribal Nations own, control, access, and possess data about\n"
         "  their own communities and territories.\n"
         "  Reference: https://fnigc.ca/ocap-training/\n"
         "\n"
-        "CARE: Data use must deliver Collective Benefit to Indigenous peoples,\n"
+        "CARE  : Data use must deliver Collective Benefit to Indigenous peoples,\n"
         "  respect their Authority to Control, uphold Responsibility to communities,\n"
         "  and center Ethics across the full data lifecycle.\n"
         "  Reference: https://www.gida-global.org/care\n"
         "\n"
-        "FAIR: Data is Findable, Accessible, Interoperable, and Reusable.\n"
+        "FAIR  : Data is Findable, Accessible, Interoperable, and Reusable.\n"
         "  FAIR governs technical standards; CARE and OCAP® govern the ethical\n"
         "  obligations to Tribal Nations that FAIR alone does not address.\n"
         "  Reference: https://www.go-fair.org/fair-principles/\n"
         "\n"
-        "Tribal Nations are sovereign governments with the right to control data about their own communities and territories.\n"
-        "Federal and third-party datasets may not reflect Tribal Nations own definitions of territory, governance, or cultural practice.\n"
-        "This work is intended to support but not replace Tribal-led fire science and land management.\n"
+        "We recognize that:\n"
+        "\n"
+        "• Tribal Nations are sovereign governments with the right to control\n"
+        "  data about their own communities and territories.\n"
+        "\n"
+        "• Federal and third-party datasets may not reflect Tribal Nations'\n"
+        "  own definitions of territory, governance, or cultural practice.\n"
+        "\n"
+        "• This work is intended to support, not replace, Tribal-led\n"
+        "  fire science and land management.\n"
     )
     print("Data sources used:")
     for key in keys:
@@ -392,7 +412,7 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
             if src.use_restrictions:
                 print(f"    Restrictions: {src.use_restrictions}")
             src.warn_if_restricted()
-    print("=" * 70)
+    
 
 
 def generate_citations(source_keys: list[str]) -> str:
@@ -408,6 +428,7 @@ def generate_citations(source_keys: list[str]) -> str:
 
 
 # Traditional Ecological Knowledge (TEK) disclaimer
+
 TEK_DISCLAIMER = """
 Traditional Ecological Knowledge (TEK) Notice
 Some analyses in this project draw on or are informed by Indigenous fire
@@ -428,8 +449,3 @@ Tribal Nations before incorporating TEK into new analyses or publications.
 def print_tek_disclaimer() -> None:
     """Print the TEK disclaimer. Use in indigenous_fire_stewardship.ipynb."""
     print(TEK_DISCLAIMER)
-
-
-
-
-
