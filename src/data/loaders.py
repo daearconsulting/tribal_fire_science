@@ -751,14 +751,13 @@ BLM_SMA_URL = (
     "MapServer/1/query"
 )
 
-
 @_retry
 def load_blm_sma(
     bbox: tuple[float, float, float, float],
     force_refresh: bool = False,
 ) -> gpd.GeoDataFrame:
     """
-    BLM Surface Management Agency (SMA) dataset with federal land ownership.
+    BLM Surface Management Agency (SMA) dataset showing federal land ownership.
     Includes BLM, USFS, NPS, FWS, BIA, DOD, state, and private surface ownership.
     Source: https://gbp-blm-egis.hub.arcgis.com/
 
@@ -782,7 +781,7 @@ def load_blm_sma(
 
         while True:
             # BLM SMA endpoint rejects combined WHERE + spatial filter (returns 400).
-            # Use spatial filter only, no where clause.
+            # Use spatial filter only (no where clause).
             params = {
                 "outFields":         "ADMIN_AGENCY_CODE,ADMIN_UNIT_NAME,ADMIN_ST",
                 "f":                 "geojson",
@@ -796,6 +795,11 @@ def load_blm_sma(
                 "inSR":              "4326",
             }
             r = requests.get(BLM_SMA_URL, params=params, timeout=120)
+            # BLM SMA returns 500 for areas with no BLM land (ex. Oklahoma)
+            # Treat 500 as empty result rather than a hard error
+            if r.status_code == 500:
+                log.info("BLM SMA: 500 for bbox %s, likely no BLM land in area", bbox)
+                break
             r.raise_for_status()
             features = r.json().get("features", [])
             all_features.extend(features)
