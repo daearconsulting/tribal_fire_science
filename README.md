@@ -2,7 +2,7 @@
 
 > Jupyter notebooks and shared Python modules for analyzing wildfire history, risk, and stewardship on and near Tribal lands in the United States, built with real data, modular code, and OCAP®-aligned data governance.
 
-**Authors:** Lilly Jones, PhD (Daear Consulting, LLC)
+**Author:** Lilly Jones, PhD (Daear Consulting, LLC)
 **Version:** 1.0.0 · Released February 2026  
 **License:** See [LICENSE](LICENSE)  
 **Citation:** See [citation.cff](citation.cff) or the [cite this repo](#citation) section below
