@@ -103,7 +103,7 @@ class DataSource:
         return f"{self.name}. {self.steward}. {self.url}"
 
 
-# Canonical dataset registry
+# Dataset registry
 # These mirror the sources in data/loaders.py. Update both when adding sources.
 
 SOURCES: dict[str, DataSource] = {
@@ -129,7 +129,7 @@ SOURCES: dict[str, DataSource] = {
         name="BIA Land Area Representations",
         url="https://biamaps.doi.gov",
         steward="Bureau of Indian Affairs (BIA)",
-        tribal_data=True,
+        tribal_data=False,
         license="Public domain (federal government)",
         ocap_notes=(
             "Tribal boundary data originates from federal records, not Tribal Nations "
@@ -148,7 +148,7 @@ SOURCES: dict[str, DataSource] = {
         name="Census TIGER AIANNH",
         url="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html",
         steward="US Census Bureau",
-        tribal_data=True,
+        tribal_data=False,
         license="Public domain (federal government)",
         ocap_notes=(
             "Census-defined boundaries are for statistical purposes only. "
@@ -208,7 +208,7 @@ SOURCES: dict[str, DataSource] = {
         steward="US Census Bureau",
         tribal_data=False,
         license="Public domain (federal government)",
-        fair_notes="Annual vintage releases, standard shapefile format, open download.",
+        fair_notes="Annual releases, standard shapefile format, open download.",
         attribution="US Census Bureau, TIGER/Line Urban Areas, 2023.",
     ),
     "census_acs": DataSource(
@@ -409,7 +409,7 @@ def print_data_acknowledgment(source_keys: Optional[list[str]] = None) -> None:
     for key in keys:
         src = SOURCES.get(key)
         if src:
-            print(f"  • {src.name} - {src.steward}")
+            print(f"  • {src.name} {src.steward}")
             if src.ocap_notes:
                 print(f"    OCAP®: {src.ocap_notes}")
             if src.care_notes:
@@ -426,9 +426,9 @@ def generate_citations(source_keys: list[str]) -> str:
     for key in source_keys:
         src = SOURCES.get(key)
         if src:
-            lines.append(f"- {src.citation()}")
+            lines.append(f" {src.citation()}")
         else:
-            lines.append(f"- [Unknown source: {key}]")
+            lines.append(f" [Unknown source: {key}]")
     return "\n".join(lines)
 
 

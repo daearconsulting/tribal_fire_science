@@ -21,14 +21,14 @@ log = logging.getLogger(__name__)
 def to_geographic(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     """Reproject to WGS 84 geographic (EPSG:4326)."""
     if gdf.crs is None:
-        raise ValueError("GeoDataFrame has no CRS set — cannot reproject.")
+        raise ValueError("GeoDataFrame has no CRS set, cannot reproject.")
     return gdf.to_crs(CRS_GEOGRAPHIC)
 
 
 def to_projected(gdf: gpd.GeoDataFrame) -> gpd.GeoDataFrame:
     """Reproject to Albers Equal Area (EPSG:5070) for area calculations."""
     if gdf.crs is None:
-        raise ValueError("GeoDataFrame has no CRS set — cannot reproject.")
+        raise ValueError("GeoDataFrame has no CRS set, cannot reproject.")
     return gdf.to_crs(CRS_PROJECTED)
 
 

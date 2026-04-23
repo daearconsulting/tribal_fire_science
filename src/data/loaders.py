@@ -1,5 +1,5 @@
 """
-loaders.py to fetch and cache real datasets used across notebooks.
+loaders.py to fetch and cache datasets used across notebooks.
 
 Design principles
 - Every function fetches from a documented public source (no synthetic data).
@@ -170,7 +170,7 @@ def load_bia_tribal_boundaries(force_refresh: bool = False) -> gpd.GeoDataFrame:
 def load_census_aian(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
     Census TIGER/Line AIANNH shapefiles (American Indian / Alaska Native /
-    Native Hawaiian areas), 2023 vintage.
+    Native Hawaiian areas), 2023.
     Source: https://www2.census.gov/geo/tiger/TIGER2023/AIANNH/
     """
     def _fetch():
@@ -241,7 +241,7 @@ def load_native_land_territories(
 @_retry
 def load_fema_national_risk_index(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
-    FEMA National Risk Index — county-level composite risk scores.
+    FEMA National Risk Index county-level composite risk scores.
     Source: https://hazards.fema.gov/nri/
     """
     def _fetch():
@@ -299,8 +299,8 @@ def load_noaa_climate_data(
     Requires a free API token from: https://www.ncei.noaa.gov/cdo-web/token
 
     Parameters
-    station_ids : list of NOAA station IDs (e.g. ["GHCND:USC00123456"])
-    dataset_id  : CDO dataset (e.g. "GHCND", "NORMAL_DLY")
+    station_ids : list of NOAA station IDs (ex. ["GHCND:USC00123456"])
+    dataset_id  : CDO dataset (ex. "GHCND", "NORMAL_DLY")
     start_date  : "YYYY-MM-DD"
     end_date    : "YYYY-MM-DD"
     api_token   : CDO API token (store in .env, never commit)
@@ -357,7 +357,6 @@ def load_gridmet_weather(
 ) -> pd.DataFrame:
     """
     Load gridMET daily weather data for Tribal land centroids.
-
     Uses OPeNDAP spatial subsetting to download only the grid cells
     covering the study area, no full continental US download required.
 
@@ -366,9 +365,9 @@ def load_gridmet_weather(
     Spatial resolution: ~4 km. Temporal coverage: 1979–present.
 
     Variables loaded by default
-    tmmx   : Daily max temperature (K → °F)
+    tmmx   : Daily max temperature (K to °F)
     rmin   : Daily min relative humidity (%)
-    vs     : Daily mean wind speed (m/s → mph)
+    vs     : Daily mean wind speed (m/s to mph)
     bi     : Burning Index
     erc    : Energy Release Component
     fm1000 : 1000-hr dead fuel moisture (%)
@@ -537,7 +536,7 @@ def load_hifld_fire_stations(
 
     Parameters
     state_filter : list of two-letter state abbreviations to filter results
-                   (e.g. ["AZ", "NM", "MT"]). If None, returns all CONUS stations.
+                   (ex. ["AZ", "NM", "MT"]). If None, returns all CONUS stations.
     force_refresh : re-download even if cache exists
     """
     cache_name = "hifld_fire_stations"
@@ -617,7 +616,7 @@ def load_usgs_wbd_huc8(
 
     Parameters
     bbox       : (min_lon, min_lat, max_lon, max_lat) spatial filter
-    huc2_codes : list of 2-digit HUC region codes (e.g. ["17", "11"])
+    huc2_codes : list of 2-digit HUC region codes (ex. ["17", "11"])
                  to limit download. If None, uses bbox only.
     force_refresh : re-download even if cache exists
     """
@@ -762,7 +761,7 @@ def load_blm_sma(
     Source: https://gbp-blm-egis.hub.arcgis.com/
 
     Parameters
-    bbox : (min_lon, min_lat, max_lon, max_lat) — required, clips to study area
+    bbox : (min_lon, min_lat, max_lon, max_lat) required, clips to study area
     """
     if bbox is None:
         raise ValueError("bbox is required for load_blm_sma to limit download size.")
@@ -828,7 +827,7 @@ CENSUS_UAC_URL = f"{CENSUS_TIGER_BASE}/TIGER2023/UAC/tl_2023_us_uac20.zip"
 @_retry
 def load_census_urban_areas(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
-    Census TIGER Urban Areas (UAC), 2020 delineation, 2023 vintage.
+    Census TIGER Urban Areas (UAC), 2020 delineation, 2023.
     Includes Urbanized Areas (>=50,000 pop) and Urban Clusters (2,500–50,000 pop).
     Source: https://www2.census.gov/geo/tiger/TIGER2023/UAC/
 
@@ -873,7 +872,7 @@ def load_census_acs_population(
     Parameters
     api_key   : Census API key (free from https://api.census.gov/data/key_signup.html)
                Store in .env as CENSUS_API_KEY, never commit.
-    year      : ACS release year (e.g. 2022 = 2018-2022 5-year estimates)
+    year      : ACS release year (ex. 2022 = 2018-2022 5-year estimates)
     variables : List of ACS variable codes. Defaults to ['B01003_001E'] (total population).
 
     Returns
@@ -964,7 +963,7 @@ def load_maca_projections(
 
     Parameters
     lon, lat   : Point coordinates (WGS84)
-    variable   : MACAv2 variable code, e.g. 'tasmax', 'pr'
+    variable   : MACAv2 variable code, ex. 'tasmax', 'pr'
     scenario   : 'historical', 'rcp45', or 'rcp85'
     model      : GCM name, ex. 'BNU-ESM'
     start_year : First year to retrieve
@@ -1047,7 +1046,7 @@ CENSUS_COUNTY_URL = f"{CENSUS_TIGER_BASE}/TIGER2023/COUNTY/tl_2023_us_county.zip
 @_retry
 def load_census_counties(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
-    Census TIGER county boundaries (2023 vintage).
+    Census TIGER county boundaries (2023).
     Returns GeoDataFrame with STATEFP, COUNTYFP, GEOID, NAME, geometry.
     Source: https://www2.census.gov/geo/tiger/TIGER2023/COUNTY/
     """
@@ -1305,7 +1304,7 @@ CENSUS_PRISECROADS_URL = (
 @_retry
 def load_census_primary_roads(force_refresh: bool = False) -> gpd.GeoDataFrame:
     """
-    Census TIGER Primary and Secondary Roads national file (2023 vintage).
+    Census TIGER Primary and Secondary Roads national file (2023).
     Includes interstate highways, US routes, state routes, and county roads.
     Suitable for WUI road density calculation as ignition vector proxy.
     Source: https://www2.census.gov/geo/tiger/TIGER2023/PRISECROADS/
@@ -1361,7 +1360,7 @@ def load_raws_stations(
                Filters for stations with 'RAWS' in name; less complete.
 
     Parameters
-    states         : List of 2-letter state abbreviations, e.g. ['AZ', 'OK']
+    states         : List of 2-letter state abbreviations, ex. ['AZ', 'OK']
     synoptic_token : SynopticData API token (optional)
     force_refresh  : Re-download even if cache exists
     """

@@ -1,6 +1,5 @@
 """
-constants.py contains Shared configuration for paths, CRS, and tribal identifiers.
-
+constants.py contains shared configuration for paths, CRS, and tribal identifiers.
 All paths are relative to REPO_ROOT so the project works on any machine
 or GitHub clone without modification.
 """
@@ -137,4 +136,4 @@ PRIMARY_TRIBES = [
 # Visualization defaults
 DEFAULT_MAP_CENTER  = [39.5, -98.35]   # geographic center of contiguous US
 DEFAULT_MAP_ZOOM    = 4
-TRIBAL_ACCENT_COLOR = "#C8522B"        # terra cotta
+TRIBAL_ACCENT_COLOR = "#C8522B"        
